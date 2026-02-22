@@ -93,59 +93,60 @@ export default function Events() {
                     )}
                 </div>
 
-                {previousEvents.length > 0 && (
-                    <>
-                        <div className="text-center mt-20 mb-12">
-                            <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6 border-b border-stone-200 pb-2 inline-block">Previous Events</h2>
-                        </div>
+                <div className="text-center mt-20 mb-12">
+                    <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6 border-b border-stone-200 pb-2 inline-block">Previous Events</h2>
+                </div>
 
-                        {/* Event List */}
-                        <div className="space-y-8 opacity-75">
-                            {previousEvents.map((event, index) => {
-                                const { month, day } = parseDate(event.date);
-                                const borderColor = index % 2 === 0 ? 'border-stone-400' : 'border-stone-300';
+                {previousEvents.length === 0 ? (
+                    <div className="bg-stone-100 p-8 border border-stone-200 rounded shadow-inner text-stone-500 text-center">
+                        <p className="text-xl font-bold uppercase tracking-wide">No Previous Events</p>
+                    </div>
+                ) : (
+                    <div className="space-y-8 opacity-75">
+                        {previousEvents.map((event, index) => {
+                            const { month, day } = parseDate(event.date);
+                            const borderColor = index % 2 === 0 ? 'border-stone-400' : 'border-stone-300';
 
-                                return (
-                                    <div key={event.id} className={`bg-white border-l-8 ${borderColor} p-8 shadow flex flex-col md:flex-row gap-8 items-start`}>
-                                        <div className="group relative shrink-0 w-full sm:w-[120px] md:w-40 h-[120px] md:h-28 rounded overflow-hidden border border-stone-200 flex flex-col justify-center items-center">
-                                            {event.image ? (
-                                                <>
-                                                    <Image
-                                                        src={event.image}
-                                                        alt={event.name}
-                                                        fill
-                                                        className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
-                                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 120px, 160px"
-                                                    />
-                                                    <div className="absolute inset-0 bg-stone-900/70 transition-colors duration-500 group-hover:bg-stone-900/40"></div>
+                            return (
+                                <div key={event.id} className={`bg-white border-l-8 ${borderColor} p-8 shadow flex flex-col md:flex-row gap-8 items-start`}>
+                                    <div className="group relative shrink-0 w-full sm:w-[120px] md:w-40 h-[120px] md:h-28 rounded overflow-hidden border border-stone-200 flex flex-col justify-center items-center">
+                                        {event.image ? (
+                                            <>
+                                                <Image
+                                                    src={event.image}
+                                                    alt={event.name}
+                                                    fill
+                                                    className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 120px, 160px"
+                                                />
+                                                <div className="absolute inset-0 bg-stone-900/70 transition-colors duration-500 group-hover:bg-stone-900/40"></div>
 
-                                                    <div className="relative z-10 text-center drop-shadow-md">
-                                                        <span className="block text-sm font-bold text-stone-300 uppercase tracking-widest mb-1">{month}</span>
-                                                        <span className="block text-4xl font-serif text-stone-50">{day}</span>
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                <div className="absolute inset-0 bg-stone-100 flex flex-col justify-center items-center opacity-75">
-                                                    <span className="block text-sm font-bold text-stone-400 uppercase tracking-widest mb-1">{month}</span>
-                                                    <span className="block text-4xl font-serif text-stone-700">{day}</span>
+                                                <div className="relative z-10 text-center drop-shadow-md">
+                                                    <span className="block text-sm font-bold text-stone-300 uppercase tracking-widest mb-1">{month}</span>
+                                                    <span className="block text-4xl font-serif text-stone-50">{day}</span>
                                                 </div>
-                                            )}
-                                        </div>
-
-                                        <div className="flex-grow">
-                                            <h3 className="text-xl font-serif text-stone-600 uppercase mb-2">{event.name}</h3>
-                                            <p className="text-stone-400 mb-4 font-bold">{event.date}</p>
-                                            <div className="mt-2">
-                                                <a href={event.url} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-stone-600 text-sm underline underline-offset-4">
-                                                    View on Facebook
-                                                </a>
+                                            </>
+                                        ) : (
+                                            <div className="absolute inset-0 bg-stone-100 flex flex-col justify-center items-center opacity-75">
+                                                <span className="block text-sm font-bold text-stone-400 uppercase tracking-widest mb-1">{month}</span>
+                                                <span className="block text-4xl font-serif text-stone-700">{day}</span>
                                             </div>
+                                        )}
+                                    </div>
+
+                                    <div className="flex-grow">
+                                        <h3 className="text-xl font-serif text-stone-600 uppercase mb-2">{event.name}</h3>
+                                        <p className="text-stone-400 mb-4 font-bold">{event.date}</p>
+                                        <div className="mt-2">
+                                            <a href={event.url} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-stone-600 text-sm underline underline-offset-4">
+                                                View on Facebook
+                                            </a>
                                         </div>
                                     </div>
-                                );
-                            })}
-                        </div>
-                    </>
+                                </div>
+                            );
+                        })}
+                    </div>
                 )}
 
                 <div className="text-center mt-12">
