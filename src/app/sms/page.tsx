@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Button from '@/components/Button';
 
 export const metadata: Metadata = {
     title: 'SMS Alerts',
@@ -27,20 +26,16 @@ export default function SMSAlerts() {
                         Sign up for SMS alerts to get the latest news on special beer releases, taproom events, and exclusive discounts delivered straight to your phone.
                     </p>
 
-                    <form className="max-w-md mx-auto space-y-4 text-left">
-                        <div>
-                            <label htmlFor="phone" className="block text-sm font-bold text-stone-700 uppercase tracking-wider mb-2">Mobile Number *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" className="w-full p-4 border border-stone-300 focus:outline-none focus:border-etbrew-gold focus:ring-1 focus:ring-etbrew-gold bg-stone-50" required />
-                        </div>
-
-                        <p className="text-xs text-stone-500 mt-4 leading-relaxed mb-6">
-                            By submitting this form, you agree to receive promotional text messages from East Troy Brewery. Messages may include offers, event info, and updates. Standard message and data rates may apply. You can reply STOP at any time to cancel.
-                        </p>
-
-                        <Button variant="gold" className="w-full text-lg py-4 mt-4">
-                            Subscribe Now
-                        </Button>
-                    </form>
+                    <div className="w-full max-w-lg mx-auto relative bg-transparent">
+                        <iframe
+                            src="https://app2.simpletexting.com/join/joinWebForm?webFormId=690b997eea162d7184c57748&c=USA"
+                            width="100%"
+                            height="600"
+                            style={{ border: 'none' }}
+                            title="East Troy Brewery SMS Sign Up Form"
+                            className="block w-full mx-auto outline-none focus:outline-none"
+                        ></iframe>
+                    </div>
                 </div>
 
             </section>
