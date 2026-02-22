@@ -20,7 +20,7 @@ export default function MugClub() {
             {/* Content */}
             <section className="py-24 px-4 max-w-5xl mx-auto w-full">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6">2024 Membership Now Available</h2>
+                    <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6">Ask About Becoming a Member</h2>
                     <p className="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
                         Become a part of the East Troy Brewery family! Our Mug Club members enjoy exclusive perks, discounts, and access to special events all year long.
                     </p>
@@ -63,14 +63,14 @@ export default function MugClub() {
                     {/* Pricing & Sign up */}
                     <div className="flex flex-col justify-center">
                         <div className="bg-stone-900 text-white p-12 text-center rounded shadow-xl">
-                            <h3 className="text-3xl font-serif uppercase tracking-widest mb-4">Annual Membership</h3>
+                            <h3 className="text-3xl font-serif uppercase tracking-widest mb-4">Yearly Membership</h3>
                             <div className="text-6xl font-black text-etbrew-gold mb-8">$75</div>
-                            <p className="text-stone-300 mb-8 italic">Valid through December 31, 2024.</p>
+                            <p className="text-stone-300 mb-8 italic">Valid until end of current calendar year.</p>
                             <Button href="/visit-us" variant="gold" className="w-full text-lg py-4">Purchase at the Brewery</Button>
                         </div>
 
                         <p className="text-center text-stone-500 mt-6 text-sm">
-                            Memberships can currently only be purchased in-person at the taproom. Ask your server or bartender for details!
+                            Memberships can only be purchased in-person at the taproom. Ask your server or bartender for details!
                         </p>
                     </div>
 
