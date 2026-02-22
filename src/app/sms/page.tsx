@@ -14,6 +14,7 @@ export default function SMSAlerts() {
                 <div className="relative z-20 max-w-4xl mx-auto">
                     <h1 className="text-5xl md:text-6xl font-serif uppercase tracking-wider mb-6">SMS Alerts</h1>
                     <div className="w-24 h-1 bg-etbrew-gold mx-auto mb-6"></div>
+                    <p className="text-xl max-w-2xl mx-auto font-sans">Stay in the loop.</p>
                 </div>
             </section>
 
@@ -21,9 +22,9 @@ export default function SMSAlerts() {
             <section className="py-32 px-4 max-w-3xl mx-auto w-full text-center flex-grow flex flex-col justify-center items-center">
 
                 <div className="bg-white p-12 md:p-16 shadow-2xl border-t-8 border-etbrew-gold rounded-sm w-full">
-                    <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6">Stay in the Loop</h2>
+                    <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6">Sign up for SMS alerts</h2>
                     <p className="text-lg text-stone-600 leading-relaxed mb-10 max-w-xl mx-auto">
-                        Sign up for SMS alerts to get the latest news on special beer releases, taproom events, and exclusive discounts delivered straight to your phone.
+                        Get the latest news on special beer releases, taproom events, and exclusive discounts, delivered straight to your phone.
                     </p>
 
                     <div className="w-full max-w-lg mx-auto relative bg-transparent">

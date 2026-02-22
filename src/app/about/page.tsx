@@ -16,6 +16,7 @@ export default function About() {
                 <div className="relative z-20 max-w-4xl mx-auto">
                     <h1 className="text-5xl md:text-6xl font-serif uppercase tracking-wider mb-6">About Us</h1>
                     <div className="w-24 h-1 bg-etbrew-gold mx-auto mb-6"></div>
+                    <p className="text-xl max-w-2xl mx-auto font-sans">Don't call it a comeback. We've been here for years.</p>
                 </div>
             </section>
 
