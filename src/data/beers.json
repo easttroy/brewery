@@ -1,0 +1,304 @@
+[
+  {
+    "name": "Cherry Pineapple Sour",
+    "url": "https://untappd.com/b/east-troy-brewery-cherry-pineapple-sour/6597140",
+    "style": "",
+    "abv": "4.5%",
+    "ibu": "N/A",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Midnight Reserve",
+    "url": "https://untappd.com/b/east-troy-brewery-ghoulish/6596350",
+    "style": "",
+    "abv": "12.1%",
+    "ibu": "N/A",
+    "prices": [
+      {
+        "size": "10oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$6.00"
+      },
+      {
+        "size": "5oz Taster",
+        "price": "$4.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$21.00"
+      }
+    ]
+  },
+  {
+    "name": "Chocolate Cherry Porter",
+    "url": "https://untappd.com/b/east-troy-brewery-chocolate-cherry-porter/6153003",
+    "style": "",
+    "abv": "5.5%",
+    "ibu": "28",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Paved In Gold",
+    "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
+    "style": "",
+    "abv": "6.5%",
+    "ibu": "50",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$14.92"
+      }
+    ]
+  },
+  {
+    "name": "Dorado Loco",
+    "url": "https://untappd.com/b/east-troy-brewery-dorado-loco/6375398",
+    "style": "",
+    "abv": "5.2%",
+    "ibu": "18",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "American Lager",
+    "url": "https://untappd.com/b/east-troy-brewery-american-lager/6309643",
+    "style": "",
+    "abv": "4.7%",
+    "ibu": "13",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Goat Talk",
+    "url": "https://untappd.com/b/east-troy-brewery-goat-talk/6559441",
+    "style": "",
+    "abv": "7.8%",
+    "ibu": "25",
+    "prices": [
+      {
+        "size": "10oz Draft",
+        "price": "$5.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$4.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$18.00"
+      }
+    ]
+  },
+  {
+    "name": "Watermelon Premium Seltzer",
+    "url": "https://untappd.com/b/east-troy-brewery-watermelon-lemon-premium-seltzer/6574246",
+    "style": "",
+    "abv": "5%",
+    "ibu": "N/A",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Strawberries & Cream Sour",
+    "url": "https://untappd.com/b/east-troy-brewery-strawberries-and-cream-sour/6525324",
+    "style": "",
+    "abv": "5%",
+    "ibu": "1",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Penny Slot Dunkel",
+    "url": "https://untappd.com/b/east-troy-brewery-penny-slot-dunkel/6516932",
+    "style": "",
+    "abv": "5.2%",
+    "ibu": "25",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Lock & Key Porter",
+    "url": "https://untappd.com/b/east-troy-brewery-lock-and-key-porter/6134324",
+    "style": "",
+    "abv": "5%",
+    "ibu": "28",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Invaluable",
+    "url": "https://untappd.com/b/g5-brewing-company-invaluable/6497043",
+    "style": "",
+    "abv": "8.4%",
+    "ibu": "55",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "J Henry Barrel Aged Grim",
+    "url": "https://untappd.com/b/east-troy-brewery-barrel-aged-grim/6474467",
+    "style": "",
+    "abv": "11.5%",
+    "ibu": "N/A",
+    "prices": [
+      {
+        "size": "10oz Draft",
+        "price": "$8.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$7.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$21.00"
+      },
+      {
+        "size": "5oz Draft",
+        "price": "$4.00"
+      }
+    ]
+  },
+  {
+    "name": "Hef Time",
+    "url": "https://untappd.com/b/east-troy-brewery-hef-time/5937578",
+    "style": "",
+    "abv": "4.8%",
+    "ibu": "15",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  }
+]
