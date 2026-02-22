@@ -2,7 +2,7 @@ name: Auto-Sync Menus
 
 on:
   schedule:
-    - cron: '0 * * * *' # Run at the top of every hour
+    - cron: '34 * * * *' # Run at the top of every hour
   workflow_dispatch: # Allow manual trigger
 
 jobs:
