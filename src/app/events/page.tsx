@@ -52,22 +52,30 @@ export default function Events() {
 
                                 return (
                                     <div key={event.id} className={`bg-white border-l-8 ${borderColor} p-8 shadow hover:shadow-lg transition-shadow flex flex-col md:flex-row gap-8 items-start`}>
-                                        <div className="bg-stone-100 p-6 text-center min-w-[120px] rounded shrink-0 border border-stone-200 flex flex-col justify-center items-center">
-                                            <span className="block text-sm font-bold text-stone-500 uppercase tracking-widest mb-1">{month}</span>
-                                            <span className="block text-4xl font-serif text-stone-900">{day}</span>
-                                        </div>
+                                        <div className="group relative shrink-0 w-full sm:w-[120px] md:w-48 h-[120px] md:h-32 rounded overflow-hidden border border-stone-200 flex flex-col justify-center items-center">
+                                            {event.image ? (
+                                                <>
+                                                    <Image
+                                                        src={event.image}
+                                                        alt={event.name}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 120px, 192px"
+                                                    />
+                                                    <div className="absolute inset-0 bg-stone-900/60 transition-colors duration-500 group-hover:bg-stone-900/30"></div>
 
-                                        {event.image && (
-                                            <div className="shrink-0 w-full md:w-48 h-32 relative overflow-hidden rounded border border-stone-200">
-                                                <Image
-                                                    src={event.image}
-                                                    alt={event.name}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="(max-width: 768px) 100vw, 192px"
-                                                />
-                                            </div>
-                                        )}
+                                                    <div className="relative z-10 text-center drop-shadow-md">
+                                                        <span className="block text-sm font-bold text-stone-200 uppercase tracking-widest mb-1">{month}</span>
+                                                        <span className="block text-4xl font-serif text-white">{day}</span>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <div className="absolute inset-0 bg-stone-100 flex flex-col justify-center items-center">
+                                                    <span className="block text-sm font-bold text-stone-500 uppercase tracking-widest mb-1">{month}</span>
+                                                    <span className="block text-4xl font-serif text-stone-900">{day}</span>
+                                                </div>
+                                            )}
+                                        </div>
 
                                         <div className="flex-grow">
                                             <h3 className="text-2xl font-serif text-stone-800 uppercase mb-2">{event.name}</h3>
@@ -99,22 +107,30 @@ export default function Events() {
 
                                 return (
                                     <div key={event.id} className={`bg-white border-l-8 ${borderColor} p-8 shadow flex flex-col md:flex-row gap-8 items-start`}>
-                                        <div className="bg-stone-100 p-6 text-center min-w-[120px] rounded shrink-0 border border-stone-200 flex flex-col justify-center items-center">
-                                            <span className="block text-sm font-bold text-stone-400 uppercase tracking-widest mb-1">{month}</span>
-                                            <span className="block text-4xl font-serif text-stone-700">{day}</span>
-                                        </div>
+                                        <div className="group relative shrink-0 w-full sm:w-[120px] md:w-40 h-[120px] md:h-28 rounded overflow-hidden border border-stone-200 flex flex-col justify-center items-center">
+                                            {event.image ? (
+                                                <>
+                                                    <Image
+                                                        src={event.image}
+                                                        alt={event.name}
+                                                        fill
+                                                        className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
+                                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 120px, 160px"
+                                                    />
+                                                    <div className="absolute inset-0 bg-stone-900/70 transition-colors duration-500 group-hover:bg-stone-900/40"></div>
 
-                                        {event.image && (
-                                            <div className="shrink-0 w-full md:w-32 h-24 relative overflow-hidden rounded border border-stone-200 grayscale opacity-75">
-                                                <Image
-                                                    src={event.image}
-                                                    alt={event.name}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="(max-width: 768px) 100vw, 128px"
-                                                />
-                                            </div>
-                                        )}
+                                                    <div className="relative z-10 text-center drop-shadow-md">
+                                                        <span className="block text-sm font-bold text-stone-300 uppercase tracking-widest mb-1">{month}</span>
+                                                        <span className="block text-4xl font-serif text-stone-50">{day}</span>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <div className="absolute inset-0 bg-stone-100 flex flex-col justify-center items-center opacity-75">
+                                                    <span className="block text-sm font-bold text-stone-400 uppercase tracking-widest mb-1">{month}</span>
+                                                    <span className="block text-4xl font-serif text-stone-700">{day}</span>
+                                                </div>
+                                            )}
+                                        </div>
 
                                         <div className="flex-grow">
                                             <h3 className="text-xl font-serif text-stone-600 uppercase mb-2">{event.name}</h3>
