@@ -18,7 +18,7 @@ export default function TermsAndConditions() {
             {/* Content */}
             <section className="py-20 px-4 max-w-4xl mx-auto w-full">
                 <div className="bg-white p-8 md:p-16 shadow-xl border-t-4 border-etbrew-gold prose prose-stone max-w-none">
-                    <p className="text-sm text-stone-500 italic mb-8">Last updated: September 5, 2018</p>
+                    <p className="text-sm text-stone-500 italic mb-8">Last updated: February 22, 2026</p>
 
                     <p>Please read these Terms of Use (&ldquo;Terms&rdquo;, &ldquo;Terms of Use&rdquo;) carefully before using the https://etbrew.com website (the &ldquo;Service&rdquo;) operated by East Troy Brewery Co (&ldquo;us&rdquo;, &ldquo;we&rdquo;, or &ldquo;our&rdquo;).</p>
 
