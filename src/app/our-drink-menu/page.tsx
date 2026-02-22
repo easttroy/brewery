@@ -35,8 +35,9 @@ export default function DrinkMenu() {
                                     <span className="text-etbrew-gold font-bold">{beer.abv}</span>
                                 </div>
                                 {beer.style && <p className="text-stone-600 mt-2 font-serif italic">{beer.style}</p>}
+                                {beer.description && <p className="text-stone-700 text-sm mt-3 leading-relaxed">{beer.description}</p>}
                                 <div className="mt-4 space-y-2">
-                                    {Array.isArray(beer.prices) ? beer.prices.map((p: { size: string, price: string }, i: number) => (
+                                    {Array.isArray(beer.prices) && beer.prices.length > 0 ? beer.prices.map((p: { size: string, price: string }, i: number) => (
                                         <div key={i} className="flex justify-between text-sm text-stone-600 border-b border-stone-200 border-dotted pb-1 last:border-0 hover:text-stone-900 transition-colors">
                                             <span>{p.size}</span>
                                             <span className="font-medium">{p.price}</span>

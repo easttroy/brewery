@@ -2,9 +2,10 @@
   {
     "name": "Cherry Pineapple Sour",
     "url": "https://untappd.com/b/east-troy-brewery-cherry-pineapple-sour/6597140",
-    "style": "",
+    "style": "Sour - Fruited",
     "abv": "4.5%",
     "ibu": "N/A",
+    "description": "Sweet pineapple meets tart cherry in a puckering, fruit-forward delight.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -23,9 +24,10 @@
   {
     "name": "Midnight Reserve",
     "url": "https://untappd.com/b/east-troy-brewery-ghoulish/6596350",
-    "style": "",
+    "style": "Stout - Imperial",
     "abv": "12.1%",
     "ibu": "N/A",
+    "description": "Deep Roast, Rich brown sugar, Silky Smooth",
     "prices": [
       {
         "size": "10oz Draft",
@@ -48,9 +50,10 @@
   {
     "name": "Chocolate Cherry Porter",
     "url": "https://untappd.com/b/east-troy-brewery-chocolate-cherry-porter/6153003",
-    "style": "",
+    "style": "Porter - English",
     "abv": "5.5%",
     "ibu": "28",
+    "description": "Our Valentine's Day gift from us to you. Why? Because we love you.  This is our original porter with additions of chocolate fudge and sweet dark cherry.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -69,9 +72,10 @@
   {
     "name": "Paved In Gold",
     "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
-    "style": "",
+    "style": "IPA - New England",
     "abv": "6.5%",
     "ibu": "50",
+    "description": "A focus on quality and tropical ingredients have the runway to your tastebuds ‘Paved in Gold.’  A big hop driven IPA, approachable and dangerous with El Dorado, Rakau, Amarillo hops.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -90,9 +94,10 @@
   {
     "name": "Dorado Loco",
     "url": "https://untappd.com/b/east-troy-brewery-dorado-loco/6375398",
-    "style": "",
+    "style": "Lager - Mexican",
     "abv": "5.2%",
     "ibu": "18",
+    "description": "Translation: \"Crazy Gold\".  This Mexican Lager was brewed with maximum thirst quenching ability and built to satisfy your taste buds.  Try it with a lime!",
     "prices": [
       {
         "size": "16oz Draft",
@@ -111,9 +116,10 @@
   {
     "name": "American Lager",
     "url": "https://untappd.com/b/east-troy-brewery-american-lager/6309643",
-    "style": "",
+    "style": "Lager - American Light",
     "abv": "4.7%",
     "ibu": "13",
+    "description": "In pursuit of the maximizing drinkability, we created a crispy clean American Lager, a beer style that is rooted deeply in Wisconsin culture.  We pair traditional noble hops with new school Indie Hops, resulting in a delightfully approachable beer with a tangy fresh flavor that is squeaky clean.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -132,9 +138,10 @@
   {
     "name": "Goat Talk",
     "url": "https://untappd.com/b/east-troy-brewery-goat-talk/6559441",
-    "style": "",
+    "style": "Bock - Doppelbock",
     "abv": "7.8%",
     "ibu": "25",
+    "description": "Dark, smooth, and indulgent. This lager pours deep amber with flavors of caramelized malt, toasted bread, and subtle dark fruit. Full-bodied yet clean, it finishes warm and satisfying.",
     "prices": [
       {
         "size": "10oz Draft",
@@ -153,9 +160,10 @@
   {
     "name": "Watermelon Premium Seltzer",
     "url": "https://untappd.com/b/east-troy-brewery-watermelon-lemon-premium-seltzer/6574246",
-    "style": "",
+    "style": "Hard Seltzer",
     "abv": "5%",
     "ibu": "N/A",
+    "description": "A simple syrup based hard premium seltzer, Watermelon flavored, and full of bubbles.  Gluten free, Lactose Free",
     "prices": [
       {
         "size": "16oz Draft",
@@ -174,9 +182,10 @@
   {
     "name": "Strawberries & Cream Sour",
     "url": "https://untappd.com/b/east-troy-brewery-strawberries-and-cream-sour/6525324",
-    "style": "",
+    "style": "Sour - Fruited",
     "abv": "5%",
     "ibu": "1",
+    "description": "Lightly tart fruited sour infused with strawberry puree, cream and vanilla flavoring.  Gluten Free, Lactose Free.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -195,9 +204,10 @@
   {
     "name": "Penny Slot Dunkel",
     "url": "https://untappd.com/b/east-troy-brewery-penny-slot-dunkel/6516932",
-    "style": "",
+    "style": "Lager - Munich Dunkel",
     "abv": "5.2%",
     "ibu": "25",
+    "description": "Drinking this dark German lager is just like playing the odds on penny slots.  So satisfying that it keeps coming back again and again....and again.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -216,9 +226,10 @@
   {
     "name": "Lock & Key Porter",
     "url": "https://untappd.com/b/east-troy-brewery-lock-and-key-porter/6134324",
-    "style": "",
+    "style": "Porter - English",
     "abv": "5%",
     "ibu": "28",
+    "description": "A combination of dark caramel and brown coffee malts capture the sweet, rich, and slightly bitter flavors that both caramel and your favorite iced latte exhibit",
     "prices": [
       {
         "size": "16oz Draft",
@@ -237,9 +248,10 @@
   {
     "name": "Invaluable",
     "url": "https://untappd.com/b/g5-brewing-company-invaluable/6497043",
-    "style": "",
+    "style": "IPA - Imperial",
     "abv": "8.4%",
     "ibu": "55",
+    "description": "Our friends up the road on I-43 came to hang and brew a lovely double west coast IPA. The talk about what it should be always had Krush hops being brought up. This became our extremely useful jump off point. What goes well with Krush? Mosaic. This bright, tasty, and clean beverage is what we all were wanting with fall transiting to winter.",
     "prices": [
       {
         "size": "16oz Draft",
@@ -258,9 +270,10 @@
   {
     "name": "J Henry Barrel Aged Grim",
     "url": "https://untappd.com/b/east-troy-brewery-barrel-aged-grim/6474467",
-    "style": "",
+    "style": "Stout - Imperial",
     "abv": "11.5%",
     "ibu": "N/A",
+    "description": "Chocolate forward Imperial Stout Aged in J Henry Barrels.\nTasting notes: Velvety Chocolate, Smooth Booze, Barrel Charred Espresso",
     "prices": [
       {
         "size": "10oz Draft",
@@ -283,9 +296,10 @@
   {
     "name": "Hef Time",
     "url": "https://untappd.com/b/east-troy-brewery-hef-time/5937578",
-    "style": "",
+    "style": "Wheat Beer - Hefeweizen",
     "abv": "4.8%",
     "ibu": "15",
+    "description": "Hefeweizen brewed for the autumn season and football games.  A sweet front of banana with a spicy clove finish.",
     "prices": [
       {
         "size": "16oz Draft",

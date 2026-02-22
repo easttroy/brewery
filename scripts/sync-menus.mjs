@@ -13,17 +13,17 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 /**
- * Fetches and parses the beer menu from Untappd
+ * Fetches and parses the beer menu from the Untappd business iframe payload
  */
 async function syncUntappd() {
-    const UNTAPPD_URL = 'https://untappd.com/v/east-troy-brewery/7812878';
+    // The iframe loads this dynamic script which contains the HTML structure
+    const UNTAPPD_JS_PAYLOAD = 'https://business.untappd.com/locations/17806/themes/67049/js';
     const OUTPUT_FILE = path.join(DATA_DIR, 'beers.json');
 
-    console.log(`Fetching Untappd menu from ${UNTAPPD_URL}...`);
+    console.log(`Fetching Untappd JS Payload from ${UNTAPPD_JS_PAYLOAD}...`);
     try {
-        const response = await fetch(UNTAPPD_URL, {
+        const response = await fetch(UNTAPPD_JS_PAYLOAD, {
             headers: {
-                // Mimic a standard browser to avoid basic blocking
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
             }
         });
@@ -32,59 +32,71 @@ async function syncUntappd() {
             throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
         }
 
-        const html = await response.text();
-        const $ = cheerio.load(html);
+        const js = await response.text();
 
+        // The script sets container.innerHTML += "html string"; Let's extract those HTML chunks.
+        const match = js.match(/container\.innerHTML \+?= "(.+)";/g);
+        if (!match) {
+            throw new Error("Could not find innerHTML assignments within the payload.");
+        }
+
+        let html = "";
+        match.forEach(m => {
+            const strStr = m.match(/"(.*)"/);
+            if (strStr && strStr[1]) {
+                const unescaped = strStr[1].replace(/\\"/g, '"').replace(/\\n/g, '\n').replace(/\\\//g, '/');
+                html += unescaped;
+            }
+        });
+
+        const $ = cheerio.load(html);
         const beers = [];
 
-        // Untappd public page structure embeds beers in standard anchor links within H5s
-        $('a[href*="/b/east-troy-brewery-"], a[href*="/b/g5-brewing-company-"]').each((i, el) => {
-            const $a = $(el);
-            const url = "https://untappd.com" + $a.attr('href');
-            const name = $a.text().trim();
+        $('.item').each((i, el) => {
+            const $item = $(el);
 
-            const $parentContainer = $a.closest('li, .beer-item');
-            const $parentH5 = $a.closest('h5');
+            // Name
+            const name = $item.find('.item-name a').text().trim();
+            if (!name) return; // Skip section headers
 
-            if ($parentH5.length > 0) {
-                // Extract Style
-                let style = $parentH5.contents().filter(function () {
-                    return this.nodeType === 3; // Text nodes
-                }).text().trim();
-                style = style.replace(/^-\s*/, '').trim(); // Clean up leading dash
+            // URL
+            const urlAttr = $item.find('.item-name a').attr('href');
+            let url = null;
+            if (urlAttr) {
+                url = "https://untappd.com" + urlAttr.replace('https://untappd.com', ''); // Ensure no double domains
+            }
 
-                const $h6 = $parentH5.next('h6');
-                if ($h6.length > 0) {
-                    const metadataStr = $h6.text();
+            // Style, ABV, IBU
+            const style = $item.find('.item-style').text().trim();
+            const abvMatch = $item.find('.item-abv').text().trim().match(/([\d.]+)%/);
+            const abv = abvMatch ? abvMatch[1] + "%" : "N/A";
+            const ibuMatch = $item.find('.item-ibu').text().trim().match(/([\d.]+)\s*IBU/i);
+            const ibu = ibuMatch ? ibuMatch[1] : "N/A";
 
-                    // Extract ABV
-                    const abvMatch = metadataStr.match(/([\d.]+)%\s*ABV/);
-                    const abv = abvMatch ? abvMatch[1] + "%" : "N/A";
+            // Description
+            let description = $item.find('.item-description').text().trim();
+            description = description.replace(/More Info ▸/g, '').replace(/Less Info ▴/g, '').trim();
 
-                    // Extract IBU
-                    const ibuMatch = metadataStr.match(/([\d.]+|N\/A)\s*IBU/);
-                    const ibu = ibuMatch ? ibuMatch[1] : "N/A";
+            // Prices
+            const prices = [];
+            $item.find('.price').each((j, priceEl) => {
+                let size = $(priceEl).siblings('.type, .size, .name').text().trim();
 
-                    // Extract Prices
-                    const prices = [];
-                    $parentContainer.find('.price').each((j, priceEl) => {
-                        const price = $(priceEl).text().trim().replace(' USD', '');
-                        const size = $(priceEl).prev('.size').text().trim();
-                        prices.push({ size, price });
-                    });
-
-                    // Prevent duplicates
-                    if (name && !beers.some(b => b.name === name)) {
-                        beers.push({
-                            name,
-                            url,
-                            style,
-                            abv,
-                            ibu,
-                            prices
-                        });
-                    }
+                if (!size) {
+                    // Sometimes it's a raw text node preceding the .price span
+                    const prevNode = $(priceEl).parent().contents().filter(function () {
+                        return this.nodeType === 3 && $(this).next().hasClass('price');
+                    }).text().trim();
+                    if (prevNode) size = prevNode;
                 }
+
+                // Clean the escaped '\$' if present, and remove 'USD'
+                const price = $(priceEl).text().trim().replace(/\\/g, '').replace(' USD', '');
+                prices.push({ size: size || "Draft", price });
+            });
+
+            if (name && !beers.some(b => b.name === name)) {
+                beers.push({ name, url, style, abv, ibu, description, prices });
             }
         });
 
@@ -93,7 +105,7 @@ async function syncUntappd() {
             fs.writeFileSync(OUTPUT_FILE, JSON.stringify(beers, null, 2));
             console.log(`Successfully wrote to ${OUTPUT_FILE}`);
         } else {
-            console.warn('No beers found. The Untappd HTML layout may have changed.');
+            console.warn('No beers found. The Untappd JS payload layout may have changed.');
         }
 
     } catch (error) {
