@@ -15,7 +15,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
     const isSolid = !transparent || isMobileMenuOpen;
 
     // Dynamic classes based on solid state
-    const headerClass = transparent ? 'absolute top-0 left-0 w-full z-50' : 'bg-white shadow-md relative w-full z-50';
+    const headerClass = transparent ? 'absolute top-0 left-0 w-full z-50' : 'bg-white shadow-md sticky top-0 w-full z-50';
     const navLinkClass = isSolid ? 'text-stone-800 hover:text-etbrew-gold' : 'text-white hover:text-etbrew-gold';
     const topBarClass = transparent ? 'bg-transparent text-white border-b border-white/20' : 'bg-etbrew-gold text-white';
     const logoTextClass = isSolid ? 'text-stone-800' : 'text-white';
