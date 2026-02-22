@@ -25,7 +25,7 @@ export default function DrinkMenu() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                         {beers.map((beer, index) => (
-                            <div key={index}>
+                            <div key={index} className="flex flex-col h-full">
                                 <div className="flex justify-between items-baseline mb-2 border-b border-stone-100 pb-1">
                                     <h3 className="text-xl font-bold font-sans text-stone-800 uppercase">
                                         <a href={beer.url} target="_blank" rel="noopener noreferrer" className="hover:text-etbrew-teal transition-colors">
@@ -36,7 +36,7 @@ export default function DrinkMenu() {
                                 </div>
                                 {beer.style && <p className="text-stone-600 mt-2 font-serif italic">{beer.style}</p>}
                                 {beer.description && <p className="text-stone-700 text-sm mt-3 leading-relaxed">{beer.description}</p>}
-                                <div className="mt-4 space-y-2">
+                                <div className="mt-auto pt-6 space-y-2">
                                     {Array.isArray(beer.prices) && beer.prices.length > 0 ? beer.prices.map((p: { size: string, price: string }, i: number) => (
                                         <div key={i} className="flex justify-between text-sm text-stone-600 border-b border-stone-200 border-dotted pb-1 last:border-0 hover:text-stone-900 transition-colors">
                                             <span>{p.size}</span>
