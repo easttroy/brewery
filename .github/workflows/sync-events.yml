@@ -1,8 +1,8 @@
-name: Auto-Sync Menus
+name: Auto-Sync Facebook Events
 
 on:
   schedule:
-    - cron: '34 * * * *' # Run at the top of every hour
+    - cron: '14 * * * *' # Run at 14 minutes past every hour to stagger with untappd
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -23,8 +23,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Fetch and Sync Menu
-        run: npm run sync-menu
+      - name: Fetch and Sync Events
+        run: npm run sync-events
 
       - name: Commit and Push Changes
         run: |
@@ -32,12 +32,16 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Check if there are changes in the specific data directory
-          if git diff --exit-code src/data/beers.json; then
-            echo "No changes to the menu."
-          else
-            echo "Menu changed, committing..."
-            git add src/data/beers.json
-            git commit -m "Auto-update Untappd menu"
-            
-            git push
+          if git diff --exit-code src/data/events.json; then
+            # We also need to check if there are new untracked or modified images
+            if [[ -z $(git status -s public/events/) ]]; then
+              echo "No changes to events or images."
+              exit 0
+            fi
           fi
+          
+          echo "Data changed, committing..."
+          git add src/data/events.json public/events/
+          git commit -m "Auto-update events data"
+          
+          git push

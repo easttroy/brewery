@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Button from '@/components/Button';
+import eventsData from '@/data/events.json';
 
 export const metadata: Metadata = {
     title: 'Brewery Events',
@@ -7,6 +9,17 @@ export const metadata: Metadata = {
 };
 
 export default function Events() {
+    const upcomingEvents = eventsData.filter(e => !e.isPast);
+    const previousEvents = eventsData.filter(e => e.isPast);
+
+    const parseDate = (dateStr: string) => {
+        const parts = dateStr.split(/[\s,]+/);
+        if (parts.length >= 3) {
+            return { month: parts[1], day: parts[2] };
+        }
+        return { month: 'TBD', day: '--' };
+    };
+
     return (
         <div className="flex flex-col min-h-screen bg-stone-50">
 
@@ -24,48 +37,105 @@ export default function Events() {
             <section className="py-24 px-4 max-w-4xl mx-auto w-full">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6">Upcoming Events</h2>
-                    <div className="bg-stone-100 p-8 border border-stone-200 mt-8 rounded shadow-inner text-stone-500">
-                        <p className="text-xl font-bold uppercase tracking-wide">No Upcoming Events</p>
-                        <p className="mt-2 text-stone-600">Please check back later for new dates!</p>
-                    </div>
+
+                    {upcomingEvents.length === 0 ? (
+                        <div className="bg-stone-100 p-8 border border-stone-200 mt-8 rounded shadow-inner text-stone-500">
+                            <p className="text-xl font-bold uppercase tracking-wide">No Upcoming Events</p>
+                            <p className="mt-2 text-stone-600">Please check back later for new dates!</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-8 text-left mt-8">
+                            {upcomingEvents.map((event, index) => {
+                                const { month, day } = parseDate(event.date);
+                                // Alternate border colors just for visual variety
+                                const borderColor = index % 2 === 0 ? 'border-etbrew-teal' : 'border-etbrew-gold';
+
+                                return (
+                                    <div key={event.id} className={`bg-white border-l-8 ${borderColor} p-8 shadow hover:shadow-lg transition-shadow flex flex-col md:flex-row gap-8 items-start`}>
+                                        <div className="bg-stone-100 p-6 text-center min-w-[120px] rounded shrink-0 border border-stone-200 flex flex-col justify-center items-center">
+                                            <span className="block text-sm font-bold text-stone-500 uppercase tracking-widest mb-1">{month}</span>
+                                            <span className="block text-4xl font-serif text-stone-900">{day}</span>
+                                        </div>
+
+                                        {event.image && (
+                                            <div className="shrink-0 w-full md:w-48 h-32 relative overflow-hidden rounded border border-stone-200">
+                                                <Image
+                                                    src={event.image}
+                                                    alt={event.name}
+                                                    fill
+                                                    className="object-cover"
+                                                    sizes="(max-width: 768px) 100vw, 192px"
+                                                />
+                                            </div>
+                                        )}
+
+                                        <div className="flex-grow">
+                                            <h3 className="text-2xl font-serif text-stone-800 uppercase mb-2">{event.name}</h3>
+                                            <p className="text-stone-500 mb-4 font-bold">{event.date}</p>
+                                            <div className="mt-4">
+                                                <Button href={event.url} target="_blank" variant="outline" className="text-sm">
+                                                    View on Facebook
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
                 </div>
 
-                <div className="text-center mt-20 mb-12">
-                    <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6 border-b border-stone-200 pb-2 inline-block">Previous Events</h2>
-                </div>
+                {previousEvents.length > 0 && (
+                    <>
+                        <div className="text-center mt-20 mb-12">
+                            <h2 className="text-3xl font-serif text-stone-800 uppercase tracking-wide mb-6 border-b border-stone-200 pb-2 inline-block">Previous Events</h2>
+                        </div>
 
-                {/* Event List */}
-                <div className="space-y-8 opacity-75">
+                        {/* Event List */}
+                        <div className="space-y-8 opacity-75">
+                            {previousEvents.map((event, index) => {
+                                const { month, day } = parseDate(event.date);
+                                const borderColor = index % 2 === 0 ? 'border-stone-400' : 'border-stone-300';
 
-                    {/* Event Item */}
-                    <div className="bg-white border-l-8 border-etbrew-teal p-8 shadow hover:shadow-lg transition-shadow flex flex-col md:flex-row gap-8 items-start">
-                        <div className="bg-stone-100 p-6 text-center min-w-[120px] rounded shrink-0 border border-stone-200">
-                            <span className="block text-sm font-bold text-etbrew-gold uppercase tracking-widest mb-1">OCT</span>
-                            <span className="block text-4xl font-serif text-stone-900">31</span>
-                        </div>
-                        <div className="flex-grow">
-                            <h3 className="text-2xl font-serif text-stone-800 uppercase mb-2">Halloween Costume Party</h3>
-                            <p className="text-stone-500 mb-4 font-bold">8:00 PM - Midnight | $5 Cover</p>
-                            <p className="text-stone-700 leading-relaxed mb-2">
-                                Dress up and drink up! We&apos;re hosting our 3rd annual Halloween bash featuring a costume contest with cash prizes, spooky cocktails, and a special midnight tapping of our Imperial Pumpkin Stout.
-                            </p>
-                        </div>
-                    </div>
+                                return (
+                                    <div key={event.id} className={`bg-white border-l-8 ${borderColor} p-8 shadow flex flex-col md:flex-row gap-8 items-start`}>
+                                        <div className="bg-stone-100 p-6 text-center min-w-[120px] rounded shrink-0 border border-stone-200 flex flex-col justify-center items-center">
+                                            <span className="block text-sm font-bold text-stone-400 uppercase tracking-widest mb-1">{month}</span>
+                                            <span className="block text-4xl font-serif text-stone-700">{day}</span>
+                                        </div>
 
-                    {/* Event Item */}
-                    <div className="bg-white border-l-8 border-etbrew-gold p-8 shadow hover:shadow-lg transition-shadow flex flex-col md:flex-row gap-8 items-start">
-                        <div className="bg-stone-100 p-6 text-center min-w-[120px] rounded shrink-0 border border-stone-200">
-                            <span className="block text-sm font-bold text-etbrew-teal uppercase tracking-widest mb-1">SEP</span>
-                            <span className="block text-4xl font-serif text-stone-900">14</span>
+                                        {event.image && (
+                                            <div className="shrink-0 w-full md:w-32 h-24 relative overflow-hidden rounded border border-stone-200 grayscale opacity-75">
+                                                <Image
+                                                    src={event.image}
+                                                    alt={event.name}
+                                                    fill
+                                                    className="object-cover"
+                                                    sizes="(max-width: 768px) 100vw, 128px"
+                                                />
+                                            </div>
+                                        )}
+
+                                        <div className="flex-grow">
+                                            <h3 className="text-xl font-serif text-stone-600 uppercase mb-2">{event.name}</h3>
+                                            <p className="text-stone-400 mb-4 font-bold">{event.date}</p>
+                                            <div className="mt-2">
+                                                <a href={event.url} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-stone-600 text-sm underline underline-offset-4">
+                                                    View on Facebook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
-                        <div className="flex-grow">
-                            <h3 className="text-2xl font-serif text-stone-800 uppercase mb-2">Live Music: The Bluegrass Boys</h3>
-                            <p className="text-stone-500 mb-4 font-bold">7:00 PM - 10:00 PM | Free Entry</p>
-                            <p className="text-stone-700 leading-relaxed mb-2">
-                                Join us on the patio for a night of stompin&apos; bluegrass. Grab a pint of our seasonal Oktoberfest and enjoy the crisp autumn air.
-                            </p>
-                        </div>
-                    </div>
+                    </>
+                )}
+
+                <div className="text-center mt-12">
+                    <a href="https://www.facebook.com/ETBrew/events" target="_blank" rel="noopener noreferrer" className="inline-block text-etbrew-teal hover:text-stone-800 transition-colors font-bold uppercase tracking-wide border-b-2 border-etbrew-teal hover:border-stone-800 pb-1">
+                        See All Events on Facebook →
+                    </a>
                 </div>
             </section>
 
