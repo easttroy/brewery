@@ -22,7 +22,7 @@ export default function FoodMenu() {
                     <MenuTabs />
 
                     {/* Snacks */}
-                    <h2 className="text-3xl font-serif text-center text-stone-800 mb-12 uppercase tracking-wide border-b border-stone-200 pb-6">Snacks</h2>
+                    <h2 id="menu" className="scroll-mt-[200px] text-3xl font-serif text-center text-stone-800 mb-12 uppercase tracking-wide border-b border-stone-200 pb-6">Snacks</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                         <div>
                             <div className="flex justify-between items-baseline mb-2">

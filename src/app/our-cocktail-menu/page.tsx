@@ -20,7 +20,7 @@ export default function CocktailMenu() {
             <section className="py-20 px-4 max-w-5xl mx-auto w-full">
                 <div className="bg-white px-8 pb-8 pt-0 md:px-16 md:pb-16 md:pt-0 shadow-xl border-t-4 border-etbrew-gold">
                     <MenuTabs />
-                    <h2 className="text-3xl font-serif text-center text-stone-800 mb-12 uppercase tracking-wide border-b border-stone-200 pb-6">Cocktails</h2>
+                    <h2 id="menu" className="scroll-mt-[200px] text-3xl font-serif text-center text-stone-800 mb-12 uppercase tracking-wide border-b border-stone-200 pb-6">Cocktails</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                         {/* Menu Items */}

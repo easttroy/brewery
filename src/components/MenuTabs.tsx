@@ -7,9 +7,9 @@ export default function MenuTabs() {
     const pathname = usePathname();
 
     const tabs = [
-        { name: 'Food Menu', href: '/our-food-menu' },
-        { name: 'Our Beers', href: '/our-drink-menu' },
-        { name: 'Cocktails & Wine', href: '/our-cocktail-menu' },
+        { name: 'Food Menu', href: '/our-food-menu/' },
+        { name: 'Our Beers', href: '/our-drink-menu/' },
+        { name: 'Cocktails & Wine', href: '/our-cocktail-menu/' },
     ];
 
     return (
@@ -19,7 +19,7 @@ export default function MenuTabs() {
                 return (
                     <Link
                         key={tab.name}
-                        href={tab.href}
+                        href={`${tab.href}#menu`}
                         className={`px-1 sm:px-2 py-3 md:py-4 text-[14px] sm:text-sm md:text-xl font-serif font-bold uppercase tracking-wide transition-colors duration-200 -mb-[2px] border-b-4 text-center whitespace-nowrap ${isActive
                             ? 'border-etbrew-gold text-etbrew-gold'
                             : 'border-transparent text-stone-500 hover:text-stone-800 hover:border-stone-300'
