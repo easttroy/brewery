@@ -19,7 +19,7 @@ export default function DrinkMenu() {
 
             {/* Menu Content */}
             <section className="py-20 px-4 max-w-5xl mx-auto w-full">
-                <div className="bg-white p-8 md:p-16 shadow-xl border-t-4 border-etbrew-gold">
+                <div className="bg-white px-8 pb-8 pt-0 md:px-16 md:pb-16 md:pt-0 shadow-xl border-t-4 border-etbrew-gold">
                     <MenuTabs />
                     <h2 className="text-3xl font-serif text-center text-stone-800 mb-12 uppercase tracking-wide border-b border-stone-200 pb-6">Draft List</h2>
 
