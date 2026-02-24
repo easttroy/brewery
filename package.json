@@ -11,7 +11,6 @@
     "sync-events": "node scripts/sync-events.mjs"
   },
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
     "cheerio": "^1.2.0",
     "next": "16.1.6",
     "react": "19.2.3",
@@ -27,8 +26,6 @@
     "facebook-event-scraper": "^0.2.6",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "puppeteer": "^24.37.5",
-    "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1",
     "typescript": "^5"
   }

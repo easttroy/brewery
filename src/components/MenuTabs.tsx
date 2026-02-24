@@ -7,10 +7,23 @@ export default function MenuTabs() {
 	const pathname = usePathname();
 
 	const tabs = [
-		{ name: "Food", href: "/menus/food/" },
-		{ name: "Beers", href: "/menus/drafts/" },
-		{ name: "Cocktails & More", href: "/menus/cocktails/" },
-		{ name: "Supper Club", href: "/menus/supper-club/", isSpecial: true },
+		{
+			name: "Food",
+			href: "/menus/food/"
+		},
+		{
+			name: "Beers",
+			href: "/menus/drafts/"
+		},
+		{
+			name: "Cocktails",
+			href: "/menus/cocktails/"
+		},
+		{
+			name: "Supper Club",
+			href: "/menus/supper-club/",
+			icon: "★"
+		}
 	];
 
 	return (
@@ -23,10 +36,10 @@ export default function MenuTabs() {
 						href={`${tab.href}#menu`}
 						className={`-mb-[2px] border-b-4 px-1 py-3 text-center font-serif text-[14px] font-bold tracking-wide whitespace-nowrap uppercase transition-colors duration-200 sm:px-2 sm:text-sm md:py-4 md:text-xl ${isActive
 							? "border-etbrew-gold text-etbrew-gold"
-							: (tab.isSpecial ? "border-transparent text-etbrew-gold hover:border-etbrew-gold/50" : "border-transparent text-stone-500 hover:border-stone-300 hover:text-stone-800")
-							} ${tab.isSpecial ? "flex flex-row items-center gap-1.5" : ""}`}
+							: (tab.icon ? "border-transparent text-etbrew-gold hover:border-etbrew-gold/50" : "border-transparent text-stone-500 hover:border-stone-300 hover:text-stone-800")
+							} ${tab.icon ? "flex flex-row items-center gap-1.5" : ""}`}
 					>
-						{tab.isSpecial && <span className="text-lg md:text-xl leading-none pb-0.5">★</span>}
+						{tab.icon && <span className="text-lg md:text-xl leading-none pb-0.5">{tab.icon}</span>}
 						{tab.name}
 					</Link>
 				);
