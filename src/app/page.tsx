@@ -14,7 +14,7 @@ export default function Home() {
 			{/* Hero Section */}
 			<section className="border-etbrew-gold relative flex h-screen min-h-[600px] items-center justify-center overflow-hidden border-b-8 bg-stone-900">
 				<Image
-					src="/brewery-filled.jpg"
+					src="/images/social/brewery-filled.jpg"
 					alt="East Troy Brewery Interior"
 					fill
 					priority

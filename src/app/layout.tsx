@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 		siteName: "East Troy Brewery",
 		images: [
 			{
-				url: "https://etbrew.com/content/uploads/sites/20/2020/03/Brewery_Filled.jpg",
+				url: "https://etbrew.com/images/social/brewery-filled.jpg",
 				width: 960,
 				height: 720,
 				alt: "East Troy Brewery exterior",

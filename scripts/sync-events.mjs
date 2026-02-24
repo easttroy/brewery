@@ -20,7 +20,7 @@ if (!fs.existsSync(DATA_DIR)) {
 async function syncEvents() {
     const FB_PAGE_URL = 'https://www.facebook.com/ETBrew/events';
     const OUTPUT_FILE = path.join(DATA_DIR, 'events.json');
-    const EVENTS_IMG_DIR = path.join(__dirname, '..', 'public', 'events');
+    const EVENTS_IMG_DIR = path.join(__dirname, '..', 'public', 'images', 'events');
 
     if (!fs.existsSync(EVENTS_IMG_DIR)) {
         fs.mkdirSync(EVENTS_IMG_DIR, { recursive: true });
@@ -55,7 +55,7 @@ async function syncEvents() {
                         const buffer = await res.arrayBuffer();
                         const filename = `${eventId}.jpg`;
                         fs.writeFileSync(path.join(EVENTS_IMG_DIR, filename), Buffer.from(buffer));
-                        localImagePath = `/events/${filename}`;
+                        localImagePath = `/images/events/${filename}`;
                     } else {
                         console.warn(`Failed to download image for event ${eventId}: ${res.status}`);
                     }
