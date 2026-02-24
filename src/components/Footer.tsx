@@ -37,7 +37,7 @@ export default function Footer() {
 						</li>
 						<li>
 							<Link
-								href="/our-food-menu"
+								href="/menus"
 								className="hover:text-etbrew-gold transition-colors"
 							>
 								Menus
@@ -139,6 +139,6 @@ export default function Footer() {
 					</Link>
 				</div>
 			</div>
-		</footer>
+		</footer >
 	);
 }

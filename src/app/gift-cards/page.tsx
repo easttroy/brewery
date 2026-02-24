@@ -16,6 +16,9 @@ export default function GiftCards() {
 						Gift Cards
 					</h1>
 					<div className="bg-etbrew-gold mx-auto mb-6 h-1 w-24"></div>
+					<p className="mx-auto max-w-2xl font-sans text-xl">
+						Thinking of you, and also me, and also beer.
+					</p>
 				</div>
 			</section>
 
@@ -51,7 +54,7 @@ export default function GiftCards() {
 					</div>
 
 					<p className="mt-12 text-sm text-stone-500 italic">
-						Note: E-gift cards are processed securely through Toast.
+						E-gift cards are processed securely through Toast.
 						They can be redeemed for food, beverages, and
 						merchandise at the brewery.
 					</p>

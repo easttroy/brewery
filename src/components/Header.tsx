@@ -127,7 +127,7 @@ export default function Header({
 					{/* Menus Dropdown */}
 					<div className="group relative">
 						<Link
-							href="/our-food-menu"
+							href="/menus"
 							className="flex items-center gap-1 py-4 transition-colors"
 						>
 							MENUS
@@ -149,22 +149,28 @@ export default function Header({
 						<div className="absolute top-full left-0 z-50 hidden min-w-[200px] pt-2 group-hover:block">
 							<div className="border-etbrew-gold flex flex-col overflow-hidden rounded-b border-t-4 bg-white text-stone-800 shadow-xl">
 								<Link
-									href="/our-food-menu"
+									href="/menus/food"
 									className="border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-100"
 								>
-									Food Menu
+									Food
 								</Link>
 								<Link
-									href="/our-drink-menu"
+									href="/menus/drafts"
 									className="border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-100"
 								>
-									Our Beers
+									Beers
 								</Link>
 								<Link
-									href="/our-cocktail-menu"
+									href="/menus/cocktails"
 									className="px-5 py-3 transition-colors hover:bg-stone-100"
 								>
-									Cocktails & Wine
+									Cocktails & More
+								</Link>
+								<Link
+									href="/menus/supper-club"
+									className="bg-stone-900 px-5 py-3 font-serif tracking-widest text-white transition-colors hover:bg-black hover:text-etbrew-gold"
+								>
+									<span className="text-etbrew-gold pr-1">★</span> Supper Club
 								</Link>
 							</div>
 						</div>
@@ -218,14 +224,12 @@ export default function Header({
 					<Link href="/about" className="py-4 transition-colors">
 						ABOUT US
 					</Link>
-					<a
-						href="https://www.toasttab.com/east-troy-brewery/giftcards?utmCampaign=onlineOrdering"
-						target="_blank"
-						rel="noopener noreferrer"
+					<Link
+						href="/gift-cards"
 						className="py-4 transition-colors"
 					>
 						GIFT CARDS
-					</a>
+					</Link>
 					<Button
 						href="https://www.toasttab.com/east-troy-brewery/v3"
 						target="_blank"
@@ -281,25 +285,32 @@ export default function Header({
 						<div className="mb-2 text-xs text-stone-400">MENUS</div>
 						<div className="flex flex-col gap-3 pl-4">
 							<Link
-								href="/our-food-menu"
+								href="/menus/food"
 								onClick={closeMenu}
 								className="hover:text-etbrew-gold"
 							>
-								Food Menu
+								Food
 							</Link>
 							<Link
-								href="/our-drink-menu"
+								href="/menus/drafts"
 								onClick={closeMenu}
 								className="hover:text-etbrew-gold"
 							>
-								Our Beers
+								Beers
 							</Link>
 							<Link
-								href="/our-cocktail-menu"
+								href="/menus/cocktails"
 								onClick={closeMenu}
 								className="hover:text-etbrew-gold"
 							>
-								Cocktails & Wine
+								Cocktails & More
+							</Link>
+							<Link
+								href="/menus/supper-club"
+								onClick={closeMenu}
+								className="mt-2 inline-block rounded-md bg-stone-900 px-4 py-2 font-serif tracking-widest text-etbrew-gold shadow-md"
+							>
+								★ Supper Club
 							</Link>
 						</div>
 					</div>
@@ -342,15 +353,13 @@ export default function Header({
 					>
 						ABOUT US
 					</Link>
-					<a
-						href="https://www.toasttab.com/east-troy-brewery/giftcards?utmCampaign=onlineOrdering"
-						target="_blank"
-						rel="noopener noreferrer"
+					<Link
+						href="/gift-cards"
 						onClick={closeMenu}
 						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
 					>
 						GIFT CARDS
-					</a>
+					</Link>
 
 					<div className="p-6">
 						<Button

@@ -3,7 +3,7 @@ import MenuTabs from "@/components/MenuTabs";
 import beers from "@/data/beers.json";
 
 export const metadata: Metadata = {
-	title: "Our Beers",
+	title: "Beers",
 	description:
 		"Discover our selection of handcrafted beers brewed on-site at East Troy Brewery.",
 };
@@ -61,7 +61,7 @@ export default function DrinkMenu() {
 								)}
 								<div className="mt-auto space-y-2 pt-6">
 									{Array.isArray(beer.prices) &&
-									beer.prices.length > 0 ? (
+										beer.prices.length > 0 ? (
 										beer.prices.map(
 											(
 												p: {
@@ -84,7 +84,7 @@ export default function DrinkMenu() {
 									) : (
 										<p className="text-sm text-stone-500">
 											{beer.ibu !== "N/A" &&
-											beer.ibu !== ""
+												beer.ibu !== ""
 												? `${beer.ibu} IBU`
 												: ""}
 										</p>

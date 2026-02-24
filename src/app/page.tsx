@@ -29,25 +29,25 @@ export default function Home() {
 
 					<div className="flex flex-col justify-center gap-4 sm:flex-row">
 						<Button
-							href="/our-food-menu"
+							href="/menus/food"
 							variant="gold"
 							className="px-8 py-4 text-lg"
 						>
 							Food Menu
 						</Button>
 						<Button
-							href="/our-drink-menu"
+							href="/menus/drafts"
 							variant="outline-white"
 							className="px-8 py-4 text-lg"
 						>
-							Our Beers
+							Beer Menu
 						</Button>
 						<Button
-							href="/our-cocktail-menu"
+							href="/menus/cocktails"
 							variant="outline-white"
 							className="px-8 py-4 text-lg"
 						>
-							Cocktail & Wine Menu
+							Cocktail Menu
 						</Button>
 					</div>
 				</div>
@@ -90,19 +90,24 @@ export default function Home() {
 						Discover our locally sourced, chef-driven menu designed
 						to pair perfectly with our craft beers.
 					</p>
-					<Button href="/our-food-menu">Food Menu</Button>
+					<Button href="/menus/food">Food Menu</Button>
 				</div>
 				<div className="flex flex-col items-center justify-center bg-stone-800 p-16 text-center text-white lg:p-32">
 					<h2 className="mb-6 font-serif text-4xl tracking-wide text-white uppercase">
-						Craft Beer, Cocktails, <br />& Wines
+						Craft Beer, Cocktails, & Wines
 					</h2>
 					<p className="mb-10 text-lg text-stone-300">
 						Explore our rotating taps of house-brewed beers, plus
 						hand-crafted cocktails and curated wines.
 					</p>
-					<Button href="/our-drink-menu" variant="outline-white">
-						Drink Menu
-					</Button>
+					<div className="flex flex-col justify-center gap-6 sm:flex-row">
+						<Button href="/menus/drafts" variant="outline-white">
+							Beer Menu
+						</Button>
+						<Button href="/menus/cocktails" variant="outline-white">
+							Cocktail Menu
+						</Button>
+					</div>
 				</div>
 			</section>
 

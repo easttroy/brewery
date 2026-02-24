@@ -1,0 +1,123 @@
+[
+    {
+        "title": "Appetizer",
+        "items": [
+            {
+                "name": "Calamari",
+                "price": "$18",
+                "description": "Dusted & Fried Calamari, Tossed in a Spicy Red Pepper Tomato Sauce, Parmesan, Parsley"
+            },
+            {
+                "name": "Bruschetta",
+                "price": "$12",
+                "description": "Whipped Goat Cheese, Toasted Garlic Tomato, Fresh Basil, Crostini, Balsamic Reduction"
+            },
+            {
+                "name": "French Onion Soup",
+                "price": "$6",
+                "description": "Braised Caramelized Onions, Beef Broth, Aged Gruyere, Crostini, Chives"
+            },
+            {
+                "name": "Beef Chili",
+                "price": "$9",
+                "description": "Cheddar Cheese, Green Onions"
+            },
+            {
+                "name": "White Bean Chicken Chili",
+                "price": "$9",
+                "description": "Lime Crema, Pickled Onion, Cilantro"
+            }
+        ]
+    },
+    {
+        "title": "Salads",
+        "items": [
+            {
+                "name": "Caesar Salad",
+                "price": "$15",
+                "description": "Romaine, Shaved Parmesan, Pretzel Crouton, Creamy Caesar Dressing."
+            },
+            {
+                "name": "Apple Arugula",
+                "price": "$17",
+                "description": "Granny Smith Apple, Shallots, Gorgonzola, Candied Walnuts, Honey IPA Vinaigrette."
+            },
+            {
+                "name": "Cobb Salad",
+                "price": "$15",
+                "description": "Egg, Bacon, Red Onion, Cherry Tomato, Blue Cheese, Choice of Dressing"
+            }
+        ]
+    },
+    {
+        "title": "Entrees",
+        "note": "All Entrees Served With Vegetable of The Day, & Choice of Mashed Potatoes, Or French Fries",
+        "items": [
+            {
+                "name": "Grilled Salmon Piccata",
+                "price": "$28",
+                "description": "Grilled Salmon, Lemon Caper Cream Sauce"
+            },
+            {
+                "name": "Prime Rib",
+                "price": "$30",
+                "description": "Slow Roasted, Herb Crusted Prime Rib, Au Jus, Horsey Cream Sauce"
+            },
+            {
+                "name": "Chicken Marsala",
+                "price": "$22",
+                "description": "Breaded & Pan Fried Chicken Breast, Wild Mushrooms, Demi Glaze Reduction"
+            },
+            {
+                "name": "Scallops",
+                "price": "$30",
+                "description": "Seared Scallops, Roasted Brussels Sprouts with Bacon, Sage Brown Butter"
+            },
+            {
+                "name": "Beef Wellington",
+                "price": "$35",
+                "description": "6oz Filet Mignon, Puff Pastry, Mushroom Duxelle, Demi Glaze"
+            }
+        ]
+    },
+    {
+        "title": "Sides",
+        "items": [
+            {
+                "name": "Vegetable of The Day",
+                "price": "$4"
+            },
+            {
+                "name": "Garlic Mashed Potatoes",
+                "price": "$5"
+            },
+            {
+                "name": "Truffle Fries",
+                "price": "$7",
+                "description": "Truffle Oil, Parmesan, Chives"
+            },
+            {
+                "name": "Side House Salad",
+                "price": "$6",
+                "description": "Mixed Greens, Cherry Tomato, Red Onion, Choice of Dressing"
+            }
+        ]
+    },
+    {
+        "title": "Desserts",
+        "items": [
+            {
+                "name": "Apple Strudel Eggroll",
+                "price": "$10"
+            },
+            {
+                "name": "Brownie Sundae",
+                "price": "$12"
+            },
+            {
+                "name": "Seasonal Cheesecake",
+                "price": "$12"
+            }
+        ]
+    }
+]

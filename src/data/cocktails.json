@@ -1,0 +1,146 @@
+[
+    {
+        "title": "Cocktails",
+        "items": [
+            {
+                "name": "Bloody Mary",
+                "price": "$9",
+                "description": "Vodka, Miss Mary's Bloody Mary Mix, pickle and olive juice, hot sauce."
+            },
+            {
+                "name": "Blackberry Mule",
+                "price": "$10",
+                "description": "Tito's vodka, lime juice, ginger beer, blackberry syrup."
+            },
+            {
+                "name": "Red Sangria",
+                "price": "$9",
+                "description": "Red Wine, Brandy, Raspberry Puree, Orange Juice."
+            },
+            {
+                "name": "Patio Punch",
+                "price": "$8.5",
+                "description": "Coconut Rum, Amaretto, Pineapple Juice, Lime Juice, and a touch of Grenadine."
+            },
+            {
+                "name": "Wisconsin Old Fashioned",
+                "price": "$8",
+                "description": "A traditional Wisconsin old fashioned - made the right way by muddling orange and cherry with bitters and simple syrup, your choice of brandy, whiskey, or bourbon, sweet, sour, or press."
+            },
+            {
+                "name": "Mimosa",
+                "price": "$8",
+                "description": "Caposaldo Brut Prosecco and your choice of Orange, Pineapple, Cranberry, or Grapefruit Juice."
+            },
+            {
+                "name": "Cocktail of the Month",
+                "price": "$10",
+                "description": "Pineapple Jalapeno Margarita: Pineapple Jalapeno tequila, triple sec, lime juice, simple syrup, pineapple juice, and a splash of grenadine."
+            }
+        ]
+    },
+    {
+        "title": "Hard Seltzer",
+        "items": [
+            {
+                "name": "Happy Dad/Mom - Hard Seltzer",
+                "price": "$5",
+                "description": "Fruit Punch, Grape, or Raspberry."
+            }
+        ]
+    },
+    {
+        "title": "Wine",
+        "subcategories": [
+            {
+                "title": "Reds",
+                "items": [
+                    {
+                        "name": "Bonanza",
+                        "price": "$10 / $30",
+                        "description": "Cabernet Sauvignon"
+                    },
+                    {
+                        "name": "Sea Sun",
+                        "price": "$10 / $30",
+                        "description": "Pinot Noir"
+                    }
+                ]
+            },
+            {
+                "title": "Whites",
+                "items": [
+                    {
+                        "name": "Caposaldo",
+                        "price": "$10 / $30",
+                        "description": "Moscato"
+                    },
+                    {
+                        "name": "Scarpetta",
+                        "price": "$10 / $30",
+                        "description": "Pinot Grigio"
+                    },
+                    {
+                        "name": "Decoy",
+                        "price": "$10 / $30",
+                        "description": "Chardonnay"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "N/A Beverages",
+        "items": [
+            {
+                "name": "Coke, Sprite, Diet Coke, Lemonade, Root Beer",
+                "price": "$2.5"
+            },
+            {
+                "name": "Kiddie Cocktail, Raspberry Lemonade",
+                "price": "$3"
+            }
+        ]
+    },
+    {
+        "title": "Liquor",
+        "isGrid3": true,
+        "items": [
+            {
+                "name": "Whiskey",
+                "description": "Seagram 7, Jack Daniels, Crown Royal",
+                "isSimple": true
+            },
+            {
+                "name": "Bourbon",
+                "description": "Old Fitzgerald, New Riff, Bulleit, 2XO",
+                "isSimple": true
+            },
+            {
+                "name": "Brandy",
+                "description": "Barton's, Korbel",
+                "isSimple": true
+            },
+            {
+                "name": "Gin",
+                "description": "Gordons, Bombay Sapphire, Hendricks",
+                "isSimple": true
+            },
+            {
+                "name": "Rum",
+                "description": "Castillo, Captain Morgan Spiced, Captain Morgan Coconut, Bacardi",
+                "isSimple": true
+            },
+            {
+                "name": "Tequila",
+                "description": "Campo Bravo",
+                "isSimple": true
+            },
+            {
+                "name": "Vodka",
+                "description": "Gordons, Titos, Rock'n, Grey Goose",
+                "isSimple": true
+            }
+        ]
+    }
+]
