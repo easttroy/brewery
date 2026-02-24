@@ -1,12 +1,273 @@
 import { Metadata } from "next";
 import Button from "@/components/Button";
+import MenuTabs from "@/components/MenuTabs";
 
 export const metadata: Metadata = {
 	title: "Food Menu",
 	description:
 		"Explore our handcrafted food menu, featuring elevated plates and supper club specials at East Troy Brewery.",
 };
-import MenuTabs from "@/components/MenuTabs";
+
+const menuCategories = [
+	{
+		title: "Starters",
+		items: [
+			{
+				name: "Brussel Sprouts",
+				price: "$12",
+				description:
+					"Fried brussel sprouts, tossed in honey garlic glaze, with bacon, parmesan, served with truffle aioli",
+			},
+			{
+				name: "Cheese Curds",
+				price: "$15",
+				description:
+					"Hill Valley, Battered and fried cheddar curds. Jalapeno Ranch & Sundried tomato aioli",
+			},
+			{
+				name: "Garlic Pretzel Bites",
+				price: "$12",
+				description: "IPA White Cheddar Sauce",
+			},
+			{
+				name: "Brewers Bites",
+				price: "$15",
+				description:
+					"Fried mac n cheese bites, filled with chorizo, hatch green chilis, Hot Honey, served with IPA white cheddar sauce",
+			},
+			{
+				name: "Baked Goat Cheese",
+				price: "$14",
+				description:
+					"Lemon and herb goat cheese dip, garlic breadcrumbs, Grilled Pita.",
+			},
+		],
+	},
+	{
+		title: "Main Course",
+		items: [
+			{
+				name: "Brewery Burger",
+				price: "$18",
+				description:
+					"8oz Chuck, brisket, and short rib blend. Bacon & onion jam, gruyere cheese, arugula, tomato, roasted garlic aioli, brioche bun and fries",
+			},
+			{
+				name: "Hot Chicken Sandwich",
+				price: "$15",
+				description:
+					"Buttermilk fried chicken breast, hot honey glaze, house pickles, pickled vegetable and jalapeno slaw served with fries",
+			},
+			{
+				name: "Bratwurst Roll",
+				price: "$12",
+				description:
+					"Hometown Sausage Bratwurst, Beer braised onions, wholegrain mustard aioli, pretzel roll served with fries",
+			},
+			{
+				name: "Baked Mac n Cheese",
+				price: "$12",
+				description:
+					"IPA white cheddar sauce, herb breadcrumbs, chives. Add Chicken $5",
+			},
+			{
+				name: "Wings",
+				price: "$10 - $16",
+				description:
+					"6 or 12 Traditional wings served with buffalo, bourbon bbq, mango habanero, thai chili, zess pepper ranch, or garlic parmesan. Not available on Fridays",
+			},
+		],
+	},
+	{
+		title: "Salads",
+		note: "Add Chicken + $4",
+		items: [
+			{
+				name: "Caeser",
+				price: "$15",
+				description:
+					"Romaine lettuce, Creamy caeser dressing, grated parmesan, shaved parmesan, garlic pretzel croutons",
+			},
+			{
+				name: "Apple Arugula",
+				price: "$16",
+				description:
+					"Granny smith apples, shallots, candied walnuts, gorgonzola, honey IPA vinaigrette",
+			},
+			{
+				name: "Fall Mixed Greens",
+				price: "$16",
+				description:
+					"Roasted butternut squash, dried cranberries, spiced pecans, goat cheese, maple dijon vinaigrette",
+			},
+		],
+	},
+	{
+		title: "Entrees",
+		note: "Served after 4pm",
+		items: [
+			{
+				name: "Shrimp Scampi",
+				price: "$25",
+				description:
+					"Tail on shrimp, garlic, red pepper flakes, linguini, IPA Infused butter sauce, breadcrumbs.",
+			},
+			{
+				name: "Short Rib Gnocchi",
+				price: "$35",
+				description:
+					"Beer Braised Beef short ribs, kale, baby carrots, gnocchi, beer braise reduction",
+			},
+			{
+				name: "Ale Glazed Salmon",
+				price: "$28",
+				description:
+					"Ale & Honey Glazed Grilled Salmon, Herb Roasted Fingerling Potatoes, Broccolini",
+			},
+			{
+				name: "Chicken Alfredo",
+				price: "$20",
+				description:
+					"Garlic herb breaded chicken breast, penne pasta, alfredo sauce, grated parmesan",
+			},
+		],
+	},
+	{
+		title: "Brick Oven",
+		note: "Build your own option available",
+		items: [
+			{
+				name: "Truffle Pear",
+				price: "$20",
+				description:
+					"White garlic sauce, anjou pears, shredded fontina, truffle oil, balsamic glaze, arugula",
+			},
+			{
+				name: "Spicy Pepperoni",
+				price: "$20",
+				description:
+					"Sliced pepperoni and sopresetta, shredded and fresh mozzarella, hot honey",
+			},
+			{
+				name: "Bacon & Beer",
+				price: "$20",
+				description:
+					"IPA white cheddar sauce, bacon, pancetta, mozzarella, cheddar, chives.",
+			},
+			{
+				name: "Wild Mushroom",
+				price: "$21",
+				description:
+					"Roasted wild mushroom blend, fontina, alfredo cream sauce, truffle oil, parsley",
+			},
+		],
+	},
+	{
+		title: "Sides",
+		items: [
+			{
+				name: "French Fries",
+				price: "$5",
+			},
+			{
+				name: "Sweet Potato Fries",
+				price: "$6",
+			},
+			{
+				name: "Truffle Tots",
+				price: "$7",
+				description: "Truffle oil, parmesan, chives, Garlic Aioli",
+			},
+			{
+				name: "Side House Salad",
+				price: "$6",
+				description: "Mixed greens, tomato, onion, ranch.",
+			},
+			{
+				name: "White Cheddar Mac n Cheese",
+				price: "$5",
+			},
+		],
+	},
+	{
+		title: "Soup & Chili",
+		items: [
+			{
+				name: "Soup Of The Day",
+				price: "Cup $5 Bowl $8",
+			},
+			{
+				name: "White Bean Chicken Chili",
+				price: "Cup $5 Bowl $9",
+				description:
+					"Salsa Verde based, Cilantro, Shredded Chicken, northern white beans, Topped with Lime Crema Pickled Onions.",
+			},
+			{
+				name: "Beef Chili",
+				price: "Cup $5 Bowl $9",
+				description:
+					"Peppers, Onions, Ground Beef, Pinto Beans, Kidney Beans. Topped with Cheddar Cheese & Green Onions.",
+			},
+		],
+	},
+	{
+		title: "Friday Fish Fry",
+		items: [
+			{
+				name: "Grilled Pacific Cod",
+				price: "$18",
+				description:
+					"Lemon & herb grilled, served with coleslaw, tartar sauce and French fries.",
+			},
+			{
+				name: "Fried Cod",
+				price: "$18",
+				description:
+					"House beer battered cod, served with coleslaw, tartar, and French fries",
+			},
+			{
+				name: "Fried Perch",
+				price: "$20",
+				description:
+					"Zander pike perch, panko breaded. Served with coleslaw, tartar sauce and French fries. \nUpgrade to potato pancakes + $3",
+			},
+		],
+	},
+	{
+		title: "Saturday Prime Rib",
+		note: "Starting at 4pm",
+		items: [
+			{
+				name: "Herb Crusted 14oz Prime Rib",
+				price: "$28",
+				description:
+					"Served with Vegetable of the day, Choice of Baked Potato or French Fries, Au Jus, & creamy Horseradish",
+			},
+		],
+	},
+	{
+		title: "Sweets",
+		items: [
+			{
+				name: "Apple Strudel Eggrolls",
+				price: "$12",
+				description:
+					"Apple pie filled and fried eggrolls, cinnamon sugar, white icing.",
+			},
+			{
+				name: "Seasonal Cheesecake",
+				price: "$12",
+				description: "Rotating homemade cheesecake. Ask for flavors.",
+			},
+			{
+				name: "Brownie Sundae",
+				price: "$10",
+				description:
+					"Cast iron brownie, peanut butter icecream, caramel, roasted peanut",
+			},
+		],
+	},
+];
 
 export default function FoodMenu() {
 	return (
@@ -23,550 +284,58 @@ export default function FoodMenu() {
 				<div className="border-etbrew-gold border-t-4 bg-white px-8 pt-0 pb-8 shadow-xl md:px-16 md:pt-0 md:pb-16">
 					<MenuTabs />
 
-					{/* Snacks */}
-					<h2
-						id="menu"
-						className="mb-12 scroll-mt-[200px] border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase"
-					>
-						Snacks
-					</h2>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Hill Valley Cheese Curds
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									14.5
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Hand battered, served with ranch dressing
-								(Vegetarian Friendly).
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Crispy Brussel Sprouts
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									13
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Glazed in a honey garlic sauce, topped w/ shaved
-								parmesan, and microgreens. Served with truffle
-								aioli.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									BBQ Pork Nachos
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									14
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Queso, pico de gallo, black bean corn salsa,
-								jalapeño, guacamole, BBQ sauce, cotija cheese,
-								pulled pork, and cilantro.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Parmesan Crusted Pretzel
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									11
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Bavarian style pretzel with garlic butter &
-								parmesan. Served with our house queso and beer
-								mustard.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Hummus & Pita
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									13.5
-								</span>
-							</div>
-							<p className="text-stone-600">
-								House-made hummus, served with pita chips,
-								cotija, & garlic confit oil.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Loaded Queso
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									10
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Queso topped with pico de gallo and guacamole.
-								Served with salsa and tortilla chips (Vegetarian
-								Friendly).
-							</p>
-						</div>
-					</div>
+					{menuCategories.map((category, index) => (
+						<div key={index}>
+							<h2
+								id={
+									index === 0
+										? "menu"
+										: category.title
+											.toLowerCase()
+											.replace(/[^a-z0-9]+/g, "-")
+								}
+								className={`border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase ${index === 0
+										? "mb-12 scroll-mt-[200px]"
+										: "mt-20 mb-12"
+									}`}
+							>
+								{category.title}
+							</h2>
+							{category.note && (
+								<p className="mb-8 text-center text-stone-500 italic">
+									{category.note}
+								</p>
+							)}
 
-					{/* Salads */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Salads
-					</h2>
-					<p className="mb-8 text-center text-stone-500 italic">
-						ADD CHICKEN TO ANY SALAD (+$4)
-					</p>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Southwest Cobb Salad
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									16
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Romaine lettuce, tomatoes, roasted corn, black
-								beans, red onion, avocado, tortilla strips,
-								cotija cheese, cilantro lime dressing & chili
-								sriracha ranch drizzle.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Caesar Salad
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									14
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Romaine lettuce, house made lemony caesar
-								dressing, crouton crumbles, shaved parmesan
-								cheese, oregano.
-							</p>
-						</div>
-					</div>
-
-					{/* Friday Fish Fry */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Friday Fish Fry
-					</h2>
-					<p className="mb-8 text-center text-stone-500 italic">
-						LIMITED QUANTITIES AVAILABLE
-					</p>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Perch Fry
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									20
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Lake Erie Perch - Choice of Baked or Fried Flour
-								Battered.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Beer Battered Cod
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									17
-								</span>
-							</div>
-							<p className="text-stone-600"></p>
-						</div>
-					</div>
-
-					{/* BBQ Plates */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						BBQ Plates
-					</h2>
-					<p className="mb-8 text-center text-stone-500 italic">
-						ALL PLATES INCLUDE MAC & CHEESE, COLESLAW, FRENCH FRIES,
-						AND CORNBREAD. NO SUBSTITUTIONS PLEASE.
-					</p>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									1/2 Pound Brisket
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									18
-								</span>
+							<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
+								{category.items.map((item, itemIndex) => (
+									<div
+										key={itemIndex}
+										className="flex h-full flex-col"
+									>
+										<div className="mb-2 flex items-baseline justify-between border-b border-stone-100 pb-1">
+											<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
+												{item.name}
+											</h3>
+											<span className="text-etbrew-gold font-bold">
+												{item.price}
+											</span>
+										</div>
+										{item.description && (
+											<p className="mt-3 text-sm leading-relaxed text-stone-700 whitespace-pre-line">
+												{item.description}
+											</p>
+										)}
+									</div>
+								))}
 							</div>
 						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Full Pound Brisket
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									28
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									1/2 Pound Pulled Pork
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									15
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Full Pound Pulled Pork
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									23
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Combo Platter
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									26
-								</span>
-							</div>
-							<p className="text-stone-600">
-								1/2 Brisket / 1/2 Pulled Pork.
-							</p>
-						</div>
-					</div>
-
-					{/* ET Square Pizzas */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						ET Square Pizzas
-					</h2>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									White Truffle Pear
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									17
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Garlic parmesan white sauce, fresh mozzarella,
-								anjou pears, arugula, white truffle oil &
-								balsamic glaze.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Prosciutto Diavolo
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									17
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Spicy fra Diavolo sauce, burrata cheese,
-								prosciutto, garnished w/ arugula & garlic confit
-								oil.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Vodka A La Sausage
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									18
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Vodka sauce, mozzarella, house-made local
-								Italian sausage.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Say Cheese
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									15
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Roasted tomato sauce, mozzarella, cheddar,
-								parmesan.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									BYO Pizza
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									18
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Say Cheese Base Max 3 toppings; Pepperoni,
-								Italian Sausage, Prosciutto, Bacon, Red Onion,
-								Tomatoes, Jalapeños.
-							</p>
-						</div>
-					</div>
-
-					{/* Wings */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Wings
-					</h2>
-					<p className="mb-8 text-center text-stone-500 italic">
-						NOT AVAILABLE FRIDAY DUE TO FISH FRY. Flavors: Bourbon
-						BBQ, House Buffalo (HOT), Caribbean Jerk Dry Rub, Zess
-						Pepper Ranch (HOT).
-					</p>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Half Dozen
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									$9
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Dozen
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									$16
-								</span>
-							</div>
-						</div>
-					</div>
-
-					{/* Sammies */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Sammies
-					</h2>
-					<p className="mb-8 text-center text-stone-500 italic">
-						GLUTEN-FREE BUNS ARE AVAILABLE FOR $1 EXTRA; SWAP TATER
-						TOTS FOR +$1 OR SIDE SALAD +$2
-					</p>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									3 Meat Combo
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									$22/person
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Bacon & Blue
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									18
-								</span>
-							</div>
-							<p className="text-stone-600">
-								1/2 lb. Brisket Patty, bacon jam, apple slaw,
-								arugula, blue cheese.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Classic Chicken Sammie
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									15
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Crispy or Grilled chicken, your choice of wing
-								sauce, lettuce, tomato, Brioche Bun.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									2 Meat Combo
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									$20/person
-								</span>
-							</div>
-						</div>
-					</div>
-
-					{/* Mac N Cheese */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Mac N Cheese
-					</h2>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Mac N Cheese
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									14
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Mac n&apos; cheese with a southwest cream sauce
-								made in house.
-							</p>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									BBQ Mac N Cheese
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									18
-								</span>
-							</div>
-							<p className="text-stone-600">
-								Our famous mac topped with your choice of pork
-								or chicken, house made BBQ sauce, shredded
-								cheese, and green onions (+ Upgrade to brisket
-								+$1).
-							</p>
-						</div>
-					</div>
-
-					{/* Kids Menu */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Kids Menu
-					</h2>
-					<p className="mb-8 text-center text-stone-500 italic">
-						AVAILABLE FOR GUESTS 12 YEARS OLD AND YOUNGER
-					</p>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Cheese Pizza
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									8
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Kid&apos;s Cheeseburger & Fries
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									9
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Grilled Cheese & Fries
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									7
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Mac N&apos; Cheese
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									8
-								</span>
-							</div>
-						</div>
-					</div>
-
-					{/* Additional Sides */}
-					<h2 className="mt-20 mb-12 border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase">
-						Additional Sides
-					</h2>
-					<div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Sweet Potato Tots
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									4
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Fries
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									2.50
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									Side Salad
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									4
-								</span>
-							</div>
-						</div>
-						<div>
-							<div className="mb-2 flex items-baseline justify-between">
-								<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-									House Slaw
-								</h3>
-								<span className="text-etbrew-gold font-bold">
-									2.50
-								</span>
-							</div>
-						</div>
-					</div>
+					))}
 
 					<div className="mt-16 text-center">
+						<p className="mb-8 text-sm text-stone-500 italic">
+							Ask us about our private events and catering options
+						</p>
 						<Button
 							href="https://www.toasttab.com/east-troy-brewery/v3"
 							target="_blank"
