@@ -97,7 +97,7 @@ export default function MugClub() {
 								Yearly Membership
 							</h3>
 							<div className="text-etbrew-gold mb-8 text-6xl font-black">
-								$75
+								$150
 							</div>
 							<p className="mb-8 text-stone-300 italic">
 								Valid until end of current calendar year.
