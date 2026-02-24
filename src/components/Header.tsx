@@ -111,7 +111,7 @@ export default function Header({
 				<Link
 					href="/"
 					onClick={closeMenu}
-					className={`font-serif text-3xl tracking-widest uppercase ${logoTextClass}`}
+					className={`font-serif text-xl sm:text-2xl md:text-3xl leading-9 tracking-widest uppercase whitespace-nowrap ${logoTextClass}`}
 				>
 					East Troy Brewery
 				</Link>
