@@ -8,10 +8,13 @@
     "start": "next start",
     "lint": "eslint",
     "sync-untappd": "node scripts/sync-menus.mjs",
-    "sync-events": "node scripts/sync-events.mjs"
+    "sync-events": "node scripts/sync-events.mjs",
+    "sync-news-fb": "node scripts/sync-news-fb.mjs",
+    "sync-news-insta": "node scripts/sync-news-insta.mjs"
   },
   "dependencies": {
     "cheerio": "^1.2.0",
+    "dotenv": "^17.3.1",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
@@ -24,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "facebook-event-scraper": "^0.2.6",
+    "playwright": "^1.58.2",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.2.1",

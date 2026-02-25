@@ -120,8 +120,9 @@ export default function Header({
 				<nav
 					className={`hidden items-center gap-6 font-sans text-sm font-bold tracking-wider xl:flex ${navLinkClass}`}
 				>
-					<Link href="/" className="py-4 transition-colors">
-						HOME
+					{/* News Link */}
+					<Link href="/news" className="py-4 transition-colors">
+						NEWS
 					</Link>
 
 					{/* Menus Dropdown */}
@@ -273,12 +274,13 @@ export default function Header({
 			{/* Mobile Navigation Menu Dropdown */}
 			{isMobileMenuOpen && (
 				<div className="border-etbrew-gold absolute top-full left-0 z-40 flex w-full flex-col border-t-4 bg-white font-sans text-sm font-bold tracking-wider text-stone-800 shadow-xl xl:hidden">
+
 					<Link
-						href="/"
+						href="/news"
 						onClick={closeMenu}
 						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
 					>
-						HOME
+						NEWS
 					</Link>
 
 					<div className="border-b border-stone-100 bg-stone-50/50 px-6 py-4">
