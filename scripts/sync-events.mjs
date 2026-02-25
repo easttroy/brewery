@@ -67,7 +67,7 @@ async function syncEvents() {
             events.push({
                 id: eventId,
                 name: eventNode.name,
-                url: eventNode.url,
+                url: `https://www.facebook.com/events/${eventId}/`,
                 date: eventNode.day_time_sentence,
                 isCanceled: eventNode.is_canceled,
                 isPast: node.actions_renderer?.event?.is_past ?? false,
