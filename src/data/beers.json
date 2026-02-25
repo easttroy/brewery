@@ -1,5 +1,27 @@
 [
   {
+    "name": "The Chronic",
+    "url": "https://untappd.com/b/east-troy-brewery-the-chronic/6613888",
+    "style": "IPA - American",
+    "abv": "6.8%",
+    "ibu": "102",
+    "description": "A hop forward IPA.  Citra, Strata, and Columbus hops provide tasting notes of sticky pine resin, dank grapefruit, and aromatic lime zest.  Come get a hit of The Chronic.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Cherry Pineapple Sour",
     "url": "https://untappd.com/b/east-troy-brewery-cherry-pineapple-sour/6597140",
     "style": "Sour - Fruited",
@@ -242,54 +264,6 @@
       {
         "size": "32oz Crowler",
         "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "Invaluable",
-    "url": "https://untappd.com/b/g5-brewing-company-invaluable/6497043",
-    "style": "IPA - Imperial",
-    "abv": "8.4%",
-    "ibu": "55",
-    "description": "Our friends up the road on I-43 came to hang and brew a lovely double west coast IPA. The talk about what it should be always had Krush hops being brought up. This became our extremely useful jump off point. What goes well with Krush? Mosaic. This bright, tasty, and clean beverage is what we all were wanting with fall transiting to winter.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "J Henry Barrel Aged Grim",
-    "url": "https://untappd.com/b/east-troy-brewery-barrel-aged-grim/6474467",
-    "style": "Stout - Imperial",
-    "abv": "11.5%",
-    "ibu": "N/A",
-    "description": "Chocolate forward Imperial Stout Aged in J Henry Barrels.\nTasting notes: Velvety Chocolate, Smooth Booze, Barrel Charred Espresso",
-    "prices": [
-      {
-        "size": "10oz Draft",
-        "price": "$8.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$7.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$21.00"
-      },
-      {
-        "size": "5oz Draft",
-        "price": "$4.00"
       }
     ]
   },
