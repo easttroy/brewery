@@ -34,14 +34,14 @@ jobs:
           # Check if there are changes in the specific data directory
           if git diff --exit-code src/data/events.json; then
             # We also need to check if there are new untracked or modified images
-            if [[ -z $(git status -s public/events/) ]]; then
+            if [[ -z $(git status -s public/images/events/) ]]; then
               echo "No changes to events or images."
               exit 0
             fi
           fi
           
           echo "Data changed, committing..."
-          git add src/data/events.json public/events/
+          git add src/data/events.json public/images/events/
           git commit -m "Auto-update events data"
           
           git push
