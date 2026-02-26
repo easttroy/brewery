@@ -40,7 +40,15 @@ async function syncEvents() {
         });
 
         const page = await context.newPage();
-        await page.goto(FB_PAGE_URL, { waitUntil: 'networkidle' });
+
+        // Log all requests to see if they are reaching the proxy
+        page.on('request', request => console.log('>>', request.method(), request.url()));
+        page.on('response', response => console.log('<<', response.status(), response.url()));
+        page.on('requestfailed', request => console.log('XX', request.url(), request.failure().errorText));
+
+        console.log('Navigating to Facebook...');
+        await page.goto(FB_PAGE_URL, { waitUntil: 'networkidle', timeout: 60000 });
+        console.log('Navigation complete. Extracting content...');
 
         const html = await page.content();
 
