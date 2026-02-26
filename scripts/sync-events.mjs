@@ -26,9 +26,10 @@ async function syncEvents() {
     }
 
     console.log(`Fetching Facebook Events for ${FB_PAGE_URL}...`);
+    let browser;
     try {
         // We configure playwright to use the SSH tunnel we opened in the GH Action (or locally)
-        const browser = await chromium.launch({
+        browser = await chromium.launch({
             headless: true,
             proxy: process.env.USE_PROXY === 'true' ? { server: 'socks5://127.0.0.1:1080' } : undefined
         });
@@ -47,8 +48,9 @@ async function syncEvents() {
         page.on('requestfailed', request => console.log('XX', request.url(), request.failure().errorText));
 
         console.log('Navigating to Facebook...');
-        await page.goto(FB_PAGE_URL, { waitUntil: 'networkidle', timeout: 60000 });
-        console.log('Navigation complete. Extracting content...');
+        await page.goto(FB_PAGE_URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        console.log('Navigation complete. Waiting for React to render...');
+        await page.waitForTimeout(5000);
 
         const html = await page.content();
 
@@ -98,8 +100,6 @@ async function syncEvents() {
             });
         }
 
-        await browser.close();
-
         // Filter out canceled tools
         let activeEvents = events.filter(e => !e.isCanceled);
 
@@ -117,6 +117,8 @@ async function syncEvents() {
     } catch (error) {
         console.error('Error fetching Facebook events:', error);
         process.exitCode = 1;
+    } finally {
+        if (browser) await browser.close();
     }
 }
 

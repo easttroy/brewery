@@ -39,8 +39,7 @@ jobs:
       - name: Open SSH Tunnel
         run: |
           # Open a SOCKS5 proxy tunnel to the Linode server on port 1080
-          ssh -i $SSH_AUTH_SOCK -N -D 1080 -o StrictHostKeyChecking=no ${{ secrets.LINODE_USER }}@${{ secrets.LINODE_HOST }} &
-          sleep 5
+          ssh -f -q -N -D 1080 -o StrictHostKeyChecking=no -i $SSH_AUTH_SOCK ${{ secrets.LINODE_USER }}@${{ secrets.LINODE_HOST }}
           echo "SSH tunnel started."
 
       - name: Fetch and Sync Events
