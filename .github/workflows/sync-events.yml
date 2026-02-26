@@ -23,6 +23,21 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.LINODE_SSH_KEY }}
+          
+      - name: Add Linode to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.LINODE_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Open SSH Tunnel
+        run: |
+          # Open a SOCKS5 proxy tunnel to the Linode server on port 1080
+          ssh -i $SSH_AUTH_SOCK -N -D 1080 -o StrictHostKeyChecking=no ${{ secrets.LINODE_USER }}@${{ secrets.LINODE_HOST }} &
+
       - name: Fetch and Sync Events
         run: npm run sync-events
 

@@ -2,9 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as jsonUtil from 'facebook-event-scraper/dist/utils/json.js';
-import { fetchEvent } from 'facebook-event-scraper/dist/utils/network.js';
-import { validateAndFormatEventPageUrl } from 'facebook-event-scraper/dist/utils/url.js';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -14,8 +11,10 @@ if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
+import { chromium } from 'playwright';
+
 /**
- * Fetches events from Facebook using facebook-event-scraper utilities to extract images
+ * Fetches events from Facebook using Playwright through SOCKS5 proxy
  */
 async function syncEvents() {
     const FB_PAGE_URL = 'https://www.facebook.com/ETBrew/events';
@@ -28,12 +27,28 @@ async function syncEvents() {
 
     console.log(`Fetching Facebook Events for ${FB_PAGE_URL}...`);
     try {
-        const formattedUrl = validateAndFormatEventPageUrl(FB_PAGE_URL);
-        const dataString = await fetchEvent(formattedUrl, {});
+        // We configure playwright to use the SSH tunnel we opened in the GH Action (or locally)
+        const browser = await chromium.launch({
+            headless: true,
+            proxy: process.env.USE_PROXY === 'true' ? { server: 'socks5://127.0.0.1:1080' } : undefined
+        });
 
-        const { jsonData } = jsonUtil.findJsonInString(dataString, 'collection');
-        if (!jsonData) {
-            throw new Error('No event data found in Facebook payload.');
+        const context = await browser.newContext({
+            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            viewport: { width: 1280, height: 720 },
+            locale: 'en-US'
+        });
+
+        const page = await context.newPage();
+        await page.goto(FB_PAGE_URL, { waitUntil: 'networkidle' });
+
+        const html = await page.content();
+
+        // Find the event collection JSON data safely inside the massive HTML string
+        const { jsonData } = jsonUtil.findJsonInString(html, 'collection');
+        if (!jsonData || !jsonData.pageItems || !jsonData.pageItems.edges) {
+            await page.screenshot({ path: 'debug_error.png' });
+            throw new Error('No event data found in Facebook payload. The proxy may be blocked.');
         }
 
         const events = [];
@@ -74,6 +89,8 @@ async function syncEvents() {
                 image: localImagePath
             });
         }
+
+        await browser.close();
 
         // Filter out canceled tools
         let activeEvents = events.filter(e => !e.isCanceled);
