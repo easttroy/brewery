@@ -33,13 +33,13 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.LINODE_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium --with-deps
+
       - name: Open SSH Tunnel
         run: |
           # Open a SOCKS5 proxy tunnel to the Linode server on port 1080
           ssh -i $SSH_AUTH_SOCK -N -D 1080 -o StrictHostKeyChecking=no ${{ secrets.LINODE_USER }}@${{ secrets.LINODE_HOST }} &
-
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium --with-deps
 
       - name: Fetch and Sync Events
         run: USE_PROXY=true npm run sync-events
