@@ -21,29 +21,13 @@ jobs:
           cache-dependency-path: 'package-lock.json'
 
       - name: Install Dependencies
-        run: npm ci
-
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.LINODE_SSH_KEY }}
-          
-      - name: Add Linode to known_hosts
         run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.LINODE_HOST }} >> ~/.ssh/known_hosts
-
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium --with-deps
-
-      - name: Open SSH Tunnel
-        run: |
-          # Open a SOCKS5 proxy tunnel to the Linode server on port 1080
-          ssh -f -q -N -D 1080 -o StrictHostKeyChecking=no -i $SSH_AUTH_SOCK ${{ secrets.LINODE_USER }}@${{ secrets.LINODE_HOST }}
-          echo "SSH tunnel started."
+          npm ci
+          npm install playwright-extra puppeteer-extra-plugin-stealth
+          npx playwright install chromium --with-deps
 
       - name: Fetch and Sync Events
-        run: USE_PROXY=true npm run sync-events
+        run: npm run sync-events
 
       - name: Commit and Push Changes
         run: |

@@ -11,10 +11,13 @@ if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-import { chromium } from 'playwright';
+import { chromium } from 'playwright-extra';
+import stealth from 'puppeteer-extra-plugin-stealth';
+
+chromium.use(stealth());
 
 /**
- * Fetches events from Facebook using Playwright through SOCKS5 proxy
+ * Fetches events from Facebook using Playwright Stealth
  */
 async function syncEvents() {
     const FB_PAGE_URL = 'https://www.facebook.com/ETBrew/events';
@@ -28,10 +31,9 @@ async function syncEvents() {
     console.log(`Fetching Facebook Events for ${FB_PAGE_URL}...`);
     let browser;
     try {
-        // We configure playwright to use the SSH tunnel we opened in the GH Action (or locally)
+        // Launch playwright-extra with the stealth plugin
         browser = await chromium.launch({
-            headless: true,
-            proxy: process.env.USE_PROXY === 'true' ? { server: 'socks5://127.0.0.1:1080' } : undefined
+            headless: true
         });
 
         const context = await browser.newContext({
