@@ -2,7 +2,7 @@ name: Auto-Sync Facebook Events
 
 on:
   schedule:
-    - cron: '14 * * * *' # Run at 14 minutes past every hour to stagger with untappd
+    - cron: '30 0 * * *' # Runs at 00:30 UTC daily to stagger with untappd
   workflow_dispatch: # Allow manual trigger
 
 jobs:
