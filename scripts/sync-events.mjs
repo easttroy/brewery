@@ -1,7 +1,12 @@
+import { chromium } from 'playwright-extra';
+import stealth from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as jsonUtil from 'facebook-event-scraper/dist/utils/json.js';
+
+chromium.use(stealth());
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -10,11 +15,6 @@ const DATA_DIR = path.join(__dirname, '..', 'src', 'data');
 if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
 }
-
-import { chromium } from 'playwright-extra';
-import stealth from 'puppeteer-extra-plugin-stealth';
-
-chromium.use(stealth());
 
 /**
  * Fetches events from Facebook using Playwright Stealth
@@ -31,27 +31,11 @@ async function syncEvents() {
     console.log(`Fetching Facebook Events for ${FB_PAGE_URL}...`);
     let browser;
     try {
-        // Launch playwright-extra with the stealth plugin
-        browser = await chromium.launch({
-            headless: true
-        });
-
-        const context = await browser.newContext({
-            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            viewport: { width: 1280, height: 720 },
-            locale: 'en-US'
-        });
-
+        browser = await chromium.launch({ headless: true });
+        const context = await browser.newContext();
         const page = await context.newPage();
 
-        // Log all requests to see if they are reaching the proxy
-        page.on('request', request => console.log('>>', request.method(), request.url()));
-        page.on('response', response => console.log('<<', response.status(), response.url()));
-        page.on('requestfailed', request => console.log('XX', request.url(), request.failure().errorText));
-
-        console.log('Navigating to Facebook...');
-        await page.goto(FB_PAGE_URL, { waitUntil: 'domcontentloaded', timeout: 30000 });
-        console.log('Navigation complete. Waiting for React to render...');
+        await page.goto(FB_PAGE_URL, { waitUntil: 'domcontentloaded' });
         await page.waitForTimeout(5000);
 
         const html = await page.content();
@@ -59,7 +43,6 @@ async function syncEvents() {
         // Find the event collection JSON data safely inside the massive HTML string
         const { jsonData } = jsonUtil.findJsonInString(html, 'collection');
         if (!jsonData || !jsonData.pageItems || !jsonData.pageItems.edges) {
-            await page.screenshot({ path: 'debug_error.png' });
             throw new Error('No event data found in Facebook payload. The proxy may be blocked.');
         }
 
