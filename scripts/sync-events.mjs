@@ -41,9 +41,18 @@ async function syncEvents() {
         const html = await page.content();
 
         // Find the event collection JSON data safely inside the massive HTML string
-        const { jsonData } = jsonUtil.findJsonInString(html, 'collection');
+        let jsonData = null;
+        try {
+            const result = jsonUtil.findJsonInString(html, 'collection');
+            jsonData = result.jsonData;
+        } catch (e) {
+            console.warn("Could not parse JSON collection from Facebook HTML.");
+        }
+
         if (!jsonData || !jsonData.pageItems || !jsonData.pageItems.edges) {
-            throw new Error('No event data found in Facebook payload. The proxy may be blocked.');
+            console.warn('⚠️ No event data found in Facebook payload. The page may be temporarily blocking unauthenticated access.');
+            console.warn('Scraper will fail gracefully. Current events will not be overwritten.');
+            return; // Exit function early, do not overwrite output file
         }
 
         const events = [];
@@ -100,8 +109,9 @@ async function syncEvents() {
         console.log(`Successfully wrote to ${OUTPUT_FILE}`);
 
     } catch (error) {
-        console.error('Error fetching Facebook events:', error);
-        process.exitCode = 1;
+        console.warn('⚠️ Scraping Facebook events failed. The proxy or IP might be temporarily blocked:', error.message);
+        console.warn('Failing gracefully to preserve existing events.');
+        // Do NOT set process.exitCode = 1 here. We want the Action to succeed.
     } finally {
         if (browser) await browser.close();
     }

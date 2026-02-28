@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "sync-untappd": "node scripts/sync-menus.mjs",
-    "sync-events": "node scripts/sync-events.mjs"
+    "sync-events": "node scripts/sync-events.mjs",
+    "test-stealth": "node test-stealth.mjs"
   },
   "dependencies": {
     "axios-socks5-agent": "^1.0.5",
