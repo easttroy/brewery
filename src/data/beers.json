@@ -1,11 +1,99 @@
 [
   {
+    "name": "Cactus Juice",
+    "url": "https://untappd.com/b/east-troy-brewery-cactus-juice/6622988",
+    "style": "Fruit Beer",
+    "abv": "5.2%",
+    "ibu": "18",
+    "description": "Prickly Pear and Lime infused Mexican Lager.  An extra boost of sweet refreshment and a citrusy aura",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "The Chronic",
     "url": "https://untappd.com/b/east-troy-brewery-the-chronic/6613888",
     "style": "IPA - American",
     "abv": "6.8%",
     "ibu": "102",
     "description": "A hop forward IPA.  Citra, Strata, and Columbus hops provide tasting notes of sticky pine resin, dank grapefruit, and aromatic lime zest.  Come get a hit of The Chronic.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Paved In Gold",
+    "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
+    "style": "IPA - New England",
+    "abv": "6.5%",
+    "ibu": "50",
+    "description": "A focus on quality and tropical ingredients have the runway to your tastebuds ‘Paved in Gold.’  A big hop driven IPA, approachable and dangerous with El Dorado, Rakau, Amarillo hops.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$14.92"
+      }
+    ]
+  },
+  {
+    "name": "Dorado Loco",
+    "url": "https://untappd.com/b/east-troy-brewery-dorado-loco/6375398",
+    "style": "Lager - Mexican",
+    "abv": "5.2%",
+    "ibu": "18",
+    "description": "Translation: \"Crazy Gold\".  This Mexican Lager was brewed with maximum thirst quenching ability and built to satisfy your taste buds.  Try it with a lime!",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "American Lager",
+    "url": "https://untappd.com/b/east-troy-brewery-american-lager/6309643",
+    "style": "Lager - American Light",
+    "abv": "4.7%",
+    "ibu": "13",
+    "description": "Brewed the American Way - clean, crisp, and endlessly drinkable. Zero nonsense.  Style notes: Barley, Corn, Saaz, Water, Yeast",
     "prices": [
       {
         "size": "16oz Draft",
@@ -92,72 +180,6 @@
     ]
   },
   {
-    "name": "Paved In Gold",
-    "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
-    "style": "IPA - New England",
-    "abv": "6.5%",
-    "ibu": "50",
-    "description": "A focus on quality and tropical ingredients have the runway to your tastebuds ‘Paved in Gold.’  A big hop driven IPA, approachable and dangerous with El Dorado, Rakau, Amarillo hops.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$14.92"
-      }
-    ]
-  },
-  {
-    "name": "Dorado Loco",
-    "url": "https://untappd.com/b/east-troy-brewery-dorado-loco/6375398",
-    "style": "Lager - Mexican",
-    "abv": "5.2%",
-    "ibu": "18",
-    "description": "Translation: \"Crazy Gold\".  This Mexican Lager was brewed with maximum thirst quenching ability and built to satisfy your taste buds.  Try it with a lime!",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "American Lager",
-    "url": "https://untappd.com/b/east-troy-brewery-american-lager/6309643",
-    "style": "Lager - American Light",
-    "abv": "4.7%",
-    "ibu": "13",
-    "description": "In pursuit of the maximizing drinkability, we created a crispy clean American Lager, a beer style that is rooted deeply in Wisconsin culture.  We pair traditional noble hops with new school Indie Hops, resulting in a delightfully approachable beer with a tangy fresh flavor that is squeaky clean.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "Goat Talk",
     "url": "https://untappd.com/b/east-troy-brewery-goat-talk/6559441",
     "style": "Bock - Doppelbock",
@@ -186,28 +208,6 @@
     "abv": "5%",
     "ibu": "N/A",
     "description": "A simple syrup based hard premium seltzer, Watermelon flavored, and full of bubbles.  Gluten free, Lactose Free",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "Strawberries & Cream Sour",
-    "url": "https://untappd.com/b/east-troy-brewery-strawberries-and-cream-sour/6525324",
-    "style": "Sour - Fruited",
-    "abv": "5%",
-    "ibu": "1",
-    "description": "Lightly tart fruited sour infused with strawberry puree, cream and vanilla flavoring.  Gluten Free, Lactose Free.",
     "prices": [
       {
         "size": "16oz Draft",
