@@ -1,8 +1,30 @@
 [
   {
+    "name": "Leprechaun's Lager",
+    "url": "https://untappd.com/b/east-troy-brewery-american-leprechaun/6631481",
+    "style": "Lager - American",
+    "abv": "4.7%",
+    "ibu": "13",
+    "description": "Green Beer, made from our American Lager",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Cactus Juice",
     "url": "https://untappd.com/b/east-troy-brewery-cactus-juice/6622988",
-    "style": "Fruit Beer",
+    "style": "Lager - Fruited",
     "abv": "5.2%",
     "ibu": "18",
     "description": "Prickly Pear and Lime infused Mexican Lager.  An extra boost of sweet refreshment and a citrusy aura",
