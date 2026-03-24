@@ -1,5 +1,27 @@
 [
   {
+    "name": "262 Lager",
+    "url": "https://untappd.com/b/east-troy-brewery-262-lager/6646803",
+    "style": "Lager - American Light",
+    "abv": "4.5%",
+    "ibu": "15",
+    "description": "Inspired by Milwaukee’s Lager Legacy, this amber lager blends soft caramel notes with a light toasted backbone and a refreshing, easy finish. Honest beer, made to be drank.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Cactus Juice",
     "url": "https://untappd.com/b/east-troy-brewery-cactus-juice/6622988",
     "style": "Lager - Fruited",
