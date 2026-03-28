@@ -12,3 +12,8 @@
 body {
   font-family: var(--font-sans);
 }
+
+@keyframes attention-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}

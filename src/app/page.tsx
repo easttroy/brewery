@@ -1,5 +1,5 @@
 import Button from "@/components/Button";
-import Image from "next/image";
+import HeroVideo from "@/components/HeroVideo";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,15 +12,8 @@ export default function Home() {
 	return (
 		<div className="flex min-h-screen flex-col">
 			{/* Hero Section */}
-			<section className="border-etbrew-gold relative flex h-screen min-h-[600px] items-center justify-center overflow-hidden border-b-8 bg-stone-900">
-				<Image
-					src="/images/backgrounds/brewery-filled.jpg"
-					alt="East Troy Brewery Interior"
-					fill
-					priority
-					className="object-cover object-center"
-				/>
-				<div className="absolute inset-0 z-10 bg-black/65" />
+			<section className="border-etbrew-gold relative flex h-[60svh] min-h-[380px] items-center justify-center overflow-hidden border-b-8 bg-stone-900 md:h-screen md:min-h-[600px]">
+				<HeroVideo />
 				<div className="relative z-20 mx-auto mt-12 max-w-4xl px-4 text-center text-white">
 					<p className="mx-auto mb-10 max-w-2xl font-sans text-xl drop-shadow-md md:text-2xl">
 						Handcrafted pints and elevated plates in the heart of
