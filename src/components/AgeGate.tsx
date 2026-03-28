@@ -38,7 +38,7 @@ export default function AgeGate() {
 					Are You 21 or Older?
 				</h2>
 				<p className="mb-8 text-stone-300">
-					You must be at least 21 to enter this site.
+					You must be at least 21 to view this content.
 				</p>
 
 				<label className="mb-8 flex cursor-pointer items-center justify-center gap-3 select-none">
