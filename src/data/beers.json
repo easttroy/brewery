@@ -110,28 +110,6 @@
     ]
   },
   {
-    "name": "American Lager",
-    "url": "https://untappd.com/b/east-troy-brewery-american-lager/6309643",
-    "style": "Lager - American Light",
-    "abv": "4.7%",
-    "ibu": "13",
-    "description": "Brewed the American Way - clean, crisp, and endlessly drinkable. Zero nonsense.  Style notes: Barley, Corn, Saaz, Water, Yeast",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "Cherry Pineapple Sour",
     "url": "https://untappd.com/b/east-troy-brewery-cherry-pineapple-sour/6597140",
     "style": "Sour - Fruited",
