@@ -22,28 +22,6 @@
     ]
   },
   {
-    "name": "Cactus Juice",
-    "url": "https://untappd.com/b/east-troy-brewery-cactus-juice/6622988",
-    "style": "Lager - Fruited",
-    "abv": "5.2%",
-    "ibu": "18",
-    "description": "Prickly Pear and Lime infused Mexican Lager.  An extra boost of sweet refreshment and a citrusy aura",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "The Chronic",
     "url": "https://untappd.com/b/east-troy-brewery-the-chronic/6613888",
     "style": "IPA - American",
