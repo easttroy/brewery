@@ -66,28 +66,6 @@
     ]
   },
   {
-    "name": "Dorado Loco",
-    "url": "https://untappd.com/b/east-troy-brewery-dorado-loco/6375398",
-    "style": "Lager - Mexican",
-    "abv": "5.2%",
-    "ibu": "18",
-    "description": "Translation: \"Crazy Gold\".  This Mexican Lager was brewed with maximum thirst quenching ability and built to satisfy your taste buds.  Try it with a lime!",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "Cherry Pineapple Sour",
     "url": "https://untappd.com/b/east-troy-brewery-cherry-pineapple-sour/6597140",
     "style": "Sour - Fruited",
@@ -251,7 +229,7 @@
     "style": "Wheat Beer - Hefeweizen",
     "abv": "4.8%",
     "ibu": "15",
-    "description": "Hefeweizen brewed for the autumn season and football games.  A sweet front of banana with a spicy clove finish.",
+    "description": "Hefeweizen brewed with a sweet front of banana with a spicy clove finish.",
     "prices": [
       {
         "size": "16oz Draft",
