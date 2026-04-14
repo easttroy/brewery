@@ -1,5 +1,27 @@
 [
   {
+    "name": "Foggy Flow",
+    "url": "https://untappd.com/b/east-troy-brewery-foggy-flow/6672349",
+    "style": "IPA - New England",
+    "abv": "7.5%",
+    "ibu": "57",
+    "description": "Galaxy and Mosaic hops combine for a bright expression of tropical character.  Motueka Amplifier hop oil boosts the citrus flow of this Foggy IPA\n\nTasting Notes: Juicy Peach, \nRipe Passion Fruit, Lime Mojito",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "262 Lager",
     "url": "https://untappd.com/b/east-troy-brewery-262-lager/6646803",
     "style": "Lager - American Light",
@@ -49,7 +71,7 @@
     "style": "IPA - New England",
     "abv": "6.5%",
     "ibu": "50",
-    "description": "A focus on quality and tropical ingredients have the runway to your tastebuds ‘Paved in Gold.’  A big hop driven IPA, approachable and dangerous with El Dorado, Rakau, Amarillo hops.",
+    "description": "An El Dorado Hop driven IPA.  Vibrant pineapple notes and a tropical finish have the runway to your tastebuds \n‘Paved in Gold.’\nHops: El Dorado, Amarillo, New Zealand Cascade",
     "prices": [
       {
         "size": "16oz Draft",
