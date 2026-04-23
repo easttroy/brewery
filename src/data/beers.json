@@ -6,7 +6,20 @@
     "abv": "4.9%",
     "ibu": "18",
     "description": "Translation: \"Crazy Gold\".  This Mexican Lager is crazy gold and crazy drinkable.  Try it with a lime!",
-    "prices": []
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
   },
   {
     "name": "Foggy Flow",
