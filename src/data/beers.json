@@ -1,5 +1,27 @@
 [
   {
+    "name": "Blood Orange Cream Ale",
+    "url": "https://untappd.com/b/east-troy-brewery-blood-orange-cream-ale/6684865",
+    "style": "Cream Ale",
+    "abv": "5%",
+    "ibu": "10",
+    "description": "A silky smooth cream ale finished with loads of Blood Orange Puree and a second helping of Red Blood Orange Fruit Concentrate.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Dorado Loco",
     "url": "https://untappd.com/b/east-troy-brewery-dorado-loco/6375398",
     "style": "Lager - Mexican",
