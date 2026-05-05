@@ -288,27 +288,5 @@
         "price": "$15.00"
       }
     ]
-  },
-  {
-    "name": "Hef Time",
-    "url": "https://untappd.com/b/east-troy-brewery-hef-time/5937578",
-    "style": "Wheat Beer - Hefeweizen",
-    "abv": "4.8%",
-    "ibu": "15",
-    "description": "Hefeweizen brewed with a sweet front of banana with a spicy clove finish.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
   }
 ]
