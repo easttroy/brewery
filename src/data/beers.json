@@ -1,5 +1,27 @@
 [
   {
+    "name": "Paved In Gold",
+    "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
+    "style": "IPA - New England",
+    "abv": "6.5%",
+    "ibu": "50",
+    "description": "An El Dorado Hop driven IPA.  Vibrant pineapple notes and a tropical finish have the runway to your tastebuds \n‘Paved in Gold.’\nHops: El Dorado, Amarillo, New Zealand Cascade",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$14.92"
+      }
+    ]
+  },
+  {
     "name": "Blood Orange Cream Ale",
     "url": "https://untappd.com/b/east-troy-brewery-blood-orange-cream-ale/6684865",
     "style": "Cream Ale",
@@ -110,28 +132,6 @@
     ]
   },
   {
-    "name": "Paved In Gold",
-    "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
-    "style": "IPA - New England",
-    "abv": "6.5%",
-    "ibu": "50",
-    "description": "An El Dorado Hop driven IPA.  Vibrant pineapple notes and a tropical finish have the runway to your tastebuds \n‘Paved in Gold.’\nHops: El Dorado, Amarillo, New Zealand Cascade",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$14.92"
-      }
-    ]
-  },
-  {
     "name": "Cherry Pineapple Sour",
     "url": "https://untappd.com/b/east-troy-brewery-cherry-pineapple-sour/6597140",
     "style": "Sour - Fruited",
@@ -220,28 +220,6 @@
       {
         "size": "32oz Crowler",
         "price": "$18.00"
-      }
-    ]
-  },
-  {
-    "name": "Watermelon Premium Seltzer",
-    "url": "https://untappd.com/b/east-troy-brewery-watermelon-lemon-premium-seltzer/6574246",
-    "style": "Hard Seltzer",
-    "abv": "5%",
-    "ibu": "N/A",
-    "description": "A simple syrup based hard premium seltzer, Watermelon flavored, and full of bubbles.  Gluten free, Lactose Free",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
       }
     ]
   },
