@@ -1,5 +1,49 @@
 [
   {
+    "name": "24 Carat West Coast IPA",
+    "url": "https://untappd.com/b/east-troy-brewery-24-karat-west-coast-ipa/6727766",
+    "style": "IPA - Other",
+    "abv": "6.8%",
+    "ibu": "95",
+    "description": "Pilsner base malt provides a lean body and Simcoe, Mosaic, Idaho 7 and Krush hops create a grapefruit-berry hop expression.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Watermelon Premium Seltzer",
+    "url": "https://untappd.com/b/east-troy-brewery-watermelon-premium-seltzer/6358761",
+    "style": "Hard Seltzer",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "A simple syrup based hard premium seltzer, Watermelon flavored, and full of bubbles. Gluten free, Lactose free.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "262 Lager",
     "url": "https://untappd.com/b/east-troy-brewery-262-lager/6646803",
     "style": "Lager - American Light",
@@ -176,28 +220,6 @@
       {
         "size": "32oz Crowler",
         "price": "$21.00"
-      }
-    ]
-  },
-  {
-    "name": "Chocolate Cherry Porter",
-    "url": "https://untappd.com/b/east-troy-brewery-chocolate-cherry-porter/6153003",
-    "style": "Porter - English",
-    "abv": "5.5%",
-    "ibu": "28",
-    "description": "Our Valentine's Day gift from us to you. Why? Because we love you.  This is our original porter with additions of chocolate fudge and sweet dark cherry.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
       }
     ]
   },
