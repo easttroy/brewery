@@ -3,132 +3,236 @@
         "title": "Starters",
         "items": [
             {
-                "name": "Brussel Sprouts",
-                "price": "$12",
-                "description": "Fried brussel sprouts, tossed in honey garlic glaze, with bacon, parmesan, served with truffle aioli"
+                "name": "Chips & Queso",
+                "price": "$10",
+                "description": "Tortilla chips with authentic queso, and pico de gallo"
             },
             {
-                "name": "Cheese Curds",
+                "name": "HillValley Cheese Curds",
                 "price": "$15",
-                "description": "Hill Valley, Battered and fried cheddar curds. Jalapeno Ranch & Sundried tomato aioli"
+                "description": "Beer battered cheese curds served with Zess Pepper Ranch, and Sun Dried Tomato Aioli"
             },
             {
                 "name": "Garlic Pretzel Bites",
                 "price": "$12",
-                "description": "IPA White Cheddar Sauce"
+                "description": "Garlic butter, Salt, Parmesan, and Italian Parsley, served with Beer Cheese"
             },
             {
-                "name": "Brewers Bites",
-                "price": "$15",
-                "description": "Fried mac n cheese bites, filled with chorizo, hatch green chilis, Hot Honey, served with IPA white cheddar sauce"
+                "name": "Crispy Brussels Sprouts",
+                "price": "$12",
+                "description": "Fried Brussel Sprouts tossed in Honey Garlic Glaze, with Bacon Parmesan, served with Truffle Aioli"
+            }
+        ]
+    },
+    {
+        "title": "Wings",
+        "note": "NOT available on Fridays\n\nWing Sauces:\nBourbon Barbecue • Thai Chilli • Mango Habanero • Zess Pepper Ranch • House Buffalo • Garlic Parmesan • Caribbean Jerk (Dry Rub) • Lemon Pepper (Dry Rub)",
+        "items": [
+            {
+                "name": "Half Dozen Traditional/Boneless",
+                "price": "$10"
             },
             {
-                "name": "Baked Goat Cheese",
+                "name": "Dozen Traditional/Boneless",
+                "price": "$16"
+            }
+        ]
+    },
+    {
+        "title": "Fresh Salads",
+        "note": "Add Chicken $5 | Add Shrimp $6\n\nSalad Dressings:\nChipotle Ranch • Ranch • Honey Vinaigerette • Caesar • Thousand Island • Blue Cheese • Garlic Balsamic Vinaigrette • Green Goddess • Cilantro Lime",
+        "items": [
+            {
+                "name": "House Salad",
                 "price": "$14",
-                "description": "Lemon and herb goat cheese dip, garlic breadcrumbs, Grilled Pita."
-            }
-        ]
-    },
-    {
-        "title": "Main Course",
-        "items": [
-            {
-                "name": "Brewery Burger",
-                "price": "$18",
-                "description": "8oz Chuck, brisket, and short rib blend. Bacon & onion jam, gruyere cheese, arugula, tomato, roasted garlic aioli, brioche bun and fries"
+                "description": "Onion, Tomato, Fall Mixed Greens, Choice of Dressing"
             },
             {
-                "name": "Hot Chicken Sandwich",
-                "price": "$15",
-                "description": "Buttermilk fried chicken breast, hot honey glaze, house pickles, pickled vegetable and jalapeno slaw served with fries"
-            },
-            {
-                "name": "Bratwurst Roll",
-                "price": "$12",
-                "description": "Hometown Sausage Bratwurst, Beer braised onions, wholegrain mustard aioli, pretzel roll served with fries"
-            },
-            {
-                "name": "Baked Mac n Cheese",
-                "price": "$12",
-                "description": "IPA white cheddar sauce, herb breadcrumbs, chives. Add Chicken $5"
-            },
-            {
-                "name": "Wings",
-                "price": "$10 - $16",
-                "description": "6 or 12 Traditional wings served with buffalo, bourbon bbq, mango habanero, thai chili, zess pepper ranch, or garlic parmesan. Not available on Fridays"
-            }
-        ]
-    },
-    {
-        "title": "Salads",
-        "note": "Add Chicken + $4",
-        "items": [
-            {
-                "name": "Caeser",
-                "price": "$15",
-                "description": "Romaine lettuce, Creamy caeser dressing, grated parmesan, shaved parmesan, garlic pretzel croutons"
+                "name": "Caesar",
+                "price": "$16",
+                "description": "Romaine Lettuce, Parmesan, Croutons, Caesar Dressing"
             },
             {
                 "name": "Apple Arugula",
-                "price": "$16",
-                "description": "Granny smith apples, shallots, candied walnuts, gorgonzola, honey IPA vinaigrette"
+                "price": "$17",
+                "description": "Granny Smith Apples, Shallots, Candied Nuts, Gorgonzola, with Honey Vinaigrette Dressing"
             },
             {
-                "name": "Fall Mixed Greens",
+                "name": "Emerald Cobb",
                 "price": "$16",
-                "description": "Roasted butternut squash, dried cranberries, spiced pecans, goat cheese, maple dijon vinaigrette"
+                "description": "Mixed Greens Tomato, Blue Cheese Crumbles, Bacon, Avocado, Hard Boiled Eggs, with Goddess Dressing"
+            },
+            {
+                "name": "Southwest Salad",
+                "price": "$16",
+                "description": "Mixed Greens, Black Beans, Roasted Corn, Tomato, Pickled Red Onion, Bell Pepper, Avocado, Queso Fresco, Chipotle Ranch, Cilantro lime Dressing"
+            },
+            {
+                "name": "Mediterranean Salad",
+                "price": "$16",
+                "description": "Arugula, Tomato, Pickled Red Onion, Chick Peas, Cucumber, Olives, Roasted Red Peppers, Topped with Feta, and a Choice of Dressing"
+            },
+            {
+                "name": "Caprese Salad",
+                "price": "$16",
+                "description": "Arugula, Basil, Fresh Mozzarella, Cherry Tomato, Balsamic Glaze"
             }
         ]
     },
     {
         "title": "Entrees",
-        "note": "Served after 4pm",
         "items": [
             {
-                "name": "Shrimp Scampi",
-                "price": "$25",
-                "description": "Tail on shrimp, garlic, red pepper flakes, linguini, IPA Infused butter sauce, breadcrumbs."
+                "name": "Baked Mac & Cheese",
+                "price": "$13",
+                "description": "IPA White Cheddar Sauce, Herb Breadcrumbs\nAdd Chicken $5"
             },
             {
                 "name": "Short Rib Gnocchi",
                 "price": "$35",
-                "description": "Beer Braised Beef short ribs, kale, baby carrots, gnocchi, beer braise reduction"
+                "description": "Braise Beef Short Rib, Kale, Baby Carrots, Gnocchi, Demi glaze"
             },
             {
-                "name": "Ale Glazed Salmon",
-                "price": "$28",
-                "description": "Ale & Honey Glazed Grilled Salmon, Herb Roasted Fingerling Potatoes, Broccolini"
+                "name": "Emerald Tuscan Gnocchi",
+                "price": "$35",
+                "description": "Shrimp, Gnocchi, Basil Pesto, Roasted Tomatos, Garlic, Spinach, Shallots, Roasted Red Peppers"
+            },
+            {
+                "name": "Chicken Marsala",
+                "price": "$26",
+                "description": "Roasted Chicken, Wild Mushrooms, Marsala Demi Glaze"
+            },
+            {
+                "name": "Short Rib Marsala",
+                "price": "$37",
+                "description": "Braised Short Rib, Marsala Demi Glaze, Mushrooms, Caramelized Onions, and Herbs"
+            },
+            {
+                "name": "Shrimp Linguine",
+                "price": "$32",
+                "description": "Tender Linguine Tossed in Red Sauce, with Sautéed Shrimp, Roasted Cherry Tomato, Spinach, Red Pepper Flakes, and Squeezed Lemon"
+            },
+            {
+                "name": "Cajun Shrimp Linguine",
+                "price": "$32",
+                "description": "Linguine in a Bold Cajun Cream Sauce, with Sautéed Blackened Shrimp, Peppers, Onions, and Garlic"
+            },
+            {
+                "name": "Vodka Chicken Parmesan",
+                "price": "$26",
+                "description": "Breaded Chicken, Vodka Sauce, Penne Pasta, and Fresh Mozzarella"
+            },
+            {
+                "name": "Gnocchi Carbonara",
+                "price": "$35",
+                "description": "Gnocchi, Egg Yolk, Pancetta, Peas, Parmesan, and Cream"
             },
             {
                 "name": "Chicken Alfredo",
-                "price": "$20",
-                "description": "Garlic herb breaded chicken breast, penne pasta, alfredo sauce, grated parmesan"
+                "price": "$26",
+                "description": "Garlic-Herb Breaded Chicken Breast, Penne Pasta, Alfredo Sauce, and Parmesan."
             }
         ]
     },
     {
-        "title": "Brick Oven",
+        "title": "Pizza Flatbreads",
         "note": "Build your own option available",
         "items": [
             {
-                "name": "Truffle Pear",
+                "name": "Say Cheese",
+                "price": "$18",
+                "description": "Red sauce, Mozzarella, Cheddar, and Parmesan"
+            },
+            {
+                "name": "Caprese",
                 "price": "$20",
-                "description": "White garlic sauce, anjou pears, shredded fontina, truffle oil, balsamic glaze, arugula"
+                "description": "Red Sauce, Fresh Mozzarella, Tomato, Basil, Balsamic Glaze"
             },
             {
                 "name": "Spicy Pepperoni",
                 "price": "$20",
-                "description": "Sliced pepperoni and sopresetta, shredded and fresh mozzarella, hot honey"
+                "description": "Red Sauce, Pepperoni, Soppressata, Fresh Mozzarella, hot honey, Red Pepper flakes"
             },
             {
-                "name": "Bacon & Beer",
+                "name": "Bacon and Beer",
                 "price": "$20",
-                "description": "IPA white cheddar sauce, bacon, pancetta, mozzarella, cheddar, chives."
+                "description": "Beer Sauce, Mozzarella, Cheddar, Bacon, Pincheta, and Chives"
+            },
+            {
+                "name": "White Truffle Pear",
+                "price": "$24",
+                "description": "White Sauce, Fontina, Pears, Balsamic Glaze, Truffle Oil, and Arugula"
             },
             {
                 "name": "Wild Mushroom",
                 "price": "$21",
-                "description": "Roasted wild mushroom blend, fontina, alfredo cream sauce, truffle oil, parsley"
+                "description": "White Sauce, Fontina, Wild Mushrooms, Truffle Oil, Parsley"
+            },
+            {
+                "name": "Chicken Pesto",
+                "price": "$20",
+                "description": "Basil Pesto Sauce, Mozzarella, Roasted Peppers, Roasted Cherry Tomatos, Grilled Chicken"
+            },
+            {
+                "name": "BYO (2 Toppings)",
+                "price": "$18",
+                "description": "Bell peppers, onion, jalapeños, onions, tomato, pepperoni, bacon, Italian sausage"
+            }
+        ]
+    },
+    {
+        "title": "Handhelds",
+        "note": "ALL burgers will be 8oz smashed chuck, brisket, and short rib. ALL Handhelds will be served with your choice of side, and a pickle. Gluten free option available",
+        "items": [
+            {
+                "name": "Brewery Burger",
+                "price": "$18",
+                "description": "Topped with Bacon-Onion Jam, Gruyére Cheese, Arugula, Tomato, and Garlic Aioli"
+            },
+            {
+                "name": "The Deluxe",
+                "price": "$18",
+                "description": "Cheddar Cheese, Bacon, Red Onions, Pickles, Lettuce, and Tomato"
+            },
+            {
+                "name": "Bacon & Blue Smash",
+                "price": "$18",
+                "description": "Blue Cheese, Bacon, Caramelized Onions, and Garlic Aioli"
+            },
+            {
+                "name": "Smokehouse Smash",
+                "price": "$18",
+                "description": "Bacon Jam, Cheddar Cheese, Pickles, Jalapeños, and Bbq Sauce"
+            },
+            {
+                "name": "Hot Chicken Sandwich",
+                "price": "$18",
+                "description": "Buttermilk Fried Chicken, with Hot Honey Glaze, Pickles, and Jalapeño Slaw"
+            },
+            {
+                "name": "Chicken Gyro Pita Wrap",
+                "price": "$15",
+                "description": "Chicken, Arugula, Tomato, Onion, Cucumber, Feta, and Tzatziki Sauce"
+            },
+            {
+                "name": "Mediterranean Shrimp Pita Wrap",
+                "price": "$15",
+                "description": "Blackened Shrimp, Tomato, Cucumber, Picked Red Onion, Feta, Arugula, and Tzatziki Sauce"
+            },
+            {
+                "name": "Chicken Parm Sandwich",
+                "price": "$19",
+                "description": "Breaded Chicken, Fresh Mozzarella, Vodka Sauce, Spinach, and Roasted Tomato"
+            },
+            {
+                "name": "Chicken Pesto Sandwich",
+                "price": "$18",
+                "description": "Roasted Chicken, Basil Pesto, Roasted Tomato, Roasted Red Peppers, and Shallots"
+            },
+            {
+                "name": "Bratwurst Roll",
+                "price": "$12",
+                "description": "Bratwurst, Braised Onions, Whole Grain Mustard Aioli, and Pretzel Roll"
             }
         ]
     },
@@ -199,18 +303,7 @@
         ]
     },
     {
-        "title": "Saturday Prime Rib",
-        "note": "Starting at 4pm",
-        "items": [
-            {
-                "name": "Herb Crusted 14oz Prime Rib",
-                "price": "$28",
-                "description": "Served with Vegetable of the day, Choice of Baked Potato or French Fries, Au Jus, & creamy Horseradish"
-            }
-        ]
-    },
-    {
-        "title": "Sweets",
+        "title": "Desserts",
         "items": [
             {
                 "name": "Apple Strudel Eggrolls",

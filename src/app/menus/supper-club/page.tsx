@@ -7,7 +7,21 @@ export const metadata: Metadata = {
         "Join us for East Troy Brewery's Monday Night Supper Club. Elevated dining, scratch-made.",
 };
 
-import menuCategories from "@/data/supper-club.json";
+import menuCategoriesRaw from "@/data/supper-club.json";
+
+interface MenuItem {
+    name: string;
+    price: string;
+    description?: string;
+}
+
+interface MenuCategory {
+    title: string;
+    note?: string;
+    items: MenuItem[];
+}
+
+const menuCategories = menuCategoriesRaw as MenuCategory[];
 
 export default function SupperClubMenu() {
     return (
@@ -47,9 +61,11 @@ export default function SupperClubMenu() {
                                 {category.title}
                             </h2>
                             {category.note && (
-                                <p className="mb-8 text-center text-stone-500 italic">
-                                    {category.note}
-                                </p>
+                                <div className="mx-auto mb-10 max-w-2xl border-y border-stone-200/60 py-4 px-4 text-center">
+                                    <p className="text-sm leading-relaxed text-stone-600 whitespace-pre-line italic">
+                                        {category.note}
+                                    </p>
+                                </div>
                             )}
 
                             <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
