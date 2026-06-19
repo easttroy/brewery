@@ -1,5 +1,27 @@
 [
   {
+    "name": "Amber of East Troy",
+    "url": "https://untappd.com/b/east-troy-brewery-amber-of-east-troy/6758525",
+    "style": "Lager - Amber",
+    "abv": "5.3%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "24 Carat West Coast IPA",
     "url": "https://untappd.com/b/east-troy-brewery-24-karat-west-coast-ipa/6727766",
     "style": "IPA - American",
@@ -83,7 +105,7 @@
       },
       {
         "size": "32oz Crowler",
-        "price": "$14.92"
+        "price": "$15.00"
       }
     ]
   },
