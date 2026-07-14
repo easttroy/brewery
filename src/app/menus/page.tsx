@@ -50,7 +50,7 @@ const menuLinks = [
         title: "Food",
         href: "/menus/food",
         icon: <FireIcon className="mb-4 h-12 w-12 text-etbrew-gold transition-transform group-hover:scale-110" />,
-        description: "Elevated plates, shared snacks, brick oven pizzas, & supper club specials.",
+        description: "Elevated plates, shared snacks, brick oven pizzas, & more.",
         isDark: false,
     },
     {
@@ -67,13 +67,6 @@ const menuLinks = [
         description: "Specialty house cocktails, mocktails, wine, and a curated spirits selection.",
         isDark: false,
     },
-    {
-        title: "Supper Club",
-        href: "/menus/supper-club",
-        icon: <StarIcon className="mb-4 h-12 w-12 text-etbrew-gold transition-transform group-hover:scale-110" />,
-        description: "Monday night exclusives: prime rib, fish fry, and classic Wisconsin traditions.",
-        isDark: true,
-    },
 ];
 
 export default function MenusOverview() {
@@ -88,7 +81,7 @@ export default function MenusOverview() {
 
             {/* Main Content */}
             <section className="mx-auto w-full max-w-5xl px-4 py-20">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                     {menuLinks.map((menu, index) => (
                         <Link
                             key={index}

@@ -80,7 +80,7 @@ export default function Footer() {
 							<span className="mb-1 block font-bold text-white">
 								Monday
 							</span>
-							4pm - 8pm (SUPPER CLUB)
+							4pm - 8pm
 						</li>
 						<li>
 							<span className="mb-1 block font-bold text-white">

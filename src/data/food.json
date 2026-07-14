@@ -40,12 +40,12 @@
     },
     {
         "title": "Fresh Salads",
-        "note": "Add Chicken $5 | Add Shrimp $6\n\nSalad Dressings:\nChipotle Ranch • Ranch • Honey Vinaigerette • Caesar • Thousand Island • Blue Cheese • Garlic Balsamic Vinaigrette • Green Goddess • Cilantro Lime",
+        "note": "*Add Chicken $5  *Add Shrimp $6\n\nSalad Dressings:\nChipotle Ranch • Honey Vinaigrette • Thousand Island • Garlic Balsamic Vinaigrette • Ranch • Caesar • Blue Cheese • Green Goddess • Cilantro Lime",
         "items": [
             {
                 "name": "House Salad",
                 "price": "$14",
-                "description": "Onion, Tomato, Fall Mixed Greens, Choice of Dressing"
+                "description": "Onion, Tomato, Fall Mixed Greens. Choice of Dressing"
             },
             {
                 "name": "Caesar",
@@ -60,12 +60,12 @@
             {
                 "name": "Emerald Cobb",
                 "price": "$16",
-                "description": "Mixed Greens Tomato, Blue Cheese Crumbles, Bacon, Avocado, Hard Boiled Eggs, with Goddess Dressing"
+                "description": "Mixed Greens, Tomato, Blue Cheese Crumbles, Bacon, Avocado, Hard Boiled Eggs, with Goddess Dressing"
             },
             {
                 "name": "Southwest Salad",
                 "price": "$16",
-                "description": "Mixed Greens, Black Beans, Roasted Corn, Tomato, Pickled Red Onion, Bell Pepper, Avocado, Queso Fresco, Chipotle Ranch, Cilantro lime Dressing"
+                "description": "Mixed Greens, Black Beans, Roasted Corn, Tomato, Pickled Red Onion, Bell Pepper, Avocado, Queso Fresco, Chipotle Ranch, Cilantro lime dressing"
             },
             {
                 "name": "Mediterranean Salad",
@@ -90,27 +90,17 @@
             {
                 "name": "Short Rib Gnocchi",
                 "price": "$35",
-                "description": "Braise Beef Short Rib, Kale, Baby Carrots, Gnocchi, Demi glaze"
-            },
-            {
-                "name": "Emerald Tuscan Gnocchi",
-                "price": "$35",
-                "description": "Shrimp, Gnocchi, Basil Pesto, Roasted Tomatos, Garlic, Spinach, Shallots, Roasted Red Peppers"
+                "description": "Braised Beef Short Rib, Kale, Baby Carrots, Gnocchi, Demi glace"
             },
             {
                 "name": "Chicken Marsala",
                 "price": "$26",
-                "description": "Roasted Chicken, Wild Mushrooms, Marsala Demi Glaze"
+                "description": "Roasted Chicken, Wild Mushrooms, Marsala Demi Glace"
             },
             {
                 "name": "Short Rib Marsala",
                 "price": "$37",
-                "description": "Braised Short Rib, Marsala Demi Glaze, Mushrooms, Caramelized Onions, and Herbs"
-            },
-            {
-                "name": "Shrimp Linguine",
-                "price": "$32",
-                "description": "Tender Linguine Tossed in Red Sauce, with Sautéed Shrimp, Roasted Cherry Tomato, Spinach, Red Pepper Flakes, and Squeezed Lemon"
+                "description": "Braised Short Rib, Marsala Demi Glace, Mushrooms, Caramelized Onions, and Herbs"
             },
             {
                 "name": "Cajun Shrimp Linguine",
@@ -130,13 +120,12 @@
             {
                 "name": "Chicken Alfredo",
                 "price": "$26",
-                "description": "Garlic-Herb Breaded Chicken Breast, Penne Pasta, Alfredo Sauce, and Parmesan."
+                "description": "Garlic-Herb Breaded Chicken Breast, Penne Pasta, Alfredo Sauce, and Parmesan"
             }
         ]
     },
     {
         "title": "Pizza Flatbreads",
-        "note": "Build your own option available",
         "items": [
             {
                 "name": "Say Cheese",
@@ -156,7 +145,7 @@
             {
                 "name": "Bacon and Beer",
                 "price": "$20",
-                "description": "Beer Sauce, Mozzarella, Cheddar, Bacon, Pincheta, and Chives"
+                "description": "Beer Sauce, Mozzarella, Cheddar, Bacon, Pinchera, and Chives"
             },
             {
                 "name": "White Truffle Pear",
@@ -171,18 +160,18 @@
             {
                 "name": "Chicken Pesto",
                 "price": "$20",
-                "description": "Basil Pesto Sauce, Mozzarella, Roasted Peppers, Roasted Cherry Tomatos, Grilled Chicken"
+                "description": "Basil Pesto Sauce, Mozzarella, Roasted Peppers, Roasted Cherry Tomato, Grilled Chicken"
             },
             {
                 "name": "BYO (2 Toppings)",
                 "price": "$18",
-                "description": "Bell peppers, onion, jalapeños, onions, tomato, pepperoni, bacon, Italian sausage"
+                "description": "Bell peppers, onion, jalapeños, onion, tomato, pepperoni, bacon, Italian sausage, mushroom, spinach"
             }
         ]
     },
     {
         "title": "Handhelds",
-        "note": "ALL burgers will be 8oz smashed chuck, brisket, and short rib. ALL Handhelds will be served with your choice of side, and a pickle. Gluten free option available",
+        "note": "All burgers will be 8oz smashed chuck, brisket, and short rib. All Handhelds will be served with your choice of side, and a pickle. Gluten free option available.",
         "items": [
             {
                 "name": "Brewery Burger",
@@ -210,16 +199,6 @@
                 "description": "Buttermilk Fried Chicken, with Hot Honey Glaze, Pickles, and Jalapeño Slaw"
             },
             {
-                "name": "Chicken Gyro Pita Wrap",
-                "price": "$15",
-                "description": "Chicken, Arugula, Tomato, Onion, Cucumber, Feta, and Tzatziki Sauce"
-            },
-            {
-                "name": "Mediterranean Shrimp Pita Wrap",
-                "price": "$15",
-                "description": "Blackened Shrimp, Tomato, Cucumber, Picked Red Onion, Feta, Arugula, and Tzatziki Sauce"
-            },
-            {
                 "name": "Chicken Parm Sandwich",
                 "price": "$19",
                 "description": "Breaded Chicken, Fresh Mozzarella, Vodka Sauce, Spinach, and Roasted Tomato"
@@ -228,11 +207,6 @@
                 "name": "Chicken Pesto Sandwich",
                 "price": "$18",
                 "description": "Roasted Chicken, Basil Pesto, Roasted Tomato, Roasted Red Peppers, and Shallots"
-            },
-            {
-                "name": "Bratwurst Roll",
-                "price": "$12",
-                "description": "Bratwurst, Braised Onions, Whole Grain Mustard Aioli, and Pretzel Roll"
             }
         ]
     },
@@ -240,65 +214,24 @@
         "title": "Sides",
         "items": [
             {
-                "name": "French Fries",
-                "price": "$5"
+                "name": "Fries",
+                "price": ""
             },
             {
-                "name": "Sweet Potato Fries",
-                "price": "$6"
+                "name": "House Salad",
+                "price": ""
             },
             {
-                "name": "Truffle Tots",
-                "price": "$7",
-                "description": "Truffle oil, parmesan, chives, Garlic Aioli"
+                "name": "Veggie of the Day",
+                "price": ""
             },
             {
-                "name": "Side House Salad",
-                "price": "$6",
-                "description": "Mixed greens, tomato, onion, ranch."
+                "name": "French Onion Soup",
+                "price": ""
             },
             {
-                "name": "White Cheddar Mac n Cheese",
-                "price": "$5"
-            }
-        ]
-    },
-    {
-        "title": "Soup & Chili",
-        "items": [
-            {
-                "name": "Soup Of The Day",
-                "price": "Cup $5 Bowl $8"
-            },
-            {
-                "name": "White Bean Chicken Chili",
-                "price": "Cup $5 Bowl $9",
-                "description": "Salsa Verde based, Cilantro, Shredded Chicken, northern white beans, Topped with Lime Crema Pickled Onions."
-            },
-            {
-                "name": "Beef Chili",
-                "price": "Cup $5 Bowl $9",
-                "description": "Peppers, Onions, Ground Beef, Pinto Beans, Kidney Beans. Topped with Cheddar Cheese & Green Onions."
-            }
-        ]
-    },
-    {
-        "title": "Friday Fish Fry",
-        "items": [
-            {
-                "name": "Grilled Pacific Cod",
-                "price": "$18",
-                "description": "Lemon & herb grilled, served with coleslaw, tartar sauce and French fries."
-            },
-            {
-                "name": "Fried Cod",
-                "price": "$18",
-                "description": "House beer battered cod, served with coleslaw, tartar, and French fries"
-            },
-            {
-                "name": "Fried Perch",
-                "price": "$20",
-                "description": "Zander pike perch, panko breaded. Served with coleslaw, tartar sauce and French fries. \nUpgrade to potato pancakes + $3"
+                "name": "White Bean Chili",
+                "price": ""
             }
         ]
     },
@@ -306,19 +239,8 @@
         "title": "Desserts",
         "items": [
             {
-                "name": "Apple Strudel Eggrolls",
-                "price": "$12",
-                "description": "Apple pie filled and fried eggrolls, cinnamon sugar, white icing."
-            },
-            {
                 "name": "Seasonal Cheesecake",
-                "price": "$12",
-                "description": "Rotating homemade cheesecake. Ask for flavors."
-            },
-            {
-                "name": "Brownie Sundae",
-                "price": "$10",
-                "description": "Cast iron brownie, peanut butter icecream, caramel, roasted peanut"
+                "price": ""
             }
         ]
     }

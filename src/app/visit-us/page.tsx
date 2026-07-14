@@ -106,7 +106,7 @@ export default function VisitUs() {
 							<h4 className="text-etbrew-gold mb-1 font-bold tracking-wider uppercase">
 								Monday
 							</h4>
-							<p>4pm - 8pm (SUPPER CLUB MENU)</p>
+							<p>4pm - 8pm</p>
 						</div>
 
 						<div className="border-t border-stone-100 pt-4">

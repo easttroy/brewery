@@ -4,7 +4,7 @@ import MenuTabs from "@/components/MenuTabs";
 export const metadata: Metadata = {
 	title: "Food",
 	description:
-		"Explore our handcrafted food menu, featuring elevated plates and supper club specials at East Troy Brewery.",
+		"Explore our handcrafted food menu, featuring elevated plates and flatbreads at East Troy Brewery.",
 };
 
 import menuCategoriesRaw from "@/data/food.json";

@@ -148,7 +148,7 @@ export default function Home() {
 									<h4 className="mb-1 font-bold underline">
 										Monday
 									</h4>
-									<p>4pm - 8pm - SUPPER CLUB MENU</p>
+									<p>4pm - 8pm</p>
 								</div>
 
 								<div className="border-l-4 border-stone-300 pl-4">

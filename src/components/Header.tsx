@@ -166,12 +166,6 @@ export default function Header({
 								>
 									Cocktails & More
 								</Link>
-								<Link
-									href="/menus/supper-club"
-									className="bg-stone-900 px-5 py-3 font-serif tracking-widest text-white transition-colors hover:bg-black hover:text-etbrew-gold"
-								>
-									<span className="text-etbrew-gold pr-1">★</span> Supper Club
-								</Link>
 							</div>
 						</div>
 					</div>
@@ -304,13 +298,6 @@ export default function Header({
 								className="hover:text-etbrew-gold"
 							>
 								Cocktails & More
-							</Link>
-							<Link
-								href="/menus/supper-club"
-								onClick={closeMenu}
-								className="mt-2 inline-block rounded-md bg-stone-900 px-4 py-2 font-serif tracking-widest text-etbrew-gold shadow-md"
-							>
-								★ Supper Club
 							</Link>
 						</div>
 					</div>

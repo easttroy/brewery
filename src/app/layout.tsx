@@ -35,7 +35,6 @@ export const metadata: Metadata = {
 		"Wisconsin",
 		"craft beer",
 		"restaurant",
-		"supper club",
 		"gastro-brewery",
 	],
 	openGraph: {

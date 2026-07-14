@@ -3,39 +3,29 @@
         "title": "Cocktails",
         "items": [
             {
-                "name": "Bloody Mary",
-                "price": "$9",
-                "description": "Vodka, Miss Mary's Bloody Mary Mix, pickle and olive juice, hot sauce."
-            },
-            {
-                "name": "Blackberry Mule",
+                "name": "Lemon Pop",
                 "price": "$10",
-                "description": "Tito's vodka, lime juice, ginger beer, blackberry syrup."
+                "description": "Blue Wavelength, Triple Sec, Sprite, Squeezed Lemon"
             },
             {
-                "name": "Red Sangria",
-                "price": "$9",
-                "description": "Red Wine, Brandy, Raspberry Puree, Orange Juice."
+                "name": "Grapefruit Mexican Mule",
+                "price": "$12",
+                "description": "Grapefruit Tequila, Squeezed Lime, Ginger Beer"
             },
             {
-                "name": "Patio Punch",
-                "price": "$8.5",
-                "description": "Coconut Rum, Amaretto, Pineapple Juice, Lime Juice, and a touch of Grenadine."
-            },
-            {
-                "name": "Wisconsin Old Fashioned",
-                "price": "$8",
-                "description": "A traditional Wisconsin old fashioned - made the right way by muddling orange and cherry with bitters and simple syrup, your choice of brandy, whiskey, or bourbon, sweet, sour, or press."
-            },
-            {
-                "name": "Mimosa",
-                "price": "$8",
-                "description": "Caposaldo Brut Prosecco and your choice of Orange, Pineapple, Cranberry, or Grapefruit Juice."
-            },
-            {
-                "name": "Cocktail of the Month",
+                "name": "Strawberry Grapefruit Tequila Spritz",
                 "price": "$10",
-                "description": "Pineapple Jalapeno Margarita: Pineapple Jalapeno tequila, triple sec, lime juice, simple syrup, pineapple juice, and a splash of grenadine."
+                "description": "Grapefruit Tequila, Strawberry Purée, Lime Juice, Club Soda"
+            },
+            {
+                "name": "Booth Blues",
+                "price": "$12",
+                "description": "Blue Curacao, Coconut Rum, Triple Sec, Pineapple Juice, Lime Juice, Club Soda"
+            },
+            {
+                "name": "Strawberry Gin Fizz",
+                "price": "$10",
+                "description": "Bombay Sapphire, Strawberry Purée, Lemon Juice, Club Soda"
             }
         ]
     },
