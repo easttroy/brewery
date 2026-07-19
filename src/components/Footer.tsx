@@ -110,7 +110,7 @@ export default function Footer() {
 							<span className="mb-1 block font-bold text-white">
 								Sunday
 							</span>
-							11:30am - 4pm
+							11:30am - 7pm
 						</li>
 						<li className="text-stone-500 italic">
 							Closed Tuesdays
