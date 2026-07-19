@@ -150,7 +150,7 @@ export default function VisitUs() {
 							<h4 className="text-etbrew-teal mb-1 font-bold tracking-wider uppercase">
 								Sunday
 							</h4>
-							<p>11:30am - 4pm</p>
+							<p>11:30am - 7pm</p>
 						</div>
 					</div>
 				</div>
