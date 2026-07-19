@@ -192,7 +192,7 @@ export default function Home() {
 									<h4 className="mb-1 font-bold underline">
 										Sunday
 									</h4>
-									<p>11:30am - 4pm</p>
+									<p>11:30am - 7pm</p>
 								</div>
 							</div>
 						</div>
