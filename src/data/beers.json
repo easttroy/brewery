@@ -22,28 +22,6 @@
     ]
   },
   {
-    "name": "American Lager",
-    "url": "https://untappd.com/b/east-troy-brewery-american-lager/6776974",
-    "style": "Lager - American",
-    "abv": "4.7%",
-    "ibu": "13",
-    "description": "In pursuit of the maximizing drinkability, we created a crispy clean American Lager, a beer style that is rooted deeply in Wisconsin culture.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "Amber of East Troy",
     "url": "https://untappd.com/b/east-troy-brewery-amber-of-east-troy/6758525",
     "style": "Lager - Amber",
