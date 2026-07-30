@@ -1,5 +1,27 @@
 [
   {
+    "name": "Afternoon Ale",
+    "url": "https://untappd.com/b/east-troy-brewery-afternoon-ale/6811092",
+    "style": "Blonde",
+    "abv": "3.9%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Blueberry Sour",
     "url": "https://untappd.com/b/east-troy-brewery-blueberry-sour/6776989",
     "style": "Sour - Fruited",
@@ -94,28 +116,6 @@
     "abv": "6.5%",
     "ibu": "50",
     "description": "An El Dorado Hop driven IPA.  Vibrant pineapple notes and a tropical finish have the runway to your tastebuds \n‘Paved in Gold.’\nHops: El Dorado, Amarillo, New Zealand Cascade",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "Blood Orange Cream Ale",
-    "url": "https://untappd.com/b/east-troy-brewery-blood-orange-cream-ale/6684865",
-    "style": "Cream Ale",
-    "abv": "5%",
-    "ibu": "10",
-    "description": "A silky smooth cream ale finished with loads of Blood Orange Puree and a second helping of Red Blood Orange Fruit Concentrate.",
     "prices": [
       {
         "size": "16oz Draft",
