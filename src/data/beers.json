@@ -1,5 +1,49 @@
 [
   {
+    "name": "Weiss Guy",
+    "url": "https://untappd.com/b/east-troy-brewery-weiss-guy/6823701",
+    "style": "Wheat Beer - Hefeweizen",
+    "abv": "5.5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Goldline Pilsner",
+    "url": "https://untappd.com/b/east-troy-brewery-goldline-pilsner/6823692",
+    "style": "Pilsner - American",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Viva Lager",
     "url": "https://untappd.com/b/east-troy-brewery-viva-lager/6823667",
     "style": "Lager - Mexican",
