@@ -1,5 +1,71 @@
 [
   {
+    "name": "Citrus Seltzer",
+    "url": "https://untappd.com/b/east-troy-brewery-citrus-seltzer/6853655",
+    "style": "Hard Seltzer",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Coconut Seltzer",
+    "url": "https://untappd.com/b/east-troy-brewery-coconut-seltzer/6853647",
+    "style": "Hard Seltzer",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "262 Lager",
+    "url": "https://untappd.com/b/east-troy-brewery-262-lager/6646803",
+    "style": "Lager - American Light",
+    "abv": "4.5%",
+    "ibu": "15",
+    "description": "Inspired by Milwaukee’s Lager Legacy, this amber lager blends soft caramel notes with a light toasted backbone and a refreshing, easy finish. Honest beer, made to be drank.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Weiss Guy",
     "url": "https://untappd.com/b/east-troy-brewery-weiss-guy/6823701",
     "style": "Wheat Beer - Hefeweizen",
