@@ -220,28 +220,6 @@
     ]
   },
   {
-    "name": "Watermelon Premium Seltzer",
-    "url": "https://untappd.com/b/east-troy-brewery-watermelon-premium-seltzer/6358761",
-    "style": "Hard Seltzer",
-    "abv": "5%",
-    "ibu": "N/A",
-    "description": "A simple syrup based hard premium seltzer, Watermelon flavored, and full of bubbles. Gluten free, Lactose free.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "Paved In Gold",
     "url": "https://untappd.com/b/east-troy-brewery-paved-in-gold/6290814",
     "style": "IPA - New England",
