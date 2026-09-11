@@ -66,28 +66,6 @@
     ]
   },
   {
-    "name": "Weiss Guy",
-    "url": "https://untappd.com/b/east-troy-brewery-weiss-guy/6823701",
-    "style": "Wheat Beer - Hefeweizen",
-    "abv": "5.5%",
-    "ibu": "N/A",
-    "description": "",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
     "name": "Goldline Pilsner",
     "url": "https://untappd.com/b/east-troy-brewery-goldline-pilsner/6823692",
     "style": "Pilsner - American",
@@ -182,28 +160,6 @@
     "abv": "5.5%",
     "ibu": "N/A",
     "description": "",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "24 Carat West Coast IPA",
-    "url": "https://untappd.com/b/east-troy-brewery-24-karat-west-coast-ipa/6727766",
-    "style": "IPA - American",
-    "abv": "6.8%",
-    "ibu": "95",
-    "description": "Pilsner base malt provides a lean body and Simcoe, Mosaic, Idaho 7 and Krush hops create a grapefruit-berry hop expression.",
     "prices": [
       {
         "size": "16oz Draft",
