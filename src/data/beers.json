@@ -1,5 +1,27 @@
 [
   {
+    "name": "Oktoberfest",
+    "url": "https://untappd.com/b/east-troy-brewery-oktoberfest-2025/6376469",
+    "style": "Märzen",
+    "abv": "5.3%",
+    "ibu": "16",
+    "description": "Marzen style lager.  Low temp fermented and slow conditioned to produce a rich caramel German lager.  Festive spiciness and herbal notes from Saaz hop varieties, best enjoyed in an East Troy Brewery Stein.",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Weiss Guy",
     "url": "https://untappd.com/b/east-troy-brewery-weiss-guy/6823701",
     "style": "Wheat Beer - Hefeweizen",
@@ -28,28 +50,6 @@
     "abv": "5.2%",
     "ibu": "18",
     "description": "Translation: \"Crazy Gold\".  This Mexican Lager was brewed with maximum thirst quenching ability and built to satisfy your taste buds.  Try it with a lime!",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "Citrus Seltzer",
-    "url": "https://untappd.com/b/east-troy-brewery-citrus-seltzer/6853655",
-    "style": "Hard Seltzer",
-    "abv": "5%",
-    "ibu": "N/A",
-    "description": "",
     "prices": [
       {
         "size": "16oz Draft",
