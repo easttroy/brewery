@@ -1,5 +1,49 @@
 [
   {
+    "name": "Night Hawk Porter",
+    "url": "https://untappd.com/b/east-troy-brewery-night-hawk-porter/7012386",
+    "style": "Porter - American",
+    "abv": "6%",
+    "ibu": "37",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Midwest Classic",
+    "url": "https://untappd.com/b/east-troy-brewery-midwest-classic/7012006",
+    "style": "IPA - American",
+    "abv": "6.5%",
+    "ibu": "60",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
     "name": "Oktoberfest",
     "url": "https://untappd.com/b/east-troy-brewery-oktoberfest-2025/6376469",
     "style": "Märzen",
