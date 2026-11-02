@@ -106,7 +106,7 @@ export default function VisitUs() {
 							<h4 className="text-etbrew-gold mb-1 font-bold tracking-wider uppercase">
 								Monday
 							</h4>
-							<p>4pm - 8pm</p>
+							<p>11:30am - 8pm</p>
 						</div>
 
 						<div className="border-t border-stone-100 pt-4">
@@ -120,9 +120,9 @@ export default function VisitUs() {
 							<h4 className="text-etbrew-teal mb-1 font-bold tracking-wider uppercase">
 								Wednesday & Thursday
 							</h4>
-							<p>Bar open 4pm - 9pm</p>
+							<p>Bar open 11:30am - 9pm</p>
 							<p className="text-stone-500">
-								Food service 4pm - 8pm
+								Food service 11:30am - 8pm
 							</p>
 						</div>
 
@@ -130,9 +130,9 @@ export default function VisitUs() {
 							<h4 className="text-etbrew-teal mb-1 font-bold tracking-wider uppercase">
 								Friday
 							</h4>
-							<p>Bar open 4pm - 10pm</p>
+							<p>Bar open 11:30am - 10pm</p>
 							<p className="text-stone-500">
-								Food Service 4pm - 9pm
+								Food Service 11:30am - 9pm
 							</p>
 						</div>
 

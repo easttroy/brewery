@@ -148,7 +148,7 @@ export default function Home() {
 									<h4 className="mb-1 font-bold underline">
 										Monday
 									</h4>
-									<p>4pm - 8pm</p>
+									<p>11:30am - 8pm</p>
 								</div>
 
 								<div className="border-l-4 border-stone-300 pl-4">
@@ -163,8 +163,8 @@ export default function Home() {
 										Wednesday and Thursday
 									</h4>
 									<div className="flex gap-8">
-										<p>Bar open 4pm - 9pm</p>
-										<p>Food service 4pm - 8pm</p>
+										<p>Bar open 11:30am - 9pm</p>
+										<p>Food service 11:30am - 8pm</p>
 									</div>
 								</div>
 
@@ -173,8 +173,8 @@ export default function Home() {
 										Friday
 									</h4>
 									<div className="flex gap-8">
-										<p>Bar open 4pm - 10pm</p>
-										<p>Food Service 4pm - 9pm</p>
+										<p>Bar open 11:30am - 10pm</p>
+										<p>Food Service 11:30am - 9pm</p>
 									</div>
 								</div>
 

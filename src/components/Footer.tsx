@@ -80,23 +80,23 @@ export default function Footer() {
 							<span className="mb-1 block font-bold text-white">
 								Monday
 							</span>
-							4pm - 8pm
+							11:30am - 8pm
 						</li>
 						<li>
 							<span className="mb-1 block font-bold text-white">
 								Wednesday & Thursday
 							</span>
-							Bar: 4pm - 9pm
+							Bar: 11:30am - 9pm
 							<br />
-							Food: 4pm - 8pm
+							Food: 11:30am - 8pm
 						</li>
 						<li>
 							<span className="mb-1 block font-bold text-white">
 								Friday
 							</span>
-							Bar: 4pm - 10pm
+							Bar: 11:30am - 10pm
 							<br />
-							Food: 4pm - 9pm
+							Food: 11:30am - 9pm
 						</li>
 						<li>
 							<span className="mb-1 block font-bold text-white">

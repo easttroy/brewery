@@ -89,6 +89,12 @@ export default function FoodMenu() {
 						</div>
 					))}
 
+					{/* Menu Disclaimers & Notes */}
+					<div className="mt-16 border-t border-stone-200 pt-8 text-center text-xs text-stone-500 space-y-1">
+						<p>*Please notify your server of any food allergies.</p>
+						<p>**An 18% gratuity will be added to parties of 8 or more.</p>
+					</div>
+
 				</div>
 			</section>
 		</div>
