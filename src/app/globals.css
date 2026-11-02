@@ -1,19 +1,34 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-etbrew-gold: #c4a424;
-  --color-etbrew-teal: #4bb6c3;
-  --color-etbrew-slate: #54565b;
-  --font-serif: var(--font-averia), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-display: var(--font-marmelad), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--color-etbrew-gold: #ad8c1a;
+	--color-etbrew-gold-bright: #d4b233;
+	--color-etbrew-gold-hover: #8f7313;
+	--color-etbrew-teal: #3d9ca8;
+	--color-etbrew-slate: #54565b;
+	--font-serif:
+		var(--font-averia), ui-serif, Georgia, Cambria, "Times New Roman",
+		Times, serif;
+	--font-sans:
+		var(--font-open-sans), ui-sans-serif, system-ui, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+}
+
+:root {
+	--header-height: 104px;
 }
 
 body {
-  font-family: var(--font-sans);
+	font-family: var(--font-sans);
 }
 
 @keyframes attention-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.07); }
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.07);
+	}
 }

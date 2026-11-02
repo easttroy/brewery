@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Averia_Serif_Libre, Marmelad, Open_Sans } from "next/font/google";
+import { Averia_Serif_Libre, Open_Sans } from "next/font/google";
 import "./globals.css";
 
 const averia = Averia_Serif_Libre({
 	weight: ["300", "400", "700"],
 	variable: "--font-averia",
-	subsets: ["latin"],
-});
-
-const marmelad = Marmelad({
-	weight: "400",
-	variable: "--font-marmelad",
 	subsets: ["latin"],
 });
 
@@ -64,7 +58,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${averia.variable} ${marmelad.variable} ${openSans.variable} flex min-h-screen flex-col bg-stone-50 font-sans text-stone-800 antialiased`}
+				className={`${averia.variable} ${openSans.variable} flex min-h-screen flex-col bg-stone-50 font-sans text-stone-800 antialiased`}
 			>
 				<Header />
 				<main className="flex-grow">{children}</main>

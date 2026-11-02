@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
 	title: "SMS Alerts",
@@ -9,25 +10,15 @@ export const metadata: Metadata = {
 export default function SMSAlerts() {
 	return (
 		<div className="flex min-h-screen flex-col bg-stone-50">
-			{/* Page Header */}
-			<section className="border-etbrew-gold relative border-b-8 bg-stone-900 px-4 py-24 text-center text-white">
-				<div className="relative z-20 mx-auto max-w-4xl">
-					<h1 className="mb-6 font-serif text-5xl tracking-wider uppercase md:text-6xl">
-						SMS Alerts
-					</h1>
-					<div className="bg-etbrew-gold mx-auto mb-6 h-1 w-24"></div>
-					<p className="mx-auto max-w-2xl font-sans text-xl">
-						Stay in the loop.
-					</p>
-				</div>
-			</section>
+			<PageHeader title="SMS Alerts" subtitle="Stay in the loop." />
 
 			{/* Content */}
-			<section className="mx-auto flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-4 py-32 text-center">
-				<div className="border-etbrew-gold w-full rounded-sm border-t-8 bg-white p-12 shadow-2xl md:p-16">
-					<h2 className="mb-6 font-serif text-3xl tracking-wide text-stone-800 uppercase">
+			<section className="mx-auto flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-4 py-20 text-center sm:py-28">
+				<div className="border-etbrew-gold w-full rounded-xs border-t-4 bg-white p-8 shadow-lg sm:p-12 md:p-16">
+					<h2 className="mb-4 font-serif text-3xl tracking-wide text-stone-800 uppercase">
 						Sign up for SMS alerts
 					</h2>
+					<div className="bg-etbrew-gold/70 mx-auto mb-6 h-0.5 w-12" />
 					<p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-stone-600">
 						Get the latest news on special beer releases, taproom
 						events, and exclusive discounts, delivered straight to

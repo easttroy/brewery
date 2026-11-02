@@ -3,6 +3,9 @@
 import { useEffect, useLayoutEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
+const BG_PLAYBACK_RATE = 0.5;
+const BG_START_TIME = 8;
+
 export default function HeroVideo() {
 	// ─── Refs ───────────────────────────────────────────────────────────────
 	const bgVideoRef = useRef<HTMLVideoElement>(null);
@@ -15,6 +18,7 @@ export default function HeroVideo() {
 	// videoStartedRef — avoids stale closure issues inside the timeupdate
 	// handler that confirms actual sustained playback.
 	const videoStartedRef = useRef(false);
+	const initialSeekDoneRef = useRef(false);
 	const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
 	// ─── State ──────────────────────────────────────────────────────────────
@@ -48,6 +52,7 @@ export default function HeroVideo() {
 			userWantsPlayingRef.current = false;
 		} else {
 			video.muted = true;
+			video.playbackRate = BG_PLAYBACK_RATE;
 			video.play().catch(() => {});
 			userWantsPlayingRef.current = true;
 		}
@@ -78,7 +83,11 @@ export default function HeroVideo() {
 	// useLayoutEffect runs synchronously after DOM mutations but before paint,
 	// giving us the best chance of being ahead of Safari's autoplay check.
 	useLayoutEffect(() => {
-		if (bgVideoRef.current) bgVideoRef.current.muted = true;
+		if (bgVideoRef.current) {
+			bgVideoRef.current.muted = true;
+			bgVideoRef.current.defaultPlaybackRate = BG_PLAYBACK_RATE;
+			bgVideoRef.current.playbackRate = BG_PLAYBACK_RATE;
+		}
 	}, []);
 
 
@@ -102,6 +111,12 @@ export default function HeroVideo() {
 		if (prefersReducedMotion || saveData) return;
 
 		video.muted = true;
+		video.defaultPlaybackRate = BG_PLAYBACK_RATE;
+		video.playbackRate = BG_PLAYBACK_RATE;
+		if (video.readyState >= 1 && !initialSeekDoneRef.current) {
+			initialSeekDoneRef.current = true;
+			video.currentTime = BG_START_TIME;
+		}
 		userWantsPlayingRef.current = true;
 		if (video.paused) {
 			video.play().catch(() => {
@@ -158,16 +173,23 @@ export default function HeroVideo() {
 		if (!video) return;
 
 		const handleTimeUpdate = () => {
-			// Confirm the video has genuinely been playing before revealing controls.
-			if (!videoStartedRef.current && video.currentTime > 0.5) {
+			// Confirm the video has genuinely been playing past BG_START_TIME before revealing.
+			if (
+				!videoStartedRef.current &&
+				initialSeekDoneRef.current &&
+				!video.paused &&
+				video.currentTime >= BG_START_TIME + 0.5 * BG_PLAYBACK_RATE
+			) {
 				videoStartedRef.current = true;
 				setVideoStarted(true);
 				showControls();
 			}
 
 			// Loop crossfade.
-			if (video.duration && userWantsPlayingRef.current) {
-				setLoopFading(video.duration - video.currentTime < 0.8);
+			if (video.duration && userWantsPlayingRef.current && !video.seeking) {
+				setLoopFading(
+					video.duration - video.currentTime < 0.8 * BG_PLAYBACK_RATE,
+				);
 			}
 		};
 
@@ -289,15 +311,32 @@ export default function HeroVideo() {
 					ref={bgVideoRef}
 					autoPlay
 					muted
-					loop
 					playsInline
 					preload="auto"
 					poster="/images/backgrounds/brewery-filled.jpg"
 					className="absolute inset-0 z-[2] h-full w-full object-cover object-center"
 					style={{ opacity: videoOpacity, transition: "opacity 0.6s ease" }}
-					onPlaying={() => {
+					onLoadedMetadata={(e) => {
+						const video = e.currentTarget;
+						video.defaultPlaybackRate = BG_PLAYBACK_RATE;
+						video.playbackRate = BG_PLAYBACK_RATE;
+						if (!initialSeekDoneRef.current) {
+							initialSeekDoneRef.current = true;
+							video.currentTime = BG_START_TIME;
+						}
+					}}
+					onPlaying={(e) => {
+						e.currentTarget.playbackRate = BG_PLAYBACK_RATE;
 						setIsPlaying(true);
 						setLoopFading(false);
+					}}
+					onEnded={(e) => {
+						const video = e.currentTarget;
+						video.currentTime = BG_START_TIME;
+						video.playbackRate = BG_PLAYBACK_RATE;
+						if (userWantsPlayingRef.current) {
+							video.play().catch(() => {});
+						}
 					}}
 					onPause={() => setIsPlaying(false)}
 					onError={() => setVideoError(true)}

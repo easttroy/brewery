@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import MenuTabs from "@/components/MenuTabs";
+import PageHeader from "@/components/PageHeader";
 import AgeGate from "@/components/AgeGate";
 import menuCategoriesRaw from "@/data/cocktails.json";
 
@@ -34,101 +35,109 @@ export default function CocktailMenu() {
 	return (
 		<div className="flex min-h-screen flex-col bg-stone-50">
 			<AgeGate />
-			{/* Page Header */}
-			<section className="border-etbrew-gold border-b-8 bg-stone-900 px-4 py-20 text-center text-white">
-				<h1 className="font-serif text-5xl tracking-wider uppercase">
-					Menus
-				</h1>
-			</section>
+			<PageHeader title="Menus" eyebrow="Scratch Kitchen & Taproom" />
 
 			{/* Menu Content */}
-			<section className="mx-auto w-full max-w-5xl px-4 py-20">
-				<div className="border-etbrew-gold border-t-4 bg-white px-8 pt-0 pb-8 shadow-xl md:px-16 md:pt-0 md:pb-16">
+			<section className="mx-auto w-full max-w-5xl px-4 py-12 sm:py-20">
+				<div className="border-etbrew-gold rounded-xs border-t-4 bg-white px-6 pt-0 pb-10 shadow-lg sm:px-8 md:px-16 md:pb-16">
 					<MenuTabs />
 
 					{menuCategories.map((category, index) => (
-						<div key={index}>
-							<h2
+						<div key={category.title}>
+							<div
 								id={
 									index === 0
 										? "menu"
 										: category.title
-											.toLowerCase()
-											.replace(/[^a-z0-9]+/g, "-")
+												.toLowerCase()
+												.replace(/[^a-z0-9]+/g, "-")
 								}
-								className={`border-b border-stone-200 pb-6 text-center font-serif text-3xl tracking-wide text-stone-800 uppercase ${index === 0
-									? "mb-12 scroll-mt-[200px]"
-									: "mt-20 mb-12"
-									}`}
+								className={`text-center ${
+									index === 0
+										? "mb-12 scroll-mt-[200px]"
+										: "mt-20 mb-12"
+								}`}
 							>
-								{category.title}
-							</h2>
+								<h2 className="font-serif text-3xl tracking-wide text-stone-800 uppercase">
+									{category.title}
+								</h2>
+								<div className="bg-etbrew-gold/70 mx-auto mt-3 h-0.5 w-12" />
+							</div>
 
 							{category.subcategories ? (
-								<div className={`grid grid-cols-1 gap-x-12 gap-y-10 ${category.isGrid3 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"}`}>
-									{category.subcategories.map((sub, subIndex) => (
-										<div key={subIndex}>
-											<div className="mb-2 flex items-baseline justify-between border-b border-stone-100 pb-1">
-												<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
-													{sub.title}
-												</h3>
-											</div>
-											{sub.items ? (
-												sub.items.map((item, itemIndex) => (
-													<div className="mt-4" key={itemIndex}>
-														<div className="mb-2 flex items-baseline justify-between">
-															<h4 className="font-sans text-lg font-bold text-stone-800">
+								<div
+									className={`grid grid-cols-1 gap-x-12 gap-y-10 ${
+										category.isGrid3
+											? "md:grid-cols-2 lg:grid-cols-3"
+											: "md:grid-cols-2"
+									}`}
+								>
+									{category.subcategories.map((sub) => (
+										<div key={sub.title}>
+											<h3 className="text-etbrew-teal mb-4 border-b border-stone-200 pb-2 font-serif text-xl font-bold tracking-wider uppercase">
+												{sub.title}
+											</h3>
+											<div className="space-y-6">
+												{sub.items?.map((item) => (
+													<div key={item.name}>
+														<div className="flex items-baseline justify-between gap-4 border-b border-dotted border-stone-300 pb-1.5">
+															<h4 className="font-sans text-lg leading-snug font-bold text-stone-800">
 																{item.name}
 															</h4>
 															{item.price && (
-																<span className="text-etbrew-gold font-bold">
+																<span className="text-etbrew-gold shrink-0 font-serif text-base font-bold">
 																	{item.price}
 																</span>
 															)}
 														</div>
 														{item.description && (
-															<p className="text-stone-600">
-																{item.description}
+															<p className="mt-2 text-sm text-stone-600 italic">
+																{
+																	item.description
+																}
 															</p>
 														)}
 													</div>
-												))
-											) : (
-												<p className="text-stone-600 mt-2">
-												</p>
-											)}
+												))}
+											</div>
 										</div>
 									))}
 								</div>
 							) : (
-								<div className={`grid grid-cols-1 gap-x-12 gap-y-10 ${category.isGrid3 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"}`}>
-									{category.items?.map((item, itemIndex) => (
-										<div key={itemIndex}>
+								<div
+									className={`grid grid-cols-1 gap-x-12 gap-y-9 ${
+										category.isGrid3
+											? "md:grid-cols-2 lg:grid-cols-3"
+											: "md:grid-cols-2"
+									}`}
+								>
+									{category.items?.map((item) => (
+										<div key={item.name}>
 											{item.isSimple ? (
 												<>
-													<h3 className="mb-2 border-b border-stone-100 pb-1 font-sans text-xl font-bold text-stone-800 uppercase">
+													<h3 className="mb-2 border-b border-stone-200 pb-1.5 font-sans text-lg font-bold tracking-wide text-stone-800 uppercase">
 														{item.name}
 													</h3>
 													{item.description && (
-														<p className="text-stone-600">
+														<p className="text-sm leading-relaxed text-stone-600">
 															{item.description}
 														</p>
 													)}
 												</>
 											) : (
 												<>
-													<div className="mb-2 flex items-baseline justify-between">
-														<h3 className="font-sans text-xl font-bold text-stone-800 uppercase">
+													<div className="flex items-baseline justify-between gap-4 border-b border-dotted border-stone-300 pb-1.5">
+														<h3 className="font-sans text-lg leading-snug font-bold tracking-wide text-stone-800 uppercase">
 															{item.name}
 														</h3>
 														{item.price && (
-															<span className="text-etbrew-gold font-bold">
+															<span className="text-etbrew-gold shrink-0 font-serif text-lg font-bold">
 																{item.price}
 															</span>
 														)}
 													</div>
 													{item.description && (
-														<p className="text-stone-600">
+														<p className="mt-2.5 text-sm leading-relaxed text-stone-600">
 															{item.description}
 														</p>
 													)}

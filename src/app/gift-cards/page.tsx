@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Button from "@/components/Button";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
 	title: "Gift Cards",
@@ -9,25 +10,18 @@ export const metadata: Metadata = {
 export default function GiftCards() {
 	return (
 		<div className="flex min-h-screen flex-col bg-stone-50">
-			{/* Page Header */}
-			<section className="border-etbrew-gold relative border-b-8 bg-stone-900 px-4 py-24 text-center text-white">
-				<div className="relative z-20 mx-auto max-w-4xl">
-					<h1 className="mb-6 font-serif text-5xl tracking-wider uppercase md:text-6xl">
-						Gift Cards
-					</h1>
-					<div className="bg-etbrew-gold mx-auto mb-6 h-1 w-24"></div>
-					<p className="mx-auto max-w-2xl font-sans text-xl">
-						Thinking of you, and also me, and also beer.
-					</p>
-				</div>
-			</section>
+			<PageHeader
+				title="Gift Cards"
+				subtitle="Thinking of you, and also me, and also beer."
+			/>
 
 			{/* Content */}
-			<section className="mx-auto flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-4 py-32 text-center">
-				<div className="border-etbrew-teal w-full rounded-sm border-t-8 bg-white p-12 shadow-2xl md:p-16">
-					<h2 className="mb-6 font-serif text-3xl tracking-wide text-stone-800 uppercase">
+			<section className="mx-auto flex w-full max-w-3xl flex-grow flex-col items-center justify-center px-4 py-20 text-center sm:py-28">
+				<div className="border-etbrew-teal w-full rounded-xs border-t-4 bg-white p-10 shadow-lg sm:p-12 md:p-16">
+					<h2 className="mb-4 font-serif text-3xl tracking-wide text-stone-800 uppercase">
 						Give the Gift of Great Beer
 					</h2>
+					<div className="bg-etbrew-gold/70 mx-auto mb-6 h-0.5 w-12" />
 					<p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-stone-600">
 						East Troy Brewery gift cards make the perfect gift for
 						the craft beer lover or foodie in your life. Physical
@@ -35,28 +29,28 @@ export default function GiftCards() {
 						send an e-gift card instantly via Toast.
 					</p>
 
-					<div className="mx-auto flex max-w-sm flex-col justify-center gap-6">
+					<div className="mx-auto flex max-w-sm flex-col justify-center gap-4">
 						<Button
 							href="https://www.toasttab.com/east-troy-brewery/giftcards?utmCampaign=onlineOrdering"
 							target="_blank"
 							variant="gold"
-							className="w-full py-4 text-lg"
+							className="w-full py-4 text-base sm:text-lg"
 						>
 							Purchase E-Gift Card
 						</Button>
 						<Button
 							href="/visit-us"
 							variant="outline"
-							className="w-full py-4 text-lg"
+							className="w-full py-4 text-base sm:text-lg"
 						>
 							Get Directions
 						</Button>
 					</div>
 
-					<p className="mt-12 text-sm text-stone-500 italic">
-						E-gift cards are processed securely through Toast.
-						They can be redeemed for food, beverages, and
-						merchandise at the brewery.
+					<p className="mt-10 text-sm text-stone-500 italic">
+						E-gift cards are processed securely through Toast. They
+						can be redeemed for food, beverages, and merchandise at
+						the brewery.
 					</p>
 				</div>
 			</section>

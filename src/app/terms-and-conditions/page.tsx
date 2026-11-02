@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
 	title: "Terms & Conditions",
@@ -8,17 +9,11 @@ export const metadata: Metadata = {
 export default function TermsAndConditions() {
 	return (
 		<div className="flex min-h-screen flex-col bg-stone-50">
-			{/* Page Header */}
-			<section className="border-etbrew-gold border-b-8 bg-stone-900 px-4 py-24 text-center text-white">
-				<h1 className="mb-6 font-serif text-5xl tracking-wider uppercase md:text-6xl">
-					Terms &amp; Conditions
-				</h1>
-				<div className="bg-etbrew-gold mx-auto h-1 w-24"></div>
-			</section>
+			<PageHeader title="Terms & Conditions" />
 
 			{/* Content */}
 			<section className="mx-auto w-full max-w-4xl px-4 py-20">
-				<div className="border-etbrew-gold prose prose-stone max-w-none border-t-4 bg-white p-8 shadow-xl md:p-16">
+				<div className="border-etbrew-gold prose prose-stone max-w-none rounded-xs border-t-4 bg-white p-8 shadow-lg md:p-16">
 					<p className="mb-8 text-sm text-stone-500 italic">
 						Last updated: February 22, 2026
 					</p>

@@ -18,14 +18,14 @@ export default function Button({
 	onClick,
 }: ButtonProps) {
 	const baseStyles =
-		"inline-block font-sans font-bold uppercase tracking-wider py-3 px-6 transition-all duration-300 text-sm text-center";
+		"inline-block rounded-xs font-sans font-bold uppercase tracking-wider py-3 px-6 transition-all duration-300 text-sm text-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-etbrew-gold focus-visible:ring-offset-2";
 
 	const variants = {
-		gold: "bg-etbrew-gold text-white hover:bg-[#a68c1c]",
+		gold: "bg-etbrew-gold text-white shadow-sm hover:bg-etbrew-gold-hover hover:shadow-md",
 		outline:
 			"border-2 border-etbrew-gold text-etbrew-gold hover:bg-etbrew-gold hover:text-white",
 		"outline-white":
-			"border-2 border-white text-white hover:bg-etbrew-gold hover:border-etbrew-gold hover:text-white",
+			"border-2 border-white/90 text-white hover:bg-etbrew-gold hover:border-etbrew-gold hover:text-white",
 		ghost: "text-stone-800 hover:text-etbrew-gold",
 	};
 

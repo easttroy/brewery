@@ -9,30 +9,33 @@ export default function MenuTabs() {
 	const tabs = [
 		{
 			name: "Food",
-			href: "/menus/food/"
+			href: "/menus/food/",
 		},
 		{
 			name: "Beers",
-			href: "/menus/drafts/"
+			href: "/menus/drafts/",
 		},
 		{
-			name: "Cocktails",
-			href: "/menus/cocktails/"
-		}
+			name: "Cocktails & More",
+			href: "/menus/cocktails/",
+		},
 	];
 
 	return (
-		<div className="xs:top-[99px] hide-scrollbar sticky top-[99px] z-40 -mx-4 mb-16 flex flex-nowrap justify-center gap-2 border-b-2 border-stone-200 bg-white/95 px-4 pt-0 pb-0 backdrop-blur-md sm:top-[104px] sm:-mx-8 sm:gap-4 sm:px-8 md:top-[104px] md:-mx-16 md:gap-8 md:px-16 xl:top-[120px]">
+		<div className="sticky top-[var(--header-height,104px)] z-40 -mx-6 mb-14 flex flex-nowrap justify-center gap-4 border-b border-stone-200 bg-white/95 px-4 backdrop-blur-md sm:-mx-8 sm:gap-8 sm:px-8 md:-mx-16 md:gap-12 md:px-16">
 			{tabs.map((tab) => {
-				const isActive = pathname?.includes(tab.href.replace(/\/$/, ""));
+				const isActive = pathname?.includes(
+					tab.href.replace(/\/$/, ""),
+				);
 				return (
 					<Link
 						key={tab.name}
 						href={`${tab.href}#menu`}
-						className={`-mb-[2px] border-b-4 px-1 py-3 text-center font-serif text-[14px] font-bold tracking-wide whitespace-nowrap uppercase transition-colors duration-200 sm:px-2 sm:text-sm md:py-4 md:text-xl ${isActive
-							? "border-etbrew-gold text-etbrew-gold"
-							: "border-transparent text-stone-500 hover:border-stone-300 hover:text-stone-800"
-							}`}
+						className={`-mb-px border-b-3 px-2 py-3.5 text-center font-serif text-sm font-bold tracking-wider whitespace-nowrap uppercase transition-colors duration-200 sm:px-3 sm:text-base md:py-4 md:text-lg ${
+							isActive
+								? "border-etbrew-gold text-stone-900"
+								: "border-transparent text-stone-500 hover:border-stone-300 hover:text-stone-800"
+						}`}
 					>
 						{tab.name}
 					</Link>

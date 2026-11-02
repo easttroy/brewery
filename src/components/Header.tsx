@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
+import SocialLinks from "./SocialLinks";
 
 export default function Header({
 	transparent = false,
@@ -10,6 +11,26 @@ export default function Header({
 	transparent?: boolean;
 }) {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const headerRef = useRef<HTMLElement>(null);
+
+	// Keep --header-height synced with actual sticky header height so secondary
+	// sticky elements (like MenuTabs) dock flush without pixel guesswork.
+	useEffect(() => {
+		const el = headerRef.current;
+		if (!el) return;
+
+		const updateHeight = () => {
+			document.documentElement.style.setProperty(
+				"--header-height",
+				`${el.offsetHeight}px`,
+			);
+		};
+
+		updateHeight();
+		const observer = new ResizeObserver(updateHeight);
+		observer.observe(el);
+		return () => observer.disconnect();
+	}, []);
 
 	// Close the mobile menu automatically when navigating
 	const closeMenu = () => setIsMobileMenuOpen(false);
@@ -21,24 +42,24 @@ export default function Header({
 	// Dynamic classes based on solid state
 	const headerClass = transparent
 		? "absolute top-0 left-0 w-full z-50"
-		: "bg-white shadow-md sticky top-0 w-full z-50";
-	const navLinkClass = isSolid
-		? "text-stone-800 hover:text-etbrew-gold"
-		: "text-white hover:text-etbrew-gold";
+		: "bg-white/98 backdrop-blur-sm shadow-sm border-b border-stone-200/80 sticky top-0 w-full z-50";
+	const navLinkClass = isSolid ? "text-stone-800" : "text-white";
 	const topBarClass = transparent
 		? "bg-transparent text-white border-b border-white/20"
 		: "bg-etbrew-gold text-white";
 	const logoTextClass = isSolid ? "text-stone-800" : "text-white";
 
 	return (
-		<header className={headerClass}>
+		<header ref={headerRef} className={headerClass}>
 			{/* Top Bar */}
 			<div
-				className={`${topBarClass} relative z-50 flex items-center justify-between px-4 py-2 font-sans text-xs transition-colors sm:text-sm md:px-8`}
+				className={`${topBarClass} relative z-50 flex items-center justify-between px-4 py-2 font-sans text-xs font-medium tracking-wide transition-colors sm:text-sm md:px-8`}
 			>
-				<div className="flex gap-2 sm:gap-4">
-					<span>2905 Main St, East Troy, WI</span>
-					<span className="hidden md:inline">|</span>
+				<div className="flex items-center gap-2 sm:gap-4">
+					<Link href="/visit-us" className="hover:underline">
+						2905 Main St, East Troy, WI
+					</Link>
+					<span className="hidden opacity-60 sm:inline">|</span>
 					<a
 						href="tel:2626422670"
 						className="hidden border-none hover:underline sm:inline"
@@ -53,54 +74,11 @@ export default function Header({
 					>
 						SMS Alerts
 					</Link>
-					<span className="hidden md:inline">|</span>
-					<div className="hidden items-center gap-3 md:flex">
-						<a
-							href="https://www.facebook.com/ETBrew/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-opacity hover:opacity-75"
-							aria-label="Facebook"
-						>
-							<svg
-								className="h-5 w-5"
-								fill="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-							</svg>
-						</a>
-						<a
-							href="https://www.instagram.com/easttroybrewery/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-opacity hover:opacity-75"
-							aria-label="Instagram"
-						>
-							<svg
-								className="h-5 w-5"
-								fill="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-							</svg>
-						</a>
-						<a
-							href="https://untappd.com/EastTroyBrewery"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="transition-opacity hover:opacity-75"
-							aria-label="Untappd"
-						>
-							<svg
-								className="h-5 w-5"
-								fill="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path d="M11.655 4.36l.6-1.2c.3-.5.1-1.1-.4-1.4l-1.5-.8c-.5-.3-1.1-.1-1.4.4l-.6 1.2 3.3 1.8zm4.308 2.39l.6-1.2c.3-.5.1-1.1-.4-1.4l-1.5-.8c-.5-.3-1.1-.1-1.4.4l-.6 1.2 3.3 1.8zM17.2 9.6l-4.2-2.3-1.2 2.3c-.7 1.3-2.2 2.1-3.7 2.1-.5 0-.9-.1-1.4-.2-1.9-.7-3-2.7-2.5-4.7l.1-.3-2.8-1.5c-.5-.3-.7-.9-.4-1.4.3-.5.9-.7 1.4-.4l2.8 1.5.1-.1c.8-1.2 2.2-1.9 3.6-1.7l1.2-2.3L6.5 0C5 .8 4.4 2.6 5 4.1l-3.1 5.9c-1.4 2.7-.4 6 2.3 7.4l3.8 2.1c2.7 1.4 6 .4 7.4-2.3l3.1-5.9c.8-1.5.1-3.3-1.3-3.7zm.6 3.1l-3.1 5.9c-1 1.9-3.3 2.7-5.3 1.7l-3.8-2.1c-1.9-1-2.7-3.3-1.7-5.3l3.1-5.9c.4-.7 1-1.2 1.7-1.5l-1.1 2.1c-.3.5-.1 1.1.4 1.4.2.1.3.1.5.1.4 0 .7-.2.9-.5l1.1-2.1c.9.1 1.7.7 2.1 1.5l-1.1 2.1c-.3.5-.1 1.1.4 1.4.2.1.3.1.5.1.4 0 .7-.2.9-.5l1.1-2.1c.6.6.8 1.5.4 2.7z" />
-							</svg>
-						</a>
-					</div>
+					<span className="hidden opacity-60 md:inline">|</span>
+					<SocialLinks
+						className="hidden items-center gap-3.5 md:flex"
+						iconClassName="h-4 w-4"
+					/>
 				</div>
 			</div>
 
@@ -111,16 +89,19 @@ export default function Header({
 				<Link
 					href="/"
 					onClick={closeMenu}
-					className={`font-serif text-xl sm:text-2xl md:text-3xl leading-9 tracking-widest uppercase whitespace-nowrap ${logoTextClass}`}
+					className={`hover:text-etbrew-gold font-serif text-xl leading-9 tracking-widest whitespace-nowrap uppercase transition-colors sm:text-2xl md:text-3xl ${logoTextClass}`}
 				>
 					East Troy Brewery
 				</Link>
 
 				{/* Desktop Nav */}
 				<nav
-					className={`hidden items-center gap-6 font-sans text-sm font-bold tracking-wider xl:flex ${navLinkClass}`}
+					className={`hidden items-center gap-5 font-sans text-xs font-bold tracking-wider xl:flex 2xl:gap-6 2xl:text-sm ${navLinkClass}`}
 				>
-					<Link href="/" className="py-4 transition-colors">
+					<Link
+						href="/"
+						className="hover:text-etbrew-gold py-4 transition-colors"
+					>
 						HOME
 					</Link>
 
@@ -128,11 +109,11 @@ export default function Header({
 					<div className="group relative">
 						<Link
 							href="/menus"
-							className="flex items-center gap-1 py-4 transition-colors"
+							className="hover:text-etbrew-gold flex items-center gap-1 py-4 transition-colors"
 						>
 							MENUS
 							<svg
-								className="h-4 w-4"
+								className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -147,24 +128,24 @@ export default function Header({
 						</Link>
 						{/* Wrapper with padding top (pt-2) to bridge the hover gap */}
 						<div className="absolute top-full left-0 z-50 hidden min-w-[200px] pt-2 group-hover:block">
-							<div className="border-etbrew-gold flex flex-col overflow-hidden rounded-b border-t-4 bg-white text-stone-800 shadow-xl">
+							<div className="border-etbrew-gold flex flex-col overflow-hidden rounded-b-xs border-t-4 bg-white text-sm text-stone-800 shadow-xl ring-1 ring-black/5">
 								<Link
 									href="/menus/food"
-									className="border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-100"
+									className="hover:text-etbrew-gold border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-50"
 								>
 									Food
 								</Link>
 								<Link
 									href="/menus/drafts"
-									className="border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-100"
+									className="hover:text-etbrew-gold border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-50"
 								>
 									Beers
 								</Link>
 								<Link
 									href="/menus/cocktails"
-									className="px-5 py-3 transition-colors hover:bg-stone-100"
+									className="hover:text-etbrew-gold px-5 py-3 transition-colors hover:bg-stone-50"
 								>
-									Cocktails & More
+									Cocktails &amp; More
 								</Link>
 							</div>
 						</div>
@@ -174,11 +155,11 @@ export default function Header({
 					<div className="group relative">
 						<Link
 							href="/events"
-							className="flex items-center gap-1 py-4 transition-colors"
+							className="hover:text-etbrew-gold flex items-center gap-1 py-4 transition-colors"
 						>
 							EVENTS
 							<svg
-								className="h-4 w-4"
+								className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -193,10 +174,10 @@ export default function Header({
 						</Link>
 						{/* Wrapper with padding top (pt-2) to bridge the hover gap */}
 						<div className="absolute top-full left-0 z-50 hidden min-w-[200px] pt-2 group-hover:block">
-							<div className="border-etbrew-gold flex flex-col overflow-hidden rounded-b border-t-4 bg-white text-stone-800 shadow-xl">
+							<div className="border-etbrew-gold flex flex-col overflow-hidden rounded-b-xs border-t-4 bg-white text-sm text-stone-800 shadow-xl ring-1 ring-black/5">
 								<Link
 									href="/events"
-									className="border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-100"
+									className="hover:text-etbrew-gold border-b border-stone-100 px-5 py-3 transition-colors hover:bg-stone-50"
 								>
 									Brewery Events
 								</Link>
@@ -204,7 +185,7 @@ export default function Header({
 									href="https://docs.google.com/forms/d/e/1FAIpQLSeVM75ot-3YXXhFJKE7BeR_CL4aJFr715Nuh2JeqTq7oh_yfQ/viewform"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="px-5 py-3 transition-colors hover:bg-stone-100"
+									className="hover:text-etbrew-gold px-5 py-3 transition-colors hover:bg-stone-50"
 								>
 									Private Parties
 								</a>
@@ -212,22 +193,35 @@ export default function Header({
 						</div>
 					</div>
 
-					<Link href="/mug-club" className="py-4 transition-colors">
+					<Link
+						href="/mug-club"
+						className="hover:text-etbrew-gold py-4 transition-colors"
+					>
 						MUG CLUB
 					</Link>
-					<Link href="/about" className="py-4 transition-colors">
+					<Link
+						href="/about"
+						className="hover:text-etbrew-gold py-4 transition-colors"
+					>
 						ABOUT US
 					</Link>
 					<Link
 						href="/gift-cards"
-						className="py-4 transition-colors"
+						className="hover:text-etbrew-gold py-4 transition-colors"
 					>
 						GIFT CARDS
+					</Link>
+					<Link
+						href="/visit-us"
+						className="hover:text-etbrew-gold py-4 transition-colors"
+					>
+						VISIT US
 					</Link>
 					<Button
 						href="https://www.toasttab.com/east-troy-brewery/v3"
 						target="_blank"
 						variant="gold"
+						className="ml-1 px-5 py-2.5 text-xs 2xl:px-6 2xl:py-3 2xl:text-sm"
 					>
 						Order Online
 					</Button>
@@ -235,9 +229,10 @@ export default function Header({
 
 				{/* Mobile Hamburger Button */}
 				<button
-					className={`transition-colors xl:hidden ${logoTextClass}`}
+					className={`cursor-pointer p-1 transition-colors xl:hidden ${logoTextClass}`}
 					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 					aria-label="Toggle menu"
+					aria-expanded={isMobileMenuOpen}
 				>
 					<svg
 						className="h-8 w-8"
@@ -266,7 +261,7 @@ export default function Header({
 
 			{/* Mobile Navigation Menu Dropdown */}
 			{isMobileMenuOpen && (
-				<div className="border-etbrew-gold absolute top-full left-0 z-40 flex w-full flex-col border-t-4 bg-white font-sans text-sm font-bold tracking-wider text-stone-800 shadow-xl xl:hidden">
+				<div className="border-etbrew-gold absolute top-full left-0 z-40 flex max-h-[calc(100svh-var(--header-height,104px))] w-full flex-col overflow-y-auto border-t-4 bg-white font-sans text-sm font-bold tracking-wider text-stone-800 shadow-2xl xl:hidden">
 					<Link
 						href="/"
 						onClick={closeMenu}
@@ -275,8 +270,10 @@ export default function Header({
 						HOME
 					</Link>
 
-					<div className="border-b border-stone-100 bg-stone-50/50 px-6 py-4">
-						<div className="mb-2 text-xs text-stone-400">MENUS</div>
+					<div className="border-b border-stone-100 bg-stone-50/60 px-6 py-4">
+						<div className="mb-2.5 text-xs tracking-widest text-stone-400">
+							MENUS
+						</div>
 						<div className="flex flex-col gap-3 pl-4">
 							<Link
 								href="/menus/food"
@@ -297,13 +294,13 @@ export default function Header({
 								onClick={closeMenu}
 								className="hover:text-etbrew-gold"
 							>
-								Cocktails & More
+								Cocktails &amp; More
 							</Link>
 						</div>
 					</div>
 
-					<div className="border-b border-stone-100 bg-stone-50/50 px-6 py-4">
-						<div className="mb-2 text-xs text-stone-400">
+					<div className="border-b border-stone-100 bg-stone-50/60 px-6 py-4">
+						<div className="mb-2.5 text-xs tracking-widest text-stone-400">
 							EVENTS
 						</div>
 						<div className="flex flex-col gap-3 pl-4">
@@ -347,6 +344,13 @@ export default function Header({
 					>
 						GIFT CARDS
 					</Link>
+					<Link
+						href="/visit-us"
+						onClick={closeMenu}
+						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
+					>
+						VISIT US
+					</Link>
 
 					<div className="p-6">
 						<Button
@@ -357,6 +361,19 @@ export default function Header({
 						>
 							Order Online
 						</Button>
+
+						<div className="mt-6 flex items-center justify-between border-t border-stone-100 pt-5 text-xs font-medium text-stone-500">
+							<a
+								href="tel:2626422670"
+								className="hover:text-etbrew-gold font-semibold text-stone-700"
+							>
+								(262) 642-2670
+							</a>
+							<SocialLinks
+								className="flex items-center gap-4 text-stone-600"
+								iconClassName="h-5 w-5"
+							/>
+						</div>
 					</div>
 				</div>
 			)}
