@@ -13,43 +13,45 @@ export default function Home() {
 	return (
 		<div className="flex min-h-screen flex-col">
 			{/* Hero Section */}
-			<section className="border-etbrew-gold relative flex h-[68svh] min-h-[420px] items-center justify-center overflow-hidden border-b-4 bg-stone-900 md:h-[85svh] md:min-h-[600px]">
+			<section className="border-etbrew-gold relative flex h-[70svh] min-h-[480px] items-center justify-center overflow-hidden border-b-4 bg-stone-900 py-14 md:h-[85svh] md:min-h-[600px]">
 				<HeroVideo />
-				<div className="relative z-20 mx-auto mt-8 max-w-4xl px-4 text-center text-white">
-					<p className="text-etbrew-gold-bright mb-4 font-sans text-xs font-bold tracking-[0.28em] uppercase drop-shadow sm:text-sm">
+				<div className="relative z-20 mx-auto mt-6 max-w-4xl px-4 text-center text-white sm:mt-8">
+					<p className="text-etbrew-gold-bright mb-3 font-sans text-xs font-bold tracking-[0.26em] uppercase drop-shadow sm:mb-4 sm:text-sm">
 						Historic Village Square &bull; East Troy, WI
 					</p>
-					<h1 className="mx-auto mb-5 max-w-3xl font-serif text-4xl leading-tight tracking-wide uppercase drop-shadow-lg sm:text-5xl md:text-6xl">
+					<h1 className="mx-auto mb-4 max-w-3xl font-serif text-3xl leading-tight tracking-wide uppercase drop-shadow-lg sm:mb-5 sm:text-5xl md:text-6xl">
 						Handcrafted Pints &amp; Elevated Plates
 					</h1>
-					<p className="mx-auto mb-10 max-w-2xl font-sans text-lg text-stone-100 drop-shadow-md md:text-xl">
+					<p className="mx-auto mb-8 max-w-2xl font-sans text-base text-stone-100 drop-shadow-md sm:mb-10 sm:text-lg md:text-xl">
 						House-brewed beer, scratch-made comfort food, and a warm
 						taproom inside East Troy&apos;s historic 1892 bank
 						building.
 					</p>
 
-					<div className="flex flex-col justify-center gap-3.5 sm:flex-row sm:gap-4">
+					<div className="mx-auto flex max-w-md flex-col justify-center gap-3 sm:max-w-none sm:flex-row sm:gap-4">
 						<Button
 							href="/menus/food"
 							variant="gold"
-							className="px-8 py-4 text-base sm:text-lg"
+							className="px-8 py-3.5 text-base sm:py-4 sm:text-lg"
 						>
 							Food Menu
 						</Button>
-						<Button
-							href="/menus/drafts"
-							variant="outline-white"
-							className="px-8 py-4 text-base sm:text-lg"
-						>
-							Beer Menu
-						</Button>
-						<Button
-							href="/menus/cocktails"
-							variant="outline-white"
-							className="px-8 py-4 text-base sm:text-lg"
-						>
-							Cocktail Menu
-						</Button>
+						<div className="grid grid-cols-2 gap-3 sm:contents">
+							<Button
+								href="/menus/drafts"
+								variant="outline-white"
+								className="px-4 py-3.5 text-sm sm:px-8 sm:py-4 sm:text-lg"
+							>
+								Beer Menu
+							</Button>
+							<Button
+								href="/menus/cocktails"
+								variant="outline-white"
+								className="px-4 py-3.5 text-sm sm:px-8 sm:py-4 sm:text-lg"
+							>
+								Cocktail Menu
+							</Button>
+						</div>
 					</div>
 				</div>
 			</section>

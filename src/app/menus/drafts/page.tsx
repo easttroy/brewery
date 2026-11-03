@@ -23,7 +23,7 @@ export default function DrinkMenu() {
 
 					<div
 						id="menu"
-						className="mb-12 scroll-mt-[200px] text-center"
+						className="mb-12 scroll-mt-[calc(var(--header-height,59px)+4.5rem)] text-center"
 					>
 						<h2 className="font-serif text-3xl tracking-wide text-stone-800 uppercase">
 							Draft List

@@ -41,7 +41,7 @@ export default function AgeGate() {
 
 	return (
 		<div
-			className="fixed inset-0 z-50 flex items-center justify-center bg-stone-950/75 p-4 backdrop-blur-sm"
+			className="fixed inset-0 z-[70] flex items-center justify-center bg-stone-950/75 p-4 backdrop-blur-sm"
 			role="dialog"
 			aria-modal="true"
 			aria-labelledby="age-gate-title"

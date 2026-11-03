@@ -1,0 +1,16 @@
+{
+	"name": "East Troy Brewery",
+	"short_name": "ET Brew",
+	"description": "Handcrafted pints and elevated plates in the heart of historic East Troy, Wisconsin.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#fafaf9",
+	"theme_color": "#1c1917",
+	"icons": [
+		{
+			"src": "/icon.png",
+			"sizes": "640x640",
+			"type": "image/png"
+		}
+	]
+}

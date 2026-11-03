@@ -45,7 +45,7 @@ export default function FoodMenu() {
 								}
 								className={`text-center ${
 									index === 0
-										? "mb-10 scroll-mt-[200px]"
+										? "mb-10 scroll-mt-[calc(var(--header-height,59px)+4.5rem)]"
 										: "mt-20 mb-10"
 								}`}
 							>

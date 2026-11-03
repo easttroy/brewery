@@ -16,11 +16,22 @@
 }
 
 :root {
-	--header-height: 104px;
+	--header-height: 59px;
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--header-height: 104px;
+	}
 }
 
 body {
 	font-family: var(--font-sans);
+}
+
+a,
+button {
+	-webkit-tap-highlight-color: transparent;
 }
 
 @keyframes attention-pulse {

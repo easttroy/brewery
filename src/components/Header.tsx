@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { TOAST_ORDER_URL, useOrderingOpen } from "@/lib/ordering";
 import Button from "./Button";
 import SocialLinks from "./SocialLinks";
 
@@ -10,8 +11,8 @@ export default function Header({
 }: {
 	transparent?: boolean;
 }) {
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const headerRef = useRef<HTMLElement>(null);
+	const isOrderingOpen = useOrderingOpen();
 
 	// Keep --header-height synced with actual sticky header height so secondary
 	// sticky elements (like MenuTabs) dock flush without pixel guesswork.
@@ -32,17 +33,11 @@ export default function Header({
 		return () => observer.disconnect();
 	}, []);
 
-	// Close the mobile menu automatically when navigating
-	const closeMenu = () => setIsMobileMenuOpen(false);
+	const isSolid = !transparent;
 
-	// If the header is transparent (homepage hero) we use white text, UNLESS the mobile menu is open.
-	// If mobile menu is open, we force the nav base to be solid white so it matches the dropdown.
-	const isSolid = !transparent || isMobileMenuOpen;
-
-	// Dynamic classes based on solid state
 	const headerClass = transparent
 		? "absolute top-0 left-0 w-full z-50"
-		: "bg-white/98 backdrop-blur-sm shadow-sm border-b border-stone-200/80 sticky top-0 w-full z-50";
+		: "border-t-3 border-t-etbrew-gold lg:border-t-0 bg-white/95 backdrop-blur-md shadow-xs border-b border-b-stone-200/80 sticky top-0 w-full z-50 pt-[env(safe-area-inset-top)]";
 	const navLinkClass = isSolid ? "text-stone-800" : "text-white";
 	const topBarClass = transparent
 		? "bg-transparent text-white border-b border-white/20"
@@ -51,52 +46,82 @@ export default function Header({
 
 	return (
 		<header ref={headerRef} className={headerClass}>
-			{/* Top Bar */}
+			{/* Desktop Top Utility Bar */}
 			<div
-				className={`${topBarClass} relative z-50 flex items-center justify-between px-4 py-2 font-sans text-xs font-medium tracking-wide transition-colors sm:text-sm md:px-8`}
+				className={`${topBarClass} relative z-50 hidden items-center justify-between px-4 py-2 font-sans text-xs font-medium tracking-wide transition-colors lg:flex lg:px-8`}
 			>
-				<div className="flex items-center gap-2 sm:gap-4">
+				<div className="flex items-center gap-4">
 					<Link href="/visit-us" className="hover:underline">
 						2905 Main St, East Troy, WI
 					</Link>
-					<span className="hidden opacity-60 sm:inline">|</span>
+					<span className="opacity-60">|</span>
 					<a
 						href="tel:2626422670"
-						className="hidden border-none hover:underline sm:inline"
+						className="border-none hover:underline"
 					>
 						(262) 642-2670
 					</a>
 				</div>
-				<div className="flex items-center gap-2 sm:gap-4">
+				<div className="flex items-center gap-4">
 					<Link
 						href="/sms"
 						className="whitespace-nowrap hover:underline"
 					>
 						SMS Alerts
 					</Link>
-					<span className="hidden opacity-60 md:inline">|</span>
+					<span className="opacity-60">|</span>
 					<SocialLinks
-						className="hidden items-center gap-3.5 md:flex"
+						className="flex items-center gap-3.5"
 						iconClassName="h-4 w-4"
 					/>
 				</div>
 			</div>
 
-			{/* Main Navigation Bar */}
-			<div
-				className={`relative z-50 container mx-auto flex items-center justify-between px-4 py-4 transition-colors ${transparent && isMobileMenuOpen ? "bg-white" : ""}`}
-			>
+			{/* Main App / Navigation Bar */}
+			<div className="relative z-50 container mx-auto flex h-14 items-center justify-between px-4 lg:h-auto lg:py-4">
 				<Link
 					href="/"
-					onClick={closeMenu}
-					className={`hover:text-etbrew-gold font-serif text-xl leading-9 tracking-widest whitespace-nowrap uppercase transition-colors sm:text-2xl md:text-3xl ${logoTextClass}`}
+					className={`hover:text-etbrew-gold font-serif text-lg leading-none tracking-[0.14em] whitespace-nowrap uppercase transition-colors sm:text-xl lg:text-xl lg:leading-9 lg:tracking-widest xl:text-2xl 2xl:text-3xl ${logoTextClass}`}
 				>
 					East Troy Brewery
 				</Link>
 
+				{/* Mobile / Tablet Compact App Actions (paired with bottom MobileNav) */}
+				<div className="flex items-center gap-2 lg:hidden">
+					<a
+						href="tel:2626422670"
+						aria-label="Call East Troy Brewery"
+						className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/90 text-stone-600 transition-transform active:scale-95"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth={1.85}
+							className="h-4 w-4"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+							/>
+						</svg>
+					</a>
+					{isOrderingOpen && (
+						<a
+							href={TOAST_ORDER_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="bg-etbrew-gold hover:bg-etbrew-gold-hover rounded-xs px-3 py-1.5 font-sans text-[11px] font-bold tracking-wider text-white uppercase shadow-2xs transition-all active:scale-95"
+						>
+							Order
+						</a>
+					)}
+				</div>
+
 				{/* Desktop Nav */}
 				<nav
-					className={`hidden items-center gap-5 font-sans text-xs font-bold tracking-wider xl:flex 2xl:gap-6 2xl:text-sm ${navLinkClass}`}
+					className={`hidden items-center gap-4 font-sans text-xs font-bold tracking-wider lg:flex xl:gap-5 2xl:gap-6 2xl:text-sm ${navLinkClass}`}
 				>
 					<Link
 						href="/"
@@ -217,166 +242,18 @@ export default function Header({
 					>
 						VISIT US
 					</Link>
-					<Button
-						href="https://www.toasttab.com/east-troy-brewery/v3"
-						target="_blank"
-						variant="gold"
-						className="ml-1 px-5 py-2.5 text-xs 2xl:px-6 2xl:py-3 2xl:text-sm"
-					>
-						Order Online
-					</Button>
-				</nav>
-
-				{/* Mobile Hamburger Button */}
-				<button
-					className={`cursor-pointer p-1 transition-colors xl:hidden ${logoTextClass}`}
-					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-					aria-label="Toggle menu"
-					aria-expanded={isMobileMenuOpen}
-				>
-					<svg
-						className="h-8 w-8"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-					>
-						{isMobileMenuOpen ? (
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M6 18L18 6M6 6l12 12"
-							/>
-						) : (
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M4 6h16M4 12h16M4 18h16"
-							/>
-						)}
-					</svg>
-				</button>
-			</div>
-
-			{/* Mobile Navigation Menu Dropdown */}
-			{isMobileMenuOpen && (
-				<div className="border-etbrew-gold absolute top-full left-0 z-40 flex max-h-[calc(100svh-var(--header-height,104px))] w-full flex-col overflow-y-auto border-t-4 bg-white font-sans text-sm font-bold tracking-wider text-stone-800 shadow-2xl xl:hidden">
-					<Link
-						href="/"
-						onClick={closeMenu}
-						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
-					>
-						HOME
-					</Link>
-
-					<div className="border-b border-stone-100 bg-stone-50/60 px-6 py-4">
-						<div className="mb-2.5 text-xs tracking-widest text-stone-400">
-							MENUS
-						</div>
-						<div className="flex flex-col gap-3 pl-4">
-							<Link
-								href="/menus/food"
-								onClick={closeMenu}
-								className="hover:text-etbrew-gold"
-							>
-								Food
-							</Link>
-							<Link
-								href="/menus/drafts"
-								onClick={closeMenu}
-								className="hover:text-etbrew-gold"
-							>
-								Beers
-							</Link>
-							<Link
-								href="/menus/cocktails"
-								onClick={closeMenu}
-								className="hover:text-etbrew-gold"
-							>
-								Cocktails &amp; More
-							</Link>
-						</div>
-					</div>
-
-					<div className="border-b border-stone-100 bg-stone-50/60 px-6 py-4">
-						<div className="mb-2.5 text-xs tracking-widest text-stone-400">
-							EVENTS
-						</div>
-						<div className="flex flex-col gap-3 pl-4">
-							<Link
-								href="/events"
-								onClick={closeMenu}
-								className="hover:text-etbrew-gold"
-							>
-								Brewery Events
-							</Link>
-							<a
-								href="https://docs.google.com/forms/d/e/1FAIpQLSeVM75ot-3YXXhFJKE7BeR_CL4aJFr715Nuh2JeqTq7oh_yfQ/viewform"
-								target="_blank"
-								rel="noopener noreferrer"
-								onClick={closeMenu}
-								className="hover:text-etbrew-gold"
-							>
-								Private Parties
-							</a>
-						</div>
-					</div>
-
-					<Link
-						href="/mug-club"
-						onClick={closeMenu}
-						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
-					>
-						MUG CLUB
-					</Link>
-					<Link
-						href="/about"
-						onClick={closeMenu}
-						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
-					>
-						ABOUT US
-					</Link>
-					<Link
-						href="/gift-cards"
-						onClick={closeMenu}
-						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
-					>
-						GIFT CARDS
-					</Link>
-					<Link
-						href="/visit-us"
-						onClick={closeMenu}
-						className="border-b border-stone-100 px-6 py-4 hover:bg-stone-50"
-					>
-						VISIT US
-					</Link>
-
-					<div className="p-6">
+					{isOrderingOpen && (
 						<Button
-							href="https://www.toasttab.com/east-troy-brewery/v3"
+							href={TOAST_ORDER_URL}
 							target="_blank"
 							variant="gold"
-							className="w-full text-center"
+							className="ml-1 px-4 py-2.5 text-xs xl:px-5 2xl:px-6 2xl:py-3 2xl:text-sm"
 						>
 							Order Online
 						</Button>
-
-						<div className="mt-6 flex items-center justify-between border-t border-stone-100 pt-5 text-xs font-medium text-stone-500">
-							<a
-								href="tel:2626422670"
-								className="hover:text-etbrew-gold font-semibold text-stone-700"
-							>
-								(262) 642-2670
-							</a>
-							<SocialLinks
-								className="flex items-center gap-4 text-stone-600"
-								iconClassName="h-5 w-5"
-							/>
-						</div>
-					</div>
-				</div>
-			)}
+					)}
+				</nav>
+			</div>
 		</header>
 	);
 }

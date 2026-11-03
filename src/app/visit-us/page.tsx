@@ -33,9 +33,35 @@ export default function VisitUs() {
 							<p className="font-medium text-stone-800">
 								2905 Main St.
 							</p>
-							<p className="text-stone-600">
+							<p className="mb-4 text-stone-600">
 								East Troy, WI 53120
 							</p>
+							<a
+								href="https://maps.google.com/?q=East+Troy+Brewery+2905+Main+St+East+Troy+WI+53120"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="border-etbrew-gold text-etbrew-gold hover:bg-etbrew-gold inline-flex items-center gap-2 rounded-xs border-2 px-4 py-2 text-xs font-bold tracking-wider uppercase transition-colors hover:text-white"
+							>
+								<svg
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth={2}
+									className="h-4 w-4"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+									/>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+									/>
+								</svg>
+								Open in Maps
+							</a>
 						</div>
 
 						<div className="border-t border-stone-100 pt-5">

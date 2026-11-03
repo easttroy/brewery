@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Averia_Serif_Libre, Open_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -15,6 +15,14 @@ const openSans = Open_Sans({
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	viewportFit: "cover",
+	themeColor: "#1c1917",
+};
 
 export const metadata: Metadata = {
 	title: {
@@ -23,6 +31,12 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Modern-rustic brewery in East Troy, WI featuring handcrafted pints, elevated plates, and a historic atmosphere.",
+	manifest: "/manifest.webmanifest",
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: "default",
+		title: "ET Brew",
+	},
 	keywords: [
 		"brewery",
 		"East Troy",
@@ -58,11 +72,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${averia.variable} ${openSans.variable} flex min-h-screen flex-col bg-stone-50 font-sans text-stone-800 antialiased`}
+				className={`${averia.variable} ${openSans.variable} flex min-h-screen flex-col bg-stone-50 pb-[calc(4.5rem+env(safe-area-inset-bottom))] font-sans text-stone-800 antialiased lg:pb-0`}
 			>
 				<Header />
 				<main className="flex-grow">{children}</main>
 				<Footer />
+				<MobileNav />
 			</body>
 		</html>
 	);

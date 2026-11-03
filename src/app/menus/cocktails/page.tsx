@@ -54,7 +54,7 @@ export default function CocktailMenu() {
 								}
 								className={`text-center ${
 									index === 0
-										? "mb-12 scroll-mt-[200px]"
+										? "mb-12 scroll-mt-[calc(var(--header-height,59px)+4.5rem)]"
 										: "mt-20 mb-12"
 								}`}
 							>
