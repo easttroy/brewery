@@ -5,17 +5,20 @@
             {
                 "name": "Chips & Queso",
                 "price": "$10",
-                "description": "Tortilla chips served with authentic queso"
+                "description": "Tortilla chips served with authentic queso",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Hill Valley Cheese Curds",
                 "price": "$15",
-                "description": "Beer battered cheese curds served with zess pepper ranch and sun dried tomato aioli"
+                "description": "Beer battered cheese curds served with zess pepper ranch and sun dried tomato aioli",
+                "badges": ["House Favorite", "Vegetarian"]
             },
             {
                 "name": "Garlic Pretzel Bites",
                 "price": "$12",
-                "description": "Garlic butter, salt, parmesan, and Italian parsley, served with beer cheese"
+                "description": "Garlic butter, salt, parmesan, and Italian parsley, served with beer cheese",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Crispy Brussels Sprouts",
@@ -45,7 +48,8 @@
             {
                 "name": "House Salad",
                 "price": "$14",
-                "description": "Onion, tomato, fall mixed greens, your choice of dressing"
+                "description": "Onion, tomato, fall mixed greens, your choice of dressing",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Caesar Salad",
@@ -55,7 +59,8 @@
             {
                 "name": "Apple Arugula Salad",
                 "price": "$17",
-                "description": "Granny Smith apples, shallots, candied nuts, gorgonzola, and honey vinaigrette dressing"
+                "description": "Granny Smith apples, shallots, candied nuts, gorgonzola, and honey vinaigrette dressing",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Emerald Cobb",
@@ -65,17 +70,20 @@
             {
                 "name": "Southwest Salad",
                 "price": "$16",
-                "description": "Mixed greens, black beans, roasted corn, tomato, pickled red onion, bell pepper, avocado, queso fresco, chipotle ranch and cilantro lime dressings"
+                "description": "Mixed greens, black beans, roasted corn, tomato, pickled red onion, bell pepper, avocado, queso fresco, chipotle ranch and cilantro lime dressings",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Mediterranean Salad",
                 "price": "$16",
-                "description": "Arugula, tomato, pickled red onion, chickpeas, cucumber, olives, roasted red peppers, topped with feta and your choice of dressing"
+                "description": "Arugula, tomato, pickled red onion, chickpeas, cucumber, olives, roasted red peppers, topped with feta and your choice of dressing",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Caprese Salad",
                 "price": "$16",
-                "description": "Arugula, basil, fresh mozzarella, cherry tomato, balsamic glaze"
+                "description": "Arugula, basil, fresh mozzarella, cherry tomato, balsamic glaze",
+                "badges": ["Vegetarian"]
             }
         ]
     },
@@ -86,12 +94,14 @@
             {
                 "name": "Baked Mac & Cheese",
                 "price": "$13",
-                "description": "IPA white cheddar sauce, herb breadcrumbs\nAdd Chicken $5"
+                "description": "IPA white cheddar sauce, herb breadcrumbs\nAdd Chicken $5",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Short Rib Gnocchi",
                 "price": "$35",
-                "description": "Braised beef short rib, kale, baby carrots, gnocchi, demi glaze"
+                "description": "Braised beef short rib, kale, baby carrots, gnocchi, demi glaze",
+                "badges": ["House Favorite"]
             },
             {
                 "name": "Chicken Marsala",
@@ -131,32 +141,38 @@
             {
                 "name": "Say Cheese",
                 "price": "$18",
-                "description": "Red sauce, mozzarella, cheddar, and parmesan"
+                "description": "Red sauce, mozzarella, cheddar, and parmesan",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Caprese",
                 "price": "$20",
-                "description": "Red sauce, fresh mozzarella, tomato, basil, balsamic glaze"
+                "description": "Red sauce, fresh mozzarella, tomato, basil, balsamic glaze",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Spicy Pepperoni",
                 "price": "$20",
-                "description": "Red sauce, pepperoni, soppressata, fresh mozzarella, hot honey, red pepper flakes"
+                "description": "Red sauce, pepperoni, soppressata, fresh mozzarella, hot honey, red pepper flakes",
+                "badges": ["House Favorite"]
             },
             {
                 "name": "Bacon and Beer",
                 "price": "$20",
-                "description": "Beer sauce, mozzarella, cheddar, bacon, pancetta, and chives"
+                "description": "Beer sauce, mozzarella, cheddar, bacon, pancetta, and chives",
+                "badges": ["House Favorite"]
             },
             {
                 "name": "White Truffle Pear",
                 "price": "$24",
-                "description": "White sauce, fontina, pears, balsamic glaze, truffle oil, and arugula"
+                "description": "White sauce, fontina, pears, balsamic glaze, truffle oil, and arugula",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Wild Mushroom",
                 "price": "$21",
-                "description": "White sauce, fontina, wild mushrooms, truffle oil, parsley"
+                "description": "White sauce, fontina, wild mushrooms, truffle oil, parsley",
+                "badges": ["Vegetarian"]
             },
             {
                 "name": "Chicken Pesto",
@@ -177,7 +193,8 @@
             {
                 "name": "Brewery Burger",
                 "price": "$18",
-                "description": "Bacon-onion jam, gruyere cheese, arugula, tomato, and garlic aioli"
+                "description": "Bacon-onion jam, gruyere cheese, arugula, tomato, and garlic aioli",
+                "badges": ["House Favorite"]
             },
             {
                 "name": "The Deluxe",
@@ -197,7 +214,8 @@
             {
                 "name": "Hot Chicken Sandwich",
                 "price": "$18",
-                "description": "Buttermilk fried chicken with hot honey glaze, pickles, and jalapeno slaw"
+                "description": "Buttermilk fried chicken with hot honey glaze, pickles, and jalapeno slaw",
+                "badges": ["House Favorite"]
             },
             {
                 "name": "Chicken Parm Sandwich",
@@ -247,7 +265,7 @@
             {
                 "name": "Seasonal Cheesecake",
                 "price": "",
-                "description": "Locally-made seasonal cheesecakes — ask your server for today's featured selection."
+                "description": "Locally-made seasonal cheesecakes. Ask your server for today's featured selection."
             }
         ]
     },

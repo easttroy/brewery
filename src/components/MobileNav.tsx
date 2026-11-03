@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+import { useTaproomStatus } from "@/lib/hours";
 import { TOAST_ORDER_URL, useOrderingOpen } from "@/lib/ordering";
 import SocialLinks from "./SocialLinks";
 
@@ -19,6 +20,7 @@ export default function MobileNav() {
 	const pathname = usePathname();
 	const [isMoreOpen, setIsMoreOpen] = useState(false);
 	const isOrderingOpen = useOrderingOpen();
+	const taproomStatus = useTaproomStatus();
 
 	const closeMore = useCallback(() => setIsMoreOpen(false), []);
 
@@ -118,6 +120,46 @@ export default function MobileNav() {
 						</svg>
 					</button>
 				</div>
+
+				{/* Live Open / Closed Status Strip */}
+				{taproomStatus && (
+					<Link
+						href="/visit-us"
+						onClick={closeMore}
+						className={`mb-3.5 flex items-center justify-between rounded-xl border px-3.5 py-2.5 text-xs ${
+							taproomStatus.isOpen
+								? "border-emerald-700/20 bg-emerald-50/80 text-emerald-950"
+								: "border-stone-200/90 bg-white text-stone-700"
+						}`}
+					>
+						<div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+							<span
+								className={`inline-flex items-center gap-1.5 font-bold tracking-wider uppercase ${
+									taproomStatus.isOpen
+										? "text-emerald-800"
+										: "text-stone-700"
+								}`}
+							>
+								<span
+									aria-hidden="true"
+									className={`h-2 w-2 rounded-full ${
+										taproomStatus.isOpen
+											? "bg-emerald-500"
+											: "bg-stone-400"
+									}`}
+								/>
+								{taproomStatus.label}
+							</span>
+							<span aria-hidden="true" className="text-stone-300">
+								&bull;
+							</span>
+							<span className="text-stone-600">
+								{taproomStatus.detail}
+							</span>
+						</div>
+						<ChevronRight />
+					</Link>
+				)}
 
 				{/* Quick Action Tiles */}
 				<div className="mb-4 grid grid-cols-2 gap-3">

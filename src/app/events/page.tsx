@@ -36,7 +36,7 @@ const WEEKLY_TRADITIONS = [
 		day: "Every Thursday",
 		title: "Taco Thursday",
 		description:
-			"Chef-crafted weekly taco specials from our scratch kitchen—paired best with a crisp house pint.",
+			"Chef-crafted weekly taco specials from our scratch kitchen, paired best with a crisp house pint.",
 	},
 	{
 		day: "Every Friday",

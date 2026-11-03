@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import Button from "@/components/Button";
 import MenuTabs from "@/components/MenuTabs";
 import PageHeader from "@/components/PageHeader";
 import AgeGate from "@/components/AgeGate";
@@ -111,9 +113,22 @@ export default function DrinkMenu() {
 															key={i}
 															className="flex items-baseline justify-between gap-3 border-b border-dotted border-stone-200 pb-1 text-sm text-stone-600 last:border-0"
 														>
-															<span>
-																{p.size}
-															</span>
+															{p.size
+																.toLowerCase()
+																.includes(
+																	"mug club",
+																) ? (
+																<Link
+																	href="/mug-club"
+																	className="text-etbrew-teal font-medium underline decoration-dotted underline-offset-3 transition-colors hover:text-stone-900"
+																>
+																	{p.size}
+																</Link>
+															) : (
+																<span>
+																	{p.size}
+																</span>
+															)}
 															<span className="shrink-0 font-serif font-bold text-stone-800">
 																{p.price}
 															</span>
@@ -164,6 +179,36 @@ export default function DrinkMenu() {
 								Get a flight and pick 6 beers on tap.
 							</p>
 						</div>
+					</div>
+
+					{/* Mug Club Callout */}
+					<div
+						className="border-etbrew-gold mt-16 flex flex-col items-center justify-between gap-6 rounded-xs border-t-4 bg-stone-900 p-7 text-center text-white sm:p-9 md:flex-row md:text-left"
+						style={{
+							backgroundImage:
+								"radial-gradient(ellipse at 25% 30%, rgba(173, 140, 26, 0.14) 0%, transparent 75%)",
+						}}
+					>
+						<div>
+							<p className="text-etbrew-gold-bright mb-1.5 text-xs font-bold tracking-[0.2em] uppercase">
+								Annual Taproom Membership
+							</p>
+							<h3 className="font-serif text-2xl tracking-wide text-white uppercase">
+								Join The ETB Mug Club
+							</h3>
+							<p className="mt-2 max-w-xl text-sm leading-relaxed text-stone-300">
+								Enjoy 20oz mug pours, Mug Club pricing on every
+								draft, 10% off dine-in food, and 15% off to-go
+								crowlers &amp; merch all year long.
+							</p>
+						</div>
+						<Button
+							href="/mug-club"
+							variant="gold"
+							className="shrink-0 text-xs sm:text-sm"
+						>
+							Explore Perks
+						</Button>
 					</div>
 				</div>
 			</section>

@@ -13,6 +13,7 @@ interface MenuItem {
 	name: string;
 	price: string;
 	description?: string;
+	badges?: string[];
 }
 
 interface MenuCategory {
@@ -84,8 +85,32 @@ export default function FoodMenu() {
 												{item.price}
 											</span>
 										</div>
+										{item.badges &&
+											item.badges.length > 0 && (
+												<div className="mt-2 flex flex-wrap gap-1.5">
+													{item.badges.map(
+														(badge) => {
+															const isVeg =
+																badge ===
+																"Vegetarian";
+															return (
+																<span
+																	key={badge}
+																	className={`rounded-xs border px-2 py-0.5 font-sans text-[10px] font-bold tracking-wider uppercase ${
+																		isVeg
+																			? "border-emerald-700/25 bg-emerald-50/70 text-emerald-800"
+																			: "border-etbrew-gold/30 text-etbrew-gold bg-amber-50/70"
+																	}`}
+																>
+																	{badge}
+																</span>
+															);
+														},
+													)}
+												</div>
+											)}
 										{item.description && (
-											<p className="mt-2.5 text-sm leading-relaxed whitespace-pre-line text-stone-600">
+											<p className="mt-2 text-sm leading-relaxed whitespace-pre-line text-stone-600">
 												{item.description}
 											</p>
 										)}
@@ -96,8 +121,12 @@ export default function FoodMenu() {
 					))}
 
 					{/* Menu Disclaimers & Notes */}
-					<div className="mt-16 space-y-1 border-t border-stone-200 pt-8 text-center text-xs text-stone-500">
-						<p>*Please notify your server of any food allergies.</p>
+					<div className="mt-16 space-y-1.5 border-t border-stone-200 pt-8 text-center text-xs text-stone-500">
+						<p>
+							*Fried items share fryer oil. Please notify your
+							server of any food allergies or dietary
+							restrictions.
+						</p>
 						<p>
 							**An 18% gratuity will be added to parties of 8 or
 							more.

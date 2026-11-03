@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useTaproomStatus } from "@/lib/hours";
 
 interface HoursRow {
 	id: string;
@@ -17,7 +17,7 @@ const SCHEDULE: HoursRow[] = [
 		id: "mon",
 		label: "Monday",
 		days: [1],
-		hours: "11:30am – 8:00pm",
+		hours: "11:30am - 8:00pm",
 	},
 	{
 		id: "tue",
@@ -29,67 +29,76 @@ const SCHEDULE: HoursRow[] = [
 		id: "wed-thu",
 		label: "Wednesday & Thursday",
 		days: [3, 4],
-		barHours: "11:30am – 9:00pm",
-		foodHours: "11:30am – 8:00pm",
+		barHours: "11:30am - 9:00pm",
+		foodHours: "11:30am - 8:00pm",
 	},
 	{
 		id: "fri",
 		label: "Friday",
 		days: [5],
-		barHours: "11:30am – 10:00pm",
-		foodHours: "11:30am – 9:00pm",
+		barHours: "11:30am - 10:00pm",
+		foodHours: "11:30am - 9:00pm",
 	},
 	{
 		id: "sat",
 		label: "Saturday",
 		days: [6],
-		barHours: "11:30am – 10:00pm",
-		foodHours: "11:30am – 9:00pm",
+		barHours: "11:30am - 10:00pm",
+		foodHours: "11:30am - 9:00pm",
 	},
 	{
 		id: "sun",
 		label: "Sunday",
 		days: [0],
-		hours: "11:30am – 7:00pm",
+		hours: "11:30am - 7:00pm",
 	},
 ];
-
-function getCentralDayOfWeek(): number {
-	try {
-		const weekdayStr = new Intl.DateTimeFormat("en-US", {
-			timeZone: "America/Chicago",
-			weekday: "short",
-		}).format(new Date());
-		const map: Record<string, number> = {
-			Sun: 0,
-			Mon: 1,
-			Tue: 2,
-			Wed: 3,
-			Thu: 4,
-			Fri: 5,
-			Sat: 6,
-		};
-		return map[weekdayStr] ?? new Date().getDay();
-	} catch {
-		return new Date().getDay();
-	}
-}
-
-const emptySubscribe = () => () => {};
 
 export default function HoursLedger({
 	showBanner = false,
 }: {
 	showBanner?: boolean;
 }) {
-	const currentDay = useSyncExternalStore(
-		emptySubscribe,
-		getCentralDayOfWeek,
-		() => null,
-	);
+	const status = useTaproomStatus();
+	const currentDay = status?.day ?? null;
 
 	return (
 		<div className="border-etbrew-teal rounded-xs border-t-4 bg-white p-6 shadow-md sm:p-8">
+			{/* Live Open / Closed Status Pill */}
+			{status && (
+				<div
+					className={`mb-5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-xs border px-4 py-3 text-center text-xs sm:text-sm ${
+						status.isOpen
+							? "border-emerald-700/20 bg-emerald-50/70 text-emerald-950"
+							: "border-stone-200 bg-stone-50 text-stone-700"
+					}`}
+				>
+					<span
+						className={`inline-flex items-center gap-2 font-bold tracking-wider uppercase ${
+							status.isOpen
+								? "text-emerald-800"
+								: "text-stone-700"
+						}`}
+					>
+						<span
+							aria-hidden="true"
+							className={`h-2 w-2 rounded-full ${
+								status.isOpen
+									? "bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]"
+									: "bg-stone-400"
+							}`}
+						/>
+						{status.label}
+					</span>
+					<span aria-hidden="true" className="text-stone-300">
+						&bull;
+					</span>
+					<span className="font-medium text-stone-600">
+						{status.detail}
+					</span>
+				</div>
+			)}
+
 			{showBanner && (
 				<p className="border-etbrew-gold/30 mb-6 rounded-xs border bg-stone-50 px-4 py-3 text-center text-xs font-bold tracking-[0.15em] text-stone-700 uppercase">
 					Open for dine-in, patio seating &amp; carryout

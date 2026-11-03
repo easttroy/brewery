@@ -130,8 +130,8 @@ export default function PrivacyPolicy() {
 						We share your Personal Information with third parties to
 						help us use your Personal Information, as described
 						above. For example, we use MailChimp to power our email
-						marketing — you can read more about how MailChimp uses
-						your Personal Information here:{" "}
+						marketing, and you can read more about how MailChimp
+						uses your Personal Information here:{" "}
 						<a
 							href="https://mailchimp.com/legal/privacy/"
 							target="_blank"
@@ -141,8 +141,8 @@ export default function PrivacyPolicy() {
 							mailchimp.com/legal/privacy
 						</a>
 						. We also use Google Analytics to help us understand how
-						our customers use the Site — you can read more about how
-						Google uses your Personal Information here:{" "}
+						our customers use the Site, and you can read more about
+						how Google uses your Personal Information here:{" "}
 						<a
 							href="https://www.google.com/intl/en/policies/privacy/"
 							target="_blank"

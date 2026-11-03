@@ -1,7 +1,31 @@
 import Button from "@/components/Button";
 import HeroVideo from "@/components/HeroVideo";
 import HoursLedger from "@/components/HoursLedger";
+import beers from "@/data/beers.json";
 import { Metadata } from "next";
+
+const KITCHEN_HIGHLIGHTS = [
+	{
+		name: "Hill Valley Cheese Curds",
+		detail: "Beer-battered local curds, zess pepper ranch & sun-dried tomato aioli",
+		price: "$15",
+	},
+	{
+		name: "Brewery Burger",
+		detail: "Smashed chuck, brisket & short rib, bacon-onion jam, gruyere",
+		price: "$18",
+	},
+	{
+		name: "Spicy Pepperoni Flatbread",
+		detail: "Pepperoni, soppressata, fresh mozzarella & hot honey",
+		price: "$20",
+	},
+];
+
+const featuredBeers = [
+	...beers.filter((b) => !b.style?.toLowerCase().includes("seltzer")),
+	...beers.filter((b) => b.style?.toLowerCase().includes("seltzer")),
+].slice(0, 3);
 
 export const metadata: Metadata = {
 	title: "East Troy Brewery | Handcrafted Food & Beer in WI",
@@ -71,7 +95,7 @@ export default function Home() {
 					<p className="mx-auto mb-6 max-w-3xl text-lg leading-relaxed text-stone-600">
 						No matter what you&apos;re sippin&apos;, we&apos;ve got
 						you covered. Try one of our house-made beers, inventive
-						cocktails, or enticing wines—selected from around the
+						cocktails, or enticing wines selected from around the
 						world.
 					</p>
 					<p className="mx-auto max-w-3xl text-lg leading-relaxed text-stone-600">
@@ -85,37 +109,83 @@ export default function Home() {
 
 			{/* Split Feature Sections */}
 			<section className="grid grid-cols-1 border-y border-stone-200 lg:grid-cols-2">
-				<div className="flex flex-col items-center justify-center bg-stone-100 px-8 py-20 text-center sm:p-16 lg:p-28">
-					<p className="text-etbrew-gold mb-3 text-xs font-bold tracking-[0.2em] uppercase">
-						From the Kitchen
-					</p>
-					<h2 className="mb-5 font-serif text-3xl tracking-wide text-stone-800 uppercase sm:text-4xl">
-						Food Cooked From Scratch
-					</h2>
-					<p className="mb-10 max-w-md text-lg leading-relaxed text-stone-600">
-						Discover our locally sourced, chef-driven menu designed
-						to pair perfectly with our craft beers.
-					</p>
-					<Button href="/menus/food">Food Menu</Button>
+				<div className="flex flex-col items-center justify-between bg-stone-100 px-6 py-20 text-center sm:p-16 lg:px-14 lg:py-24 xl:px-20">
+					<div className="flex w-full max-w-md flex-col items-center">
+						<p className="text-etbrew-gold mb-3 text-xs font-bold tracking-[0.2em] uppercase">
+							From the Kitchen
+						</p>
+						<h2 className="mb-4 font-serif text-3xl tracking-wide text-stone-800 uppercase sm:text-4xl">
+							Food Cooked From Scratch
+						</h2>
+						<p className="mb-8 text-base leading-relaxed text-stone-600 sm:text-lg">
+							Locally sourced, chef-driven comfort food designed
+							to pair with our house beers.
+						</p>
+
+						<div className="mb-10 w-full divide-y divide-stone-200/90 rounded-xs border border-stone-200/90 bg-white px-5 py-2 text-left shadow-2xs">
+							{KITCHEN_HIGHLIGHTS.map((item) => (
+								<div key={item.name} className="py-3.5">
+									<div className="flex items-baseline justify-between gap-3">
+										<h3 className="font-sans text-sm font-bold tracking-wide text-stone-800 uppercase">
+											{item.name}
+										</h3>
+										<span className="text-etbrew-gold shrink-0 font-serif text-sm font-bold">
+											{item.price}
+										</span>
+									</div>
+									<p className="mt-1 text-xs leading-relaxed text-stone-500">
+										{item.detail}
+									</p>
+								</div>
+							))}
+						</div>
+					</div>
+					<Button href="/menus/food">Full Food Menu</Button>
 				</div>
+
 				<div
-					className="relative flex flex-col items-center justify-center overflow-hidden bg-stone-900 px-8 py-20 text-center text-white sm:p-16 lg:p-28"
+					className="relative flex flex-col items-center justify-between overflow-hidden bg-stone-900 px-6 py-20 text-center text-white sm:p-16 lg:px-14 lg:py-24 xl:px-20"
 					style={{
 						backgroundImage:
 							"radial-gradient(ellipse at 50% 30%, rgba(173, 140, 26, 0.12) 0%, transparent 75%)",
 					}}
 				>
-					<p className="text-etbrew-gold-bright mb-3 text-xs font-bold tracking-[0.2em] uppercase">
-						From the Taproom
-					</p>
-					<h2 className="mb-5 font-serif text-3xl tracking-wide text-white uppercase sm:text-4xl">
-						Craft Beer, Cocktails &amp; Wines
-					</h2>
-					<p className="mb-10 max-w-md text-lg leading-relaxed text-stone-300">
-						Explore our rotating taps of house-brewed beers, plus
-						hand-crafted cocktails and curated wines.
-					</p>
-					<div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
+					<div className="flex w-full max-w-md flex-col items-center">
+						<p className="text-etbrew-gold-bright mb-3 text-xs font-bold tracking-[0.2em] uppercase">
+							From the Taproom
+						</p>
+						<h2 className="mb-4 font-serif text-3xl tracking-wide text-white uppercase sm:text-4xl">
+							Craft Beer, Cocktails &amp; Wines
+						</h2>
+						<p className="mb-8 text-base leading-relaxed text-stone-300 sm:text-lg">
+							Explore our rotating taps of house-brewed beers,
+							handcrafted cocktails, and curated wines.
+						</p>
+
+						<div className="backdrop-blur-2xs mb-10 w-full divide-y divide-white/10 rounded-xs border border-white/10 bg-white/[0.04] px-5 py-2 text-left">
+							{featuredBeers.map((beer) => (
+								<div key={beer.name} className="py-3.5">
+									<div className="flex items-baseline justify-between gap-3">
+										<h3 className="font-sans text-sm font-bold tracking-wide text-white uppercase">
+											{beer.name}
+										</h3>
+										{beer.abv && beer.abv !== "N/A" && (
+											<span className="text-etbrew-gold-bright shrink-0 font-sans text-[11px] font-bold tracking-wider uppercase">
+												{beer.abv} ABV
+											</span>
+										)}
+									</div>
+									{beer.style && (
+										<p className="mt-1 font-serif text-xs text-stone-400 italic">
+											{beer.style}
+										</p>
+									)}
+								</div>
+							))}
+						</div>
+					</div>
+
+					<div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-5">
 						<Button href="/menus/drafts" variant="outline-white">
 							Beer Menu
 						</Button>

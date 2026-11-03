@@ -156,7 +156,7 @@ export default function VisitUs() {
 									south side of the Historic East Troy Village
 									Square
 								</strong>{" "}
-								inside the 1892 State Bank building—just 2
+								inside the 1892 State Bank building, just 2
 								minutes west of{" "}
 								<strong className="text-stone-900">
 									I-43 Exit 38

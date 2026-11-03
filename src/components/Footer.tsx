@@ -133,7 +133,7 @@ export default function Footer() {
 							<span className="font-bold text-stone-200">
 								Monday:
 							</span>{" "}
-							11:30am – 8:00pm
+							11:30am - 8:00pm
 						</li>
 						<li className="text-stone-500 italic">
 							Tuesday: Closed
@@ -143,8 +143,8 @@ export default function Footer() {
 								Wednesday &amp; Thursday
 							</span>
 							<span>
-								Bar: 11:30am – 9:00pm &middot; Kitchen: 11:30am
-								– 8:00pm
+								Bar: 11:30am - 9:00pm &middot; Kitchen: 11:30am
+								- 8:00pm
 							</span>
 						</li>
 						<li>
@@ -152,15 +152,15 @@ export default function Footer() {
 								Friday &amp; Saturday
 							</span>
 							<span>
-								Bar: 11:30am – 10:00pm &middot; Kitchen: 11:30am
-								– 9:00pm
+								Bar: 11:30am - 10:00pm &middot; Kitchen: 11:30am
+								- 9:00pm
 							</span>
 						</li>
 						<li>
 							<span className="font-bold text-stone-200">
 								Sunday:
 							</span>{" "}
-							11:30am – 7:00pm
+							11:30am - 7:00pm
 						</li>
 					</ul>
 				</div>

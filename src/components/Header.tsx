@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { useTaproomStatus } from "@/lib/hours";
 import { TOAST_ORDER_URL, useOrderingOpen } from "@/lib/ordering";
 import Button from "./Button";
 import SocialLinks from "./SocialLinks";
@@ -13,6 +14,7 @@ export default function Header({
 }) {
 	const headerRef = useRef<HTMLElement>(null);
 	const isOrderingOpen = useOrderingOpen();
+	const taproomStatus = useTaproomStatus();
 
 	// Keep --header-height synced with actual sticky header height so secondary
 	// sticky elements (like MenuTabs) dock flush without pixel guesswork.
@@ -63,6 +65,30 @@ export default function Header({
 					</a>
 				</div>
 				<div className="flex items-center gap-4">
+					{taproomStatus && (
+						<>
+							<Link
+								href="/visit-us"
+								title={`${taproomStatus.label} - ${taproomStatus.detail}`}
+								className={`inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-0.5 text-[11px] font-bold tracking-wider uppercase shadow-2xs transition-opacity hover:opacity-90 ${
+									taproomStatus.isOpen
+										? "text-emerald-700"
+										: "text-stone-600"
+								}`}
+							>
+								<span
+									aria-hidden="true"
+									className={`h-2 w-2 rounded-full ${
+										taproomStatus.isOpen
+											? "bg-emerald-500"
+											: "bg-stone-400"
+									}`}
+								/>
+								{taproomStatus.isOpen ? "Open" : "Closed"}
+							</Link>
+							<span className="opacity-60">|</span>
+						</>
+					)}
 					<Link
 						href="/sms"
 						className="whitespace-nowrap hover:underline"
@@ -88,6 +114,27 @@ export default function Header({
 
 				{/* Mobile / Tablet Compact App Actions (paired with bottom MobileNav) */}
 				<div className="flex items-center gap-2 lg:hidden">
+					{taproomStatus && (
+						<Link
+							href="/visit-us"
+							title={`${taproomStatus.label} - ${taproomStatus.detail}`}
+							className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] leading-none font-bold tracking-wider uppercase transition-transform active:scale-95 ${
+								taproomStatus.isOpen
+									? "border-emerald-600/25 bg-emerald-50 text-emerald-800"
+									: "border-stone-200/90 bg-stone-100 text-stone-600"
+							}`}
+						>
+							<span
+								aria-hidden="true"
+								className={`h-1.5 w-1.5 rounded-full ${
+									taproomStatus.isOpen
+										? "bg-emerald-500"
+										: "bg-stone-400"
+								}`}
+							/>
+							{taproomStatus.isOpen ? "Open" : "Closed"}
+						</Link>
+					)}
 					<a
 						href="tel:2626422670"
 						aria-label="Call East Troy Brewery"
