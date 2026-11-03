@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 		"Discover our selection of handcrafted beers brewed on-site at East Troy Brewery.",
 };
 
+const draftSections = [
+	{ id: "draft-list", label: "Draft List" },
+	{ id: "flights", label: "Flights" },
+];
+
 export default function DrinkMenu() {
 	return (
 		<div className="flex min-h-screen flex-col bg-stone-50">
@@ -18,12 +23,15 @@ export default function DrinkMenu() {
 
 			{/* Menu Content */}
 			<section className="mx-auto w-full max-w-5xl px-4 py-12 sm:py-20">
-				<div className="border-etbrew-gold rounded-xs border-t-4 bg-white px-6 pt-0 pb-10 shadow-lg sm:px-8 md:px-16 md:pb-16">
-					<MenuTabs />
+				<div
+					id="menu"
+					className="border-etbrew-gold scroll-mt-[var(--header-height,59px)] rounded-xs border-t-4 bg-white px-6 pt-0 pb-10 shadow-lg sm:px-8 md:px-16 md:pb-16"
+				>
+					<MenuTabs categories={draftSections} />
 
 					<div
-						id="menu"
-						className="mb-12 scroll-mt-[calc(var(--header-height,59px)+4.5rem)] text-center"
+						id="draft-list"
+						className="mb-12 scroll-mt-[calc(var(--header-height,59px)+var(--menu-tabs-height,92px)+1.5rem)] text-center"
 					>
 						<h2 className="font-serif text-3xl tracking-wide text-stone-800 uppercase">
 							Draft List
@@ -119,7 +127,10 @@ export default function DrinkMenu() {
 						})}
 					</div>
 
-					<div className="mt-20 mb-12 text-center">
+					<div
+						id="flights"
+						className="mt-20 mb-12 scroll-mt-[calc(var(--header-height,59px)+var(--menu-tabs-height,92px)+1.5rem)] text-center"
+					>
 						<h2 className="font-serif text-3xl tracking-wide text-stone-800 uppercase">
 							Flights
 						</h2>

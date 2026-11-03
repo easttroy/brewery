@@ -1,9 +1,89 @@
 [
   {
+    "id": "paint-n-sip-let-it-snow-2026-12-02",
+    "name": "Paint n' Sip East Troy: Let it Snow",
+    "url": "https://www.eventbrite.com/e/let-it-snow-tickets-2003569304725",
+    "ctaLabel": "Get Tickets ($25–$30)",
+    "date": "Wed, Dec 2 - 6:00pm",
+    "startDate": "2026-12-02",
+    "description": "Hosted by Phoenix Sis Paint N Sip at East Troy Brewery. Limited spots available—ticket price includes the guided painting lesson, all supplies, plus one drink (beer, wine, cocktail, or non-alcoholic beverage).",
+    "isCanceled": false,
+    "isPast": false,
+    "manual": true,
+    "image": "/images/events/paint-n-sip-let-it-snow.jpg"
+  },
+  {
+    "id": "brewers-game-2026-10-14",
+    "name": "Brewers Game",
+    "url": "https://www.facebook.com/ETBrew/events",
+    "date": "Wed, Oct 14",
+    "startDate": "2026-10-14",
+    "isCanceled": false,
+    "isPast": true,
+    "manual": true,
+    "image": "/images/events/brewers-game-2026-10-14.jpg"
+  },
+  {
+    "id": "robs-alibi-2026-08-28",
+    "name": "Rob's Alibi on the patio at East Troy Brewery",
+    "url": "https://www.facebook.com/ETBrew/events",
+    "date": "Fri, Aug 28",
+    "startDate": "2026-08-28",
+    "isCanceled": false,
+    "isPast": true,
+    "manual": true,
+    "image": "/images/events/robs-alibi-2026-08-28.jpg"
+  },
+  {
+    "id": "tess-and-company-2026-07-18",
+    "name": "Tess and Company",
+    "url": "https://www.facebook.com/ETBrew/events",
+    "date": "Sat, Jul 18",
+    "startDate": "2026-07-18",
+    "isCanceled": false,
+    "isPast": true,
+    "manual": true,
+    "image": "/images/events/tess-and-company-2026-07-18.jpg"
+  },
+  {
+    "id": "kentucky-derby-2026-05-02",
+    "name": "Kentucky Derby",
+    "url": "https://www.facebook.com/ETBrew/events",
+    "date": "Sat, May 2",
+    "startDate": "2026-05-02",
+    "isCanceled": false,
+    "isPast": true,
+    "manual": true,
+    "image": "/images/events/kentucky-derby-2026-05-02.jpg"
+  },
+  {
+    "id": "matt-jaye-2026-04-18",
+    "name": "Matt Jaye",
+    "url": "https://www.facebook.com/ETBrew/events",
+    "date": "Sat, Apr 18",
+    "startDate": "2026-04-18",
+    "isCanceled": false,
+    "isPast": true,
+    "manual": true,
+    "image": "/images/events/matt-jaye-2026-04-18.jpg"
+  },
+  {
+    "id": "alex-and-tony-2026-04-04",
+    "name": "Alex and Tony Duo",
+    "url": "https://www.facebook.com/ETBrew/events",
+    "date": "Sat, Apr 4",
+    "startDate": "2026-04-04",
+    "isCanceled": false,
+    "isPast": true,
+    "manual": true,
+    "image": "/images/events/alex-and-tony-2026-04-04.jpg"
+  },
+  {
     "id": "2036122877257918",
     "name": "Line Dancing",
     "url": "https://www.facebook.com/events/2036122877257918/",
     "date": "Sat, Mar 7 - 8:30pm",
+    "startDate": "2026-03-07",
     "isCanceled": false,
     "isPast": true,
     "image": "/images/events/2036122877257918.jpg"
@@ -13,44 +93,9 @@
     "name": "Line Dancing night",
     "url": "https://www.facebook.com/events/891294320014817/",
     "date": "Sat, Jan 31",
+    "startDate": "2026-01-31",
     "isCanceled": false,
     "isPast": true,
     "image": "/images/events/891294320014817.jpg"
-  },
-  {
-    "id": "1384688936729453",
-    "name": "Supper Club Monday",
-    "url": "https://www.facebook.com/events/1384688936729453/",
-    "date": "Mon, Jan 12",
-    "isCanceled": false,
-    "isPast": true,
-    "image": "/images/events/1384688936729453.jpg"
-  },
-  {
-    "id": "2051576125579893",
-    "name": "Supper Club  - Monday",
-    "url": "https://www.facebook.com/events/2051576125579893/",
-    "date": "Mon, Nov 3, 2025",
-    "isCanceled": false,
-    "isPast": true,
-    "image": "/images/events/2051576125579893.jpg"
-  },
-  {
-    "id": "1915696192342547",
-    "name": "Octoberfest - East Troy Brewery",
-    "url": "https://www.facebook.com/events/1915696192342547/",
-    "date": "Sat, Oct 25, 2025",
-    "isCanceled": false,
-    "isPast": true,
-    "image": "/images/events/1915696192342547.jpg"
-  },
-  {
-    "id": "1358513055621177",
-    "name": "Supper Club + Baseball",
-    "url": "https://www.facebook.com/events/1358513055621177/",
-    "date": "Mon, Oct 13, 2025",
-    "isCanceled": false,
-    "isPast": true,
-    "image": "/images/events/1358513055621177.jpg"
   }
 ]

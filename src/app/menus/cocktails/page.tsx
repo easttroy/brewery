@@ -25,6 +25,18 @@ type MenuCategory = {
 
 const menuCategories = menuCategoriesRaw as MenuCategory[];
 
+function toSlug(title: string) {
+	return title
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, "-")
+		.replace(/(^-|-$)/g, "");
+}
+
+const categoryLinks = menuCategories.map((cat) => ({
+	id: toSlug(cat.title),
+	label: cat.title,
+}));
+
 export const metadata: Metadata = {
 	title: "Cocktails & More",
 	description:
@@ -39,23 +51,18 @@ export default function CocktailMenu() {
 
 			{/* Menu Content */}
 			<section className="mx-auto w-full max-w-5xl px-4 py-12 sm:py-20">
-				<div className="border-etbrew-gold rounded-xs border-t-4 bg-white px-6 pt-0 pb-10 shadow-lg sm:px-8 md:px-16 md:pb-16">
-					<MenuTabs />
+				<div
+					id="menu"
+					className="border-etbrew-gold scroll-mt-[var(--header-height,59px)] rounded-xs border-t-4 bg-white px-6 pt-0 pb-10 shadow-lg sm:px-8 md:px-16 md:pb-16"
+				>
+					<MenuTabs categories={categoryLinks} />
 
 					{menuCategories.map((category, index) => (
 						<div key={category.title}>
 							<div
-								id={
-									index === 0
-										? "menu"
-										: category.title
-												.toLowerCase()
-												.replace(/[^a-z0-9]+/g, "-")
-								}
-								className={`text-center ${
-									index === 0
-										? "mb-12 scroll-mt-[calc(var(--header-height,59px)+4.5rem)]"
-										: "mt-20 mb-12"
+								id={toSlug(category.title)}
+								className={`scroll-mt-[calc(var(--header-height,59px)+var(--menu-tabs-height,92px)+1.5rem)] text-center ${
+									index === 0 ? "mb-12" : "mt-20 mb-12"
 								}`}
 							>
 								<h2 className="font-serif text-3xl tracking-wide text-stone-800 uppercase">
