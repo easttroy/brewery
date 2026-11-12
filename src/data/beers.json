@@ -1,6 +1,94 @@
 [
   {
-    "name": "Wet Hop",
+    "name": "Blueberry Sour",
+    "url": "https://untappd.com/b/east-troy-brewery-blueberry-sour/7673315",
+    "style": "Sour - Fruited",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Blood Orange Sour",
+    "url": "https://untappd.com/b/east-troy-brewery-blood-orange-sour/7673310",
+    "style": "Sour - Fruited",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Blackberry Sour",
+    "url": "https://untappd.com/b/east-troy-brewery-blackberry-sour/7673307",
+    "style": "Sour - Fruited",
+    "abv": "5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "414 Pilsner",
+    "url": "https://untappd.com/b/east-troy-brewery-414-pilsner/7673305",
+    "style": "Pilsner - American",
+    "abv": "5.5%",
+    "ibu": "N/A",
+    "description": "",
+    "prices": [
+      {
+        "size": "16oz Draft",
+        "price": "$7.00"
+      },
+      {
+        "size": "Mug Club",
+        "price": "$5.00"
+      },
+      {
+        "size": "32oz Crowler",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "name": "Hopped On Main",
     "url": "https://untappd.com/b/east-troy-brewery-wet-hop/7657518",
     "style": "Pale Ale - American",
     "abv": "5.6%",
@@ -93,50 +181,6 @@
     "style": "IPA - American",
     "abv": "6.5%",
     "ibu": "60",
-    "description": "",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "Oktoberfest",
-    "url": "https://untappd.com/b/east-troy-brewery-oktoberfest-2025/6376469",
-    "style": "Märzen",
-    "abv": "5.3%",
-    "ibu": "16",
-    "description": "Marzen style lager.  Low temp fermented and slow conditioned to produce a rich caramel German lager.  Festive spiciness and herbal notes from Saaz hop varieties, best enjoyed in an East Troy Brewery Stein.",
-    "prices": [
-      {
-        "size": "16oz Draft",
-        "price": "$7.00"
-      },
-      {
-        "size": "Mug Club",
-        "price": "$5.00"
-      },
-      {
-        "size": "32oz Crowler",
-        "price": "$15.00"
-      }
-    ]
-  },
-  {
-    "name": "Weiss Guy",
-    "url": "https://untappd.com/b/east-troy-brewery-weiss-guy/6823701",
-    "style": "Wheat Beer - Hefeweizen",
-    "abv": "5.5%",
-    "ibu": "N/A",
     "description": "",
     "prices": [
       {
