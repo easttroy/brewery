@@ -26,9 +26,16 @@ const SCHEDULE: HoursRow[] = [
 		closed: true,
 	},
 	{
-		id: "wed-thu",
-		label: "Wednesday & Thursday",
-		days: [3, 4],
+		id: "wed",
+		label: "Wednesday",
+		days: [3],
+		barHours: "11:30am - 9:00pm",
+		foodHours: "11:30am - 8:00pm",
+	},
+	{
+		id: "thu",
+		label: "Thursday",
+		days: [4],
 		barHours: "11:30am - 9:00pm",
 		foodHours: "11:30am - 8:00pm",
 	},
@@ -61,13 +68,14 @@ export default function HoursLedger({
 }) {
 	const status = useTaproomStatus();
 	const currentDay = status?.day ?? null;
+	const holidayBannerText = status?.holidayNote ?? null;
 
 	return (
 		<div className="border-etbrew-teal rounded-xs border-t-4 bg-white p-6 shadow-md sm:p-8">
 			{/* Live Open / Closed Status Pill */}
 			{status && (
 				<div
-					className={`mb-5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-xs border px-4 py-3 text-center text-xs sm:text-sm ${
+					className={`mb-4 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-xs border px-4 py-3 text-center text-xs sm:text-sm ${
 						status.isOpen
 							? "border-emerald-700/20 bg-emerald-50/70 text-emerald-950"
 							: "border-stone-200 bg-stone-50 text-stone-700"
@@ -99,6 +107,13 @@ export default function HoursLedger({
 				</div>
 			)}
 
+			{/* Thanksgiving Holiday Closure Notice */}
+			{holidayBannerText && (
+				<div className="border-etbrew-gold/40 mb-5 rounded-xs border bg-amber-50/70 px-4 py-2.5 text-center text-xs font-bold tracking-wider text-stone-800 uppercase">
+					{holidayBannerText}
+				</div>
+			)}
+
 			{showBanner && (
 				<div className="border-etbrew-gold/30 mb-6 rounded-xs border bg-stone-50 px-4 py-3 text-center">
 					<p className="text-xs font-bold tracking-[0.15em] text-stone-700 uppercase">
@@ -115,6 +130,8 @@ export default function HoursLedger({
 				{SCHEDULE.map((row) => {
 					const isToday =
 						currentDay !== null && row.days.includes(currentDay);
+					const isThanksgivingRow =
+						row.id === "thu" && Boolean(holidayBannerText);
 
 					return (
 						<div
@@ -128,7 +145,7 @@ export default function HoursLedger({
 							<div className="flex items-center gap-2.5">
 								<h4
 									className={`font-sans text-sm font-bold tracking-wider uppercase ${
-										row.closed
+										row.closed || isThanksgivingRow
 											? "text-stone-400"
 											: isToday
 												? "text-stone-900"
@@ -145,7 +162,17 @@ export default function HoursLedger({
 							</div>
 
 							<div className="text-sm sm:text-right sm:text-base">
-								{row.closed ? (
+								{isThanksgivingRow ? (
+									<div className="space-y-0.5">
+										<p className="text-etbrew-gold font-bold tracking-wide uppercase">
+											{holidayBannerText}
+										</p>
+										<p className="text-xs text-stone-400">
+											Regular hours: Bar 11:30am - 9:00pm
+											&middot; Kitchen 11:30am - 8:00pm
+										</p>
+									</div>
+								) : row.closed ? (
 									<span className="font-medium tracking-wider text-stone-400 uppercase italic">
 										Closed
 									</span>

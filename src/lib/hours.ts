@@ -68,61 +68,95 @@ const WEEKDAY_MAP: Record<string, number> = {
 
 export interface TaproomStatus {
 	day: number;
+	monthDay: string;
 	isOpen: boolean;
 	isKitchenOpen: boolean;
 	label: string;
 	detail: string;
+	holidayNote?: string;
 }
 
 export function getChicagoTimeParts(now: Date = new Date()): {
 	day: number;
 	minutes: number;
+	monthDay: string;
 } {
 	try {
 		const parts = new Intl.DateTimeFormat("en-US", {
 			timeZone: "America/Chicago",
+			month: "2-digit",
+			day: "2-digit",
 			weekday: "short",
 			hour: "numeric",
 			minute: "numeric",
 			hourCycle: "h23",
 		}).formatToParts(now);
 
+		const monthStr = parts.find((p) => p.type === "month")?.value ?? "01";
+		const dayStr = parts.find((p) => p.type === "day")?.value ?? "01";
 		const weekdayStr = parts.find((p) => p.type === "weekday")?.value ?? "";
 		const hourStr = parts.find((p) => p.type === "hour")?.value ?? "0";
 		const minuteStr = parts.find((p) => p.type === "minute")?.value ?? "0";
 
 		const day = WEEKDAY_MAP[weekdayStr] ?? now.getDay();
 		const minutes = (Number(hourStr) % 24) * 60 + Number(minuteStr);
-		return { day, minutes };
+		const monthDay = `${monthStr}-${dayStr}`;
+		return { day, minutes, monthDay };
 	} catch {
+		const m = String(now.getMonth() + 1).padStart(2, "0");
+		const d = String(now.getDate()).padStart(2, "0");
 		return {
 			day: now.getDay(),
 			minutes: now.getHours() * 60 + now.getMinutes(),
+			monthDay: `${m}-${d}`,
 		};
 	}
 }
 
 export function computeTaproomStatus(now: Date = new Date()): TaproomStatus {
-	const { day, minutes } = getChicagoTimeParts(now);
+	const { day, minutes, monthDay } = getChicagoTimeParts(now);
 	const todayWindow = HOURS_BY_DAY[day];
+	const holidayNote =
+		monthDay === "11-25"
+			? "Closed Tomorrow (November 26) for Thanksgiving"
+			: monthDay === "11-26"
+				? "Closed Today (November 26) for Thanksgiving"
+				: undefined;
+
+	// Thanksgiving Day (November 26): closed all day
+	if (monthDay === "11-26") {
+		return {
+			day,
+			monthDay,
+			isOpen: false,
+			isKitchenOpen: false,
+			label: "Closed for Thanksgiving",
+			detail: "Opens Friday at 11:30am",
+			holidayNote,
+		};
+	}
 
 	if (!todayWindow) {
 		return {
 			day,
+			monthDay,
 			isOpen: false,
 			isKitchenOpen: false,
 			label: "Closed Today",
 			detail: "Opens Wednesday at 11:30am",
+			holidayNote,
 		};
 	}
 
 	if (minutes < todayWindow.open) {
 		return {
 			day,
+			monthDay,
 			isOpen: false,
 			isKitchenOpen: false,
 			label: "Closed Now",
 			detail: "Opens today at 11:30am",
+			holidayNote,
 		};
 	}
 
@@ -130,38 +164,46 @@ export function computeTaproomStatus(now: Date = new Date()): TaproomStatus {
 		const sameClose = todayWindow.kitchenClose === todayWindow.barClose;
 		return {
 			day,
+			monthDay,
 			isOpen: true,
 			isKitchenOpen: true,
 			label: "Open Now",
 			detail: sameClose
 				? `Until ${todayWindow.barCloseLabel}`
 				: `Kitchen til ${todayWindow.kitchenCloseLabel} · Bar til ${todayWindow.barCloseLabel}`,
+			holidayNote,
 		};
 	}
 
 	if (minutes < todayWindow.barClose) {
 		return {
 			day,
+			monthDay,
 			isOpen: true,
 			isKitchenOpen: false,
 			label: "Bar Open Now",
 			detail: `Until ${todayWindow.barCloseLabel} · Kitchen closed`,
+			holidayNote,
 		};
 	}
 
-	// Past closing time today: check if tomorrow is Tuesday (closed)
+	// Past closing time today: check if tomorrow is Thanksgiving or Tuesday (closed)
 	const nextDay = (day + 1) % 7;
 	const detail =
-		HOURS_BY_DAY[nextDay] === null
-			? "Opens Wednesday at 11:30am"
-			: "Opens tomorrow at 11:30am";
+		monthDay === "11-25"
+			? "Closed Tomorrow (Nov 26) for Thanksgiving · Opens Friday at 11:30am"
+			: HOURS_BY_DAY[nextDay] === null
+				? "Opens Wednesday at 11:30am"
+				: "Opens tomorrow at 11:30am";
 
 	return {
 		day,
+		monthDay,
 		isOpen: false,
 		isKitchenOpen: false,
 		label: "Closed Now",
 		detail,
+		holidayNote,
 	};
 }
 
@@ -170,8 +212,8 @@ let cachedSnapshot: TaproomStatus | null = null;
 
 function getStatusSnapshot(): TaproomStatus {
 	const now = new Date();
-	const { day, minutes } = getChicagoTimeParts(now);
-	const key = `${day}:${minutes}`;
+	const { day, minutes, monthDay } = getChicagoTimeParts(now);
+	const key = `${monthDay}:${day}:${minutes}`;
 	if (key !== cachedKey || !cachedSnapshot) {
 		cachedKey = key;
 		cachedSnapshot = computeTaproomStatus(now);

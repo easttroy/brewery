@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useTaproomStatus } from "@/lib/hours";
 import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
+	const taproomStatus = useTaproomStatus();
+	const holidayNote = taproomStatus?.holidayNote ?? null;
+
 	return (
 		<footer className="border-etbrew-gold border-t-4 bg-stone-900 py-14 font-sans text-stone-400">
 			<div className="container mx-auto grid grid-cols-1 gap-10 px-4 text-center md:grid-cols-3 md:gap-12 md:text-left">
@@ -128,6 +134,11 @@ export default function Footer() {
 					<h3 className="mb-4 font-serif text-xl tracking-wider text-white uppercase">
 						Hours
 					</h3>
+					{holidayNote && (
+						<div className="border-etbrew-gold/40 bg-etbrew-gold/15 text-etbrew-gold-bright mb-4 rounded-xs border px-3 py-2 text-xs font-bold tracking-wide">
+							{holidayNote}
+						</div>
+					)}
 					<ul className="space-y-3 text-sm">
 						<li>
 							<span className="font-bold text-stone-200">
@@ -146,6 +157,11 @@ export default function Footer() {
 								Bar: 11:30am - 9:00pm &middot; Kitchen: 11:30am
 								- 8:00pm
 							</span>
+							{holidayNote && (
+								<span className="text-etbrew-gold-bright mt-0.5 block text-xs font-semibold">
+									{holidayNote}
+								</span>
+							)}
 						</li>
 						<li>
 							<span className="block font-bold text-stone-200">

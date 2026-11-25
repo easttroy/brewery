@@ -1,5 +1,18 @@
 [
   {
+    "id": "black-out-wednesday-2026-11-25",
+    "name": "Black Out Wednesday",
+    "url": "https://www.facebook.com/ETBrew",
+    "ctaLabel": "View on Facebook",
+    "date": "Wed, Nov 25",
+    "startDate": "2026-11-25",
+    "description": "Kick off the Thanksgiving holiday with us in the taproom! Enjoy $3.50 16oz draft beers, $6.00 glasses of wine, $6.00 premium cocktails, $3.00 shots, and more specials all evening.",
+    "isCanceled": false,
+    "isPast": false,
+    "manual": true,
+    "image": "/images/events/black-out-wednesday-2026-11-25.jpg"
+  },
+  {
     "id": "paint-n-sip-let-it-snow-2026-12-02",
     "name": "Paint n' Sip East Troy: Let it Snow",
     "url": "https://www.eventbrite.com/e/let-it-snow-tickets-2003569304725",

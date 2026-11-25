@@ -132,30 +132,40 @@ export default function MobileNav() {
 								: "border-stone-200/90 bg-white text-stone-700"
 						}`}
 					>
-						<div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-							<span
-								className={`inline-flex items-center gap-1.5 font-bold tracking-wider uppercase ${
-									taproomStatus.isOpen
-										? "text-emerald-800"
-										: "text-stone-700"
-								}`}
-							>
+						<div className="space-y-0.5">
+							<div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+								<span
+									className={`inline-flex items-center gap-1.5 font-bold tracking-wider uppercase ${
+										taproomStatus.isOpen
+											? "text-emerald-800"
+											: "text-stone-700"
+									}`}
+								>
+									<span
+										aria-hidden="true"
+										className={`h-2 w-2 rounded-full ${
+											taproomStatus.isOpen
+												? "bg-emerald-500"
+												: "bg-stone-400"
+										}`}
+									/>
+									{taproomStatus.label}
+								</span>
 								<span
 									aria-hidden="true"
-									className={`h-2 w-2 rounded-full ${
-										taproomStatus.isOpen
-											? "bg-emerald-500"
-											: "bg-stone-400"
-									}`}
-								/>
-								{taproomStatus.label}
-							</span>
-							<span aria-hidden="true" className="text-stone-300">
-								&bull;
-							</span>
-							<span className="text-stone-600">
-								{taproomStatus.detail}
-							</span>
+									className="text-stone-300"
+								>
+									&bull;
+								</span>
+								<span className="text-stone-600">
+									{taproomStatus.detail}
+								</span>
+							</div>
+							{taproomStatus.holidayNote && (
+								<p className="text-etbrew-gold text-[11px] font-bold tracking-wide">
+									{taproomStatus.holidayNote}
+								</p>
+							)}
 						</div>
 						<ChevronRight />
 					</Link>
