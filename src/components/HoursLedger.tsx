@@ -100,9 +100,15 @@ export default function HoursLedger({
 			)}
 
 			{showBanner && (
-				<p className="border-etbrew-gold/30 mb-6 rounded-xs border bg-stone-50 px-4 py-3 text-center text-xs font-bold tracking-[0.15em] text-stone-700 uppercase">
-					Open for dine-in, patio seating &amp; carryout
-				</p>
+				<div className="border-etbrew-gold/30 mb-6 rounded-xs border bg-stone-50 px-4 py-3 text-center">
+					<p className="text-xs font-bold tracking-[0.15em] text-stone-700 uppercase">
+						Open for dine-in &amp; carryout
+					</p>
+					<p className="mt-1 text-[11px] font-medium tracking-wide text-stone-500">
+						Patio closed for winter (open on nice days, weather
+						permitting)
+					</p>
+				</div>
 			)}
 
 			<div className="divide-y divide-stone-100">

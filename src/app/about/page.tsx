@@ -58,10 +58,11 @@ export default function About() {
 							<p>
 								Our expansive taproom preserves the historic
 								charm of the building while offering a warm,
-								inviting modern atmosphere. Enjoy a pint by the
-								lounge fireplace during winter months, or soak
-								up the sun on our large outdoor patio
-								overlooking the town square during the summer.
+								inviting modern atmosphere. Cozy up with a pint
+								by the lounge fireplace during the colder
+								months, or grab a table on our outdoor patio
+								overlooking the Square whenever the weather
+								permits.
 							</p>
 						</div>
 

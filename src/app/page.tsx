@@ -100,9 +100,9 @@ export default function Home() {
 					</p>
 					<p className="mx-auto max-w-3xl text-lg leading-relaxed text-stone-600">
 						We offer a laid-back, family-friendly space to unwind
-						from the daily hustle. Join us by the fireplace lounge,
-						listen to live music, or soak up some sun outdoors on
-						our patio.
+						from the daily hustle. Cozy up by the fireplace lounge,
+						catch live music, or grab a seat on the patio when the
+						weather cooperates.
 					</p>
 				</div>
 			</section>
